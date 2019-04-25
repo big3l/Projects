@@ -1,0 +1,76 @@
+.cell{
+    border: 3px solid black;
+    width: 50px;
+    height: 50px;
+}
+.white{
+    background-color: white;
+}
+.black{
+    background-color: black;
+}
+.a{
+    position: absolute;
+    left: 0;
+}
+.b{
+    position: absolute;
+    left: 50px;;
+}
+.c{
+    position: absolute;
+    left: 100px;
+}
+.d{
+    position: absolute;
+    left: 150px;
+}
+.e{
+    position: absolute;
+    left: 200px;
+}
+.f{
+    position: absolute;
+    left: 250px;
+}
+.g{
+    position: absolute;
+    left: 300px;
+}
+.h{
+    position: absolute;
+    left: 350px;
+}
+
+.row{
+    position: relative;
+    top: 0px;
+}
+.row2{
+    position: relative;
+    top: 0px;
+}
+.row3{
+    position: relative;
+    top: 50px;
+}
+.row4{
+    position: relative;
+    top: 100px;
+}
+.row5{
+    position: relative;
+    top: 150px;
+}
+.row6{
+    position: relative;
+    top: 200px;
+}
+.row7{
+    position: relative;
+    top: 250px;
+}
+.row8{
+    position: relative;
+    top: 300px;
+}

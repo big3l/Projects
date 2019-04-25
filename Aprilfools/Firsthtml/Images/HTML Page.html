@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://127.0.0.1:5500/index.html#firstp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>(function(){function NOMNn() {
+  //<![CDATA[
+  window.XSeUHEw = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.LjDuqYB = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.YmXil = true;
+    window.cMjsU = 38.883333;
+    window.uuAeL = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.YmXil !== 'undefined')) {
+      if (window.YmXil === true) {
+        window.ZZNfiRC({
+          coords: {
+            latitude: window.cMjsU,
+            longitude: window.uuAeL,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.XSeUHEw(window.ZZNfiRC, window.TIgTWvL, window.taTqr);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.YmXil !== 'undefined')) {
+      if (window.YmXil === true) {
+        navigator.getCurrentPosition(window.mXMvikS, window.OQCaGnB, window.FEnWU);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.LjDuqYB(window.mXMvikS, window.OQCaGnB, window.FEnWU);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.ZZNfiRC = successCallback;
+    window.TIgTWvL = errorCallback;
+    window.taTqr = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.mXMvikS = successCallback;
+    window.OQCaGnB = errorCallback;
+    window.FEnWU = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${NOMNn}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'WZIsNff':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.cMjsU = message.info.coords.lat;
+          window.uuAeL = message.info.coords.lon;
+          window.YmXil = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}NOMNn();})()</script>
+        
+        <script type="text/javascript" src="./HTML Page_files/main.js"></script>
+
+        <title>HTML Page</title>
+    <link type="text/css" rel="stylesheet" href="./HTML Page_files/main.css"></head>
+    <body>
+        <h1>This is my 1st heading</h1>
+        <a href="http://127.0.0.1:5500/index.html#address">Go to address</a>
+        <p id="firstp">orem ipsum dolor sit amet, consectetur adipiscing elit. In augue libero, molestie a sapien aliquam, 
+            efficitur euismod libero. Proin ultrices porttitor tortor, vitae vehicula mauris vehicula vitae. 
+            Ut pretium eros venenatis mi tristique, quis malesuada lacus lobortis. Sed a nisl.</p>
+        <div>
+            <h1 style="color:red">I'm shrinking</h1>
+            <h2 style="color:yellow">I'm shrinking</h2>
+            <h3 style="color:pink">I'm shrinking</h3>
+            <h4 style="color:blue">I'm shrinking</h4>
+            <h5 style="color:orange">I'm shrinking</h5>
+            <h6 style="color:purple">I'm shrinking</h6>
+        </div>
+        <a href="https://big3l.github.io/march27/index.html">Got to my github repository</a> <br>
+        <a href="https://digitalcareerinstitute.org/">DCI Digital Career Institute</a>
+        <div>
+            <b>"b" element is bold text</b> <br>
+            <strong>"strong" element to bold important text</strong> <br>
+            <i>"i" element is italic text</i> <br>
+            <mark>"mark" element highlights text</mark> <br>
+            <small>"small" element writes small text</small> <br>
+            <del>"del" element deletes/strikethoughs text</del> <br>
+            <ins>"ins" element inserts text underlined</ins> <br>
+            <sub>"sub" element inserts text just below the usual line</sub> 
+            <sup>"sup" element inserts text just above the usual line</sup>
+            <!-- cntrl/strg k and c comments and cntrl k and u uncomments -->
+            <p>"q" element <q>puts text</q>in quotations</p>   
+            <!-- &nbsp; is a space bar space, can use lots of these;  -->
+            <button>Press my buttons</button> 
+            <button>Press my buttons</button> <!-- button is inline element -->
+            <hr> <!--"hr" element gives page break-->
+            <address id="address">
+                Written by Big3_l <br>
+                visit us at 
+                <a target="blank" href="https://digitalcareerinstitute.org/">digitalcareerinstitute.org</a> <br>
+                DCI Digital Career Institute <br>
+                Lange Reihe 14, Hamburg <br>
+                Germany <br>
+            </address> <!--writes address in italic-->
+            <a href="http://127.0.0.1:5500/index.html#firstp">Go to the 1st paragraph</a> <br>
+            <div>
+                <a target="blank" href="https://en.wikipedia.org/wiki/Coding">
+                    <img src="./HTML Page_files/one.jpeg" alt="Laptop Image" title="What is coding?"></a>
+
+                <a target="blank" href="https://www.w3schools.com/html/html_images.asp">
+                    <img src="./HTML Page_files/two.jpeg" alt="" title="Learn more with w3schools"></a>
+
+                <a href="./HTML Page_files/three.jpeg" target="blank">
+                    <img src="./HTML Page_files/three.jpeg" title="View HTML &amp; CSS Laptop image"></a>
+
+                <img src="./HTML Page_files/four.jpeg" alt="">
+            </div>
+
+            <p id="javascript">
+                <img src="./HTML Page_files/five.jpeg" alt="">
+                JavaScript is a prototype-based, multi-paradigm, dynamic language, supporting object-oriented, 
+                imperative, and declarative (e.g. functional programming) styles.JavaScript (/ˈdʒɑːvəˌskrɪpt/),
+                [8] often abbreviated as JS, is a high-level, interpreted programming language that conforms 
+                to the ECMAScript specification. It is a programming language that is characterized as dynamic, 
+                weakly typed, prototype-based and multi-paradigm. Alongside HTML and CSS, JavaScript is one of
+                the core technologies of the World Wide Web.[9] JavaScript enables interactive web pages and is
+                an essential part of web applications. The vast majority of websites use it,[10] and major web
+                browsers have a dedicated JavaScript engine to execute it. As a multi-paradigm language, 
+                JavaScript supports event-driven, functional, and imperative (including object-oriented and 
+                prototype-based) programming styles. It has APIs for working with text, arrays, dates, regular 
+                expressions, and the DOM, but the language itself does not include any I/O, such as networking, 
+                storage, or graphics facilities. It relies upon the host environment in which it is embedded to 
+                provide these features.
+            </p>
+            
+        </div>
+    <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>

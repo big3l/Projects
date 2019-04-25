@@ -1,0 +1,52 @@
+
+Title graphic
+Home
+Learning the Shell
+Writing Shell Scripts
+Resources
+The Book
+Adventures
+Blog
+Previous | Contents | Next
+
+Manipulating Files
+This lesson will introduce you to the following commands:
+
+cp - copy files and directories
+mv - move or rename files and directories
+rm - remove files and directories
+mkdir - create directories
+These four commands are among the most frequently used Linux commands. They are the basic commands for manipulating both files and directories.
+
+Now, to be frank, some of the tasks performed by these commands are more easily done with a graphical file manager. With a file manager, you can drag and drop a file from one directory to another, cut and paste files, delete files, etc. So why use these old command line programs?
+
+The answer is power and flexibility. While it is easy to perform simple file manipulations with a graphical file manager, complicated tasks can be easier with the command line programs. For example, how would you copy all the HTML files from one directory to another, but only copy files that did not exist in the destination directory or were newer than the versions in the destination directory? Pretty hard with with a file manager. Pretty easy with the command line:
+
+[me@linuxbox me]$ cp -u *.html destination
+
+Wildcards
+Before I begin with our commands, I want to talk about a shell feature that makes these commands so powerful. Since the shell uses filenames so much, it provides special characters to help you rapidly specify groups of filenames. These special characters are called wildcards. Wildcards allow you to select filenames based on patterns of characters. The table below lists the wildcards and what they select:
+
+Summary of wildcards and their meanings
+Wildcard	Meaning
+*
+
+Matches any characters
+
+?
+
+Matches any single character
+
+[characters]
+
+Matches any character that is a member of the set characters. The set of characters may also be expressed as a POSIX character class such as one of the following:
+
+POSIX Character Classes
+[:alnum:]	Alphanumeric characters
+[:alpha:]	Alphabetic characters
+[:digit:]	Numerals
+[:upper:]	Uppercase alphabetic characters
+[:lower:]	Lowercase alphabetic characters
+[!characters]
+
+

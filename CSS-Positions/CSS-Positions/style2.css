@@ -1,0 +1,58 @@
+.parent{
+    background-color: paleturquoise;
+    height: 75vh;
+    width: 75vw;
+    padding: 50px;
+    position: relative;
+    z-index: -1;
+}
+.child{
+    background-color: red;
+       
+    /* position: relative;
+    top: 100px;
+    left: 250px; */
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 0;
+}
+.main{
+    position: relative;
+}
+#img1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+#img2{
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    z-index: 2;
+}
+#img3{
+    position: absolute;
+    top: 400px;
+    left: 400px;
+    z-index: 1;
+}
+img{
+    transition: ease-in-out 1s;
+}
+img:hover{
+    transform: translate(-200px, 0px);
+}
+#img1:hover{
+    z-index: 3;
+}
+#img2:hover{
+    z-index: 3;
+}
+#img3:hover{
+    z-index: 3;
+}

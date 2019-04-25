@@ -1,0 +1,124 @@
+#firstp{
+    color: green;
+    font-size: 10vm;
+    font-weight: bold; 
+    max-width: 75%;   
+}
+body{
+    background-color: bisque;
+}
+mark{
+    background: green;
+}
+img{
+    max-width: 100%;
+    height:auto;
+}
+#javascript img{
+    max-width: 20%;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+    border: dotted 10px lawngreen;
+}
+#javascript{
+    border: 2px dashed darkolivegreen;
+    border-radius: 0px 20px 20px 0px;
+    font-size: 1.3vw;
+    padding-right: 5px;
+    text-align: justify;
+    float: right;
+    color: darkgreen;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.table{
+    border: 2px solid grey;
+    background-color: paleturquoise;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.table td,.table th{
+    border: 3px solid darkgrey;
+    border-radius: 25px 10px 25px 10px;
+    width: 20%;
+    background-color: aquamarine;
+    
+}
+.potato{
+    width: 100%;
+    border: 5px solid red;
+    border-radius: 10px;
+    background-color: black;
+    font-size: 2vw;
+    padding-right: 5px;
+    text-align: center;
+    float: right;
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.potato img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.potato td,.potato th{
+    border: 2px solid red;
+    border-radius: 10px;
+    width: 20%;
+       
+}
+.responsiveh1{
+    font-size: 10vw;
+}
+.left{
+    background-color: lightgreen;
+    padding: 20px 0px 20px 0px;
+    width: 25%;
+    float: left;
+}
+
+.centre{
+    background-color: lightsalmon;
+    padding: 20px 0px 20px 0px;
+    width: 50%;
+    float: left;
+}
+
+.right{
+    background-color: lightcyan;
+    padding: 20px 0px 20px 0px;
+    width: 25%;
+    float: left;
+}
+@media screen and (max-width:600px) and (min-width:300px){
+    .left,.centre,.right{
+        width: 100%;
+        color: red;
+        border: 2px solid gray;
+        border-radius: 20px;
+    }
+    .left{
+        background-color: pink;
+    }
+    .right{
+        background-color: blueviolet;
+    }
+    .centre{
+        background-color: yellow;
+    }
+    body{
+        background-color: tomato;
+    }
+}
+@media screen and (max-width:1200px) and (min-width:800px){
+    .left,.centre,.right{
+        width: 100%;
+        color: blue;
+        border: 2px dotted black;
+        border-radius: 20px;
+    
+    }

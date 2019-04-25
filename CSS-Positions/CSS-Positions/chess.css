@@ -1,0 +1,67 @@
+
+div{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    left: 50px;
+    color: white;
+    position: absolute;
+}
+.one{
+    position: relative;
+    left: 50px;
+}
+.two{
+    position: relative;
+    left: 150px;
+    top: -50px;
+}
+.three{
+    position: relative;
+    left: 250px;
+    top: -100px;
+}
+.four{
+    position: relative;
+    left: 350px;
+    top: -150px;
+}
+.first{
+    background-color: white;
+    position: static;
+}
+.second{
+    background-color: white;
+    margin-left: -50px;
+    position: static;
+}
+.third{
+    background-color: white;
+    margin-left: 0px;
+    position: static;
+}
+.fourth{
+    background-color: white;
+    margin-left: -50px;
+    position: static;
+}
+.fifth{
+    background-color: white;
+    margin-left: 0px;
+    position: static;
+}
+.sixth{
+    background-color: white;
+    margin-left: -50px;
+    position: static;
+}
+.seventh{
+    background-color: white;
+    margin-left: 0px;
+    position: static;
+}
+.eight{
+    background-color: white;
+    margin-left: -50px;
+    position: static;
+}

@@ -1,0 +1,84 @@
+.styling{
+    /*color: 123456789abcde*/ 
+    color: #ff0000;
+    color: #00ff00;
+    color: #0000ff;
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+.styling1{
+    /*rgb is red, green, blue color pallet*/
+    font-size: 2.5em;
+    color: rgb(255,0,0);
+    color: rgb(0,255,0);
+    color: rgb(0,0,255);
+    background-color: rgb(244, 46, 234);
+}
+.styling2{
+    /*rgba - red, green, blue, alpha - alpha is same as Opacity, max value is 1.*/
+    font-size: 2.5em;
+    color: rgba(60, 90, 134, 0.8);
+    background-color: rgba(200, 150, 50, 0.6);
+    border: 20px solid rgb(60, 50, 150);
+    display: block;
+    width: 300px;
+    padding-left:50px;
+    padding-right: 50px;
+}
+    
+#img1{
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.styling2:hover{
+    color: rgba(89, 60, 180, 0.9);
+    border: 4px dashed rgba(255, 60, 180, 0.5);
+    border-radius: 10px;
+    font-size: 3.0em;
+}
+body{
+    background-color: rgba(255, 60, 80, 0.4);
+
+}
+.main{
+    height: 200px;
+    width: 600px;
+    background-color: rgba(60, 90, 134, 0.3);
+    border: 1px solid rgba(200, 150, 50, 0.9);
+    
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+
+    padding: 0px 10px 70px 20px;
+    /*padding: top, right, bottom, left;*/
+
+    margin-top: 100px;
+    margin-right: 150px;
+    margin-bottom: 200px;
+    margin-left: 90px;
+    margin: 0px 10px 70px 20px;
+    /*margin: top,right, bottom, left;*/
+    margin: 0 auto;
+
+}
+.main div{
+    float: left;
+    border: 1px solid rgba(20, 50, 99, 0.9);
+    width: 200px;
+    height: 150px;
+    box-sizing: border-box;
+    padding: 40px;
+}
+.div1{
+    background-color: lightgrey;
+}
+.div2{
+    background-color: aquamarine;
+}
+.div3{
+    background-color: cadetblue;
+}
