@@ -1,0 +1,107 @@
+.div1{
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: all 3s; /* background 3s, width 6s, border 3s, border-radius 2s;*/
+    /* transition: linear;
+    transition: ease-out;
+    transition: ease-in-out; */
+    /* transition-delay: 1s; */
+    transition-timing-function: cubic-bezier(1,2.04,.09,1.46);
+    /* http://cubic-bezier.com */
+}
+.div1:hover{
+    width: 400px;
+    height: 400px;
+    border: 3px solid black;
+    border-radius: 45px;
+    background: red;
+    transform: translate(100px,100px) rotate(360deg) ;
+}
+
+.div2{
+    height: 200px;
+    width: 200px;
+    margin-top: 50px;
+    background-color: red;
+    animation-name: anim;
+    animation-duration: 4s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1,2.04,.09,1.5);
+}
+@keyframes anim{
+    from{width:200px; height:200px;  background: url(2.jpeg) no-repeat;}
+
+    to{width:400px; height:400px; 
+        margin-left:500px; margin-top: -150px; border-radius: 200px; 
+        transform: rotateX(360deg) rotateZ(360deg); background: url(1.jpeg) no-repeat;}
+}
+
+h2{
+    text-align: center;
+    padding-top: 30px;
+    transition: all;
+    transform: rotateX(20deg);
+    animation-name:  word;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    /* animation-fill-mode: forwards; */
+    animation-iteration-count: infinite;
+}
+@keyframes word{
+    from{transform: translateX(30px); opacity: 0;}
+    to{transform: translateX(0px); opacity: 1;}
+}
+
+h4{
+    text-align: center;
+    transition: all;
+    transform: rotateX(20deg);
+    animation-name:  words;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    /* animation-fill-mode: forwards; */
+    animation-iteration-count: infinite;
+}
+@keyframes words{
+    from{transform: translateX(-30px); opacity: 0;}
+    to{transform: translateX(0px); opacity: 1;}
+}
+
+.button{
+    height: 200px;
+    color: bisque;
+    text-decoration: none;
+    width: 100%;    
+    background: url(3.jpg) no-repeat;
+    background-size: 100%;
+    
+}
+button{
+    display: inline-block;
+    position: relative;
+    margin-left: 575px;
+    padding: 10px 15px;
+    background: white;
+    text-align: center;
+    border-radius: 30px;
+    transition: all;
+    transform: rotateX(20deg);
+    animation-name:  buttons;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    /* animation-fill-mode: forwards; */
+    animation-iteration-count: infinite;
+}
+
+@keyframes button{
+    from{transform: translateY(30px); opacity: 0;}
+    to{transform: translateY(0px); opacity: 1;}
+}
+@keyframes buttons{
+    0%{transform: translateY(30px); opacity: 0; }
+    50%{transform: translateY(0px);opacity:1;}
+    100%{transform: translateY(30px);opacity:0;}
+}

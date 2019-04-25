@@ -1,0 +1,56 @@
+/* 
+    There are four different combinators in CSS:
+
+    - descendant selector (space)
+    - child selector (>)
+    - adjacent sibling selector (+)
+    - general sibling selector (~) 
+    */
+
+div > p{  /* child selector (>) */
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    padding: 30px 
+}
+
+div + h1{ /*+ means 1st H1 element after the div */
+    background-color: yellow;
+}
+div ~ p{ 
+    background-color: blue;
+}
+a:link{
+    color: red;
+    font-size: 2.1em;
+}
+a:visited{
+    color: green;
+}
+a:hover{
+    background-color: lightblue;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    cursor: progress;
+}
+.myclass:hover{
+    background-color: black;
+    color: white;
+}
+.myclass{
+    transition: 2s;
+}
+a:active{
+    color: orange;
+    font-size: 2.1em;
+}
+div > p:first-child{
+    display: none;
+}
+div:hover p{
+    display: block;
+}
+p:last-child{
+    background-color: green;
+}
