@@ -1,0 +1,102 @@
+body{
+    background-color: #ccc;
+}
+h1{
+    color: red;
+}
+.text{
+    padding: 50px;
+    font-size: 1.5em;
+}
+h1, h2{
+    text-align: center;
+}
+.text::before{
+    content: '- Start -';
+    color: red;
+    font-weight: 800;
+    border-radius: 20px;
+    display: block;
+    background-color: palevioletred;
+}
+.text::after{
+    content: ' - End -';
+    text-align: right;
+    color: red;
+    font-weight: 800;
+    display: block;
+    background-color: palevioletred;
+}
+h2::before{
+    content: open-quote;
+    font-size: 2em;
+    color: darkcyan;
+}
+h2::after{
+    content: close-quote;
+    font-size: 2em;
+    color: darkcyan;
+}
+.article{
+    padding: 50px;
+    font-size: 1.3em;
+}
+.article a{
+    text-decoration: none;
+    position: relative;
+}
+.article a::before{
+    content: attr(info);
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    display: block;
+    background-color: grey;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: ease-in-out 750ms;
+}
+.article a:hover{
+    color: red;
+}
+.article a:hover::before{
+    display: block;
+    color: green;
+    transform: scale(1)
+}
+/* .article a::after{
+    content: '- After the href';
+    display: block;
+    color: orange;
+} */
+
+.centre{
+    text-align: center;
+}
+.btnhover{
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.4em;    
+    position: relative; 
+}
+.btnhover::after{
+    content: attr(info);
+    color: blue;   
+    position: absolute;
+    left: 0;
+    bottom: 110%;
+    background-color: yellow;
+    border: 3px solid grey;
+    border-radius: 16px;
+    transform: scale(0);
+    transition: ease-in-out 150ms;
+}
+.btnhover:hover::after{
+    transform: scale(1);
+}
+.btnhover:hover{
+    cursor: crosshair;
+}

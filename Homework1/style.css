@@ -1,0 +1,149 @@
+body{
+    height: 100% auto;
+    margin: 0;
+}
+.header{
+    display: inline;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    letter-spacing: 4px;
+    color: #222;
+    margin-left: 100px;
+}
+h5{
+    margin-left: 5%;
+    
+}
+#logo{
+    margin-left: 40%;
+    margin-top: -50px;
+}
+#media{
+    width: 150px;
+    height: 20px;
+    margin-left: 85%;
+}
+.nav{
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    border: 1px solid lightgrey;
+    position: sticky;
+    top: 0%;
+}
+li{
+    color: gray;
+    border-right: 1px solid lightgray;
+    display: inline;
+    padding: 5px 30px;
+    list-style-type: none;
+    text-align: center;
+    font-size:15px;
+    font-family: sans-serif;
+}
+li:hover{
+    color: black;
+}
+li:last-child {
+    border-right: none;
+    
+}
+.main{
+    height: 800px;
+    margin-top: -40px;
+    text-align: center;
+    color: white;
+    background-image:url(1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+h1{
+    padding-top: 250px;
+    font-size: 51px;
+    font-family: sans-serif;
+    animation-name:  words1;
+    animation-duration: 0.5s;
+}
+@keyframes words1{
+    from{transform: translateY(100px); opacity: 0;}
+    to{transform: translateY(0px); opacity: 1;}
+}
+h2{
+    padding: 0%;
+    font-family: sans-serif;
+    font-weight: lighter;
+    animation-name:  words2;
+    animation-duration: 0.5s;
+    animation-delay: 0.2s;
+    
+}
+@keyframes words2{
+    from{transform: translateY(100px); opacity: 0;}
+    to{transform: translateY(0px); opacity: 1;}
+}
+h4{
+    display: inline;
+    background-color: black;
+    padding: 10px 30px;
+    font-weight: lighter;
+    font-family: sans-serif;
+    animation-name:  words3;
+    animation-duration: 2s;
+    animation-delay: 0.4s;
+}
+@keyframes words3{
+    from{transform: translateY(100px); opacity: 0;}
+    to{transform: translateY(0px); opacity: 1;}
+}
+button{
+    padding: 10px 50px;
+    background: yellow;
+    color: black;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 30px;
+    animation-name:  button;
+    animation-duration: 2s;
+    animation-delay: 0.6s;
+}
+@keyframes button{
+    from{transform: translateY(60px); opacity: 0;}
+    to{transform: translateY(0px); opacity: 1;}
+}
+button:hover{
+    background-color: transparent;
+    border: 3px solid yellow;
+    color: white;
+}
+.footer{
+    margin-top: 20px;
+    height: 300px;
+    width: 50%;
+    border-right: 2px solid lightgray;
+    border-top: 2px solid lightgrey;
+}
+#footer{
+    margin-top: 50px;
+    margin-left: 140px;
+}
+#lorem{
+    margin-left:140px;
+    padding-right: 50px;
+    color: gray;
+}
+.bottom{
+    height: 100px;
+    background-image:url(bottom.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align:center;
+    color: white;
+}
+#bottomt{
+    padding-top: 50px;
+}

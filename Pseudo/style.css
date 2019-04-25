@@ -1,0 +1,111 @@
+body{
+    margin: 0;
+    /* background-color: rgba(125,214,110,0.8); */
+}
+header{
+    height: 95vh;
+    background-image: 
+    linear-gradient(to right bottom, rgba(126,213,111,0.8),
+    rgba(40,180,133,0.8)), url(hero.jpg);
+}
+p::first-line{
+    color: red;
+    font-size: 2em;
+}
+p::first-letter{
+    color: black;
+    font-weight: bolder;
+    font-size: 3em;
+    vertical-align: top;
+}
+p::after{
+    content: url(1.jpeg);
+}
+.mybtn{
+    text-align: center;
+}
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: white;
+    transition: all 2s;
+    padding: 15px 35px;
+    border-radius: 30px;
+    color:black;
+    position: relative;
+    animation: move 1s;
+}
+.btn::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 700ms;
+}
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.mybtn h1>:first-child{
+    color: white;
+    display: block;
+    letter-spacing: 0.8em;
+    font-size: 1.4em;
+    font-family: sans-serif;
+    animation: moveright 1s;
+    animation-delay: 0.5s;
+}
+.mybtn h1>span:nth-child(2){
+    color: white;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.5em;
+    letter-spacing: 0.8em;
+    font-family: sans-serif;
+    font-weight: 400;
+    margin-bottom: 35px;
+    animation: moveleft 1s;
+    animation-delay: 0.5s;
+}
+@keyframes moveright{
+    from{
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes moveleft{
+    from{
+        transform: translateX(150px);
+        opacity: 0;
+    }
+    to{
+        transform:translateX(0px);
+        opacity: 1;
+    }
+}
+
+.btn:hover{
+    color: white;
+    background-color: black;
+    box-shadow: 0 20px 30px black;
+}
+@keyframes move{
+    from{
+        transform:translateY(200px);
+        opacity: 0;
+    }
+    to{
+        transform:translateY(00px);
+        opacity: 1;
+    }
+} 

@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+}    
+body{
+    margin: 0 auto;
+}.header{
+    padding: 60px;
+    text-align: center;
+    background-color: rgba(202, 202, 7, 0.5);
+    color: rgb(137, 81, 33);
+    border: 2px solid white;
+}
+.nav{
+    background-color: #96df5b;
+    display: flex;
+    justify-content: center;
+    border: 2px solid white;
+}
+.nav a{
+    color: rgb(09, 70, 71);
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 20px;
+}
+.nav a:hover{
+    background-color: rgba(202, 202, 7, 0.5);
+    color: rgb(10, 56, 53);
+}
+.noimg1{
+    display: flex;
+    width: 100%;
+    height: 100%:
+    padding: 20px;
+} 
+.noimg2{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+.side{
+    background-color: bisque;
+    color: rgb(137, 81, 33);
+    flex: 30%;
+    padding: 20px;
+    border: 2px solid white;
+}
+.main{
+    flex: 70%;
+    color: rgb(137, 81, 33);
+    padding: 20px;
+    background-color: rgba(202, 202, 7, 0.5);
+    border: 2px solid white;
+}
+.noimg3{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+.footer{
+    padding: 20px;
+    background-color: rgba(202, 202, 7, 0.5);
+    color: rgb(137, 81, 33);
+    text-align: center;
+    border: 2px solid white;
+}
+@media screen and (max-width:800px){
+.row,.nav{
+    flex-direction: column-reverse;        
+}
+h1,h2,h3,h4,h5,p{
+    text-align: center;
+    color: orangered;
+    }
+.side img{
+    display: flex;
+    flex-wrap: wrap;
+    }
+}
+.rowimg{
+    display: -ms-flexbox; /*IE10*/
+    display: flex;
+    -ms-flex-wrap: wrap; /*IE10*/
+    flex-wrap: wrap;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+}   
+
+.rowimg div{
+    flex:25%;
+    margin-top: 8px;
+    padding-right: 8px;
+    vertical-align: middle;
+    
+}
+.rowimg div img{
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:800px){
+    .rowimg div{
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+@media screen and (max-width:600px){
+    .rowimg div{
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+    
+
