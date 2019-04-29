@@ -31,16 +31,20 @@
         <p>Please complete the form below to send a message to us</p> 
         <form action="">
             <p>
-            <label for="">Name:</label>
-            <input required="required" placeholder="type name here" type="text" name="Fullname" id="">
+                <label for="First">Name:</label>
+                <input required="required" placeholder="type name here" type="text" name="Fullname" id="">
             </p>
             
             <p>
-            <label for="">Email Address:</label>
-            <input required="required" placeholder="type email here" type="email">
+                <label for="email">Email Address:</label>
+                <input required="required" placeholder="type email here" type="email">
             </p>
             <p>
-                <label for="">Your Location</label>
+                <label for="date">Date of Birth:</label>
+                <input required="required" type="date">
+            </p>
+            <p>
+                <label for="location">Your Location:</label>
                 <select name="location" id="location">
                     <option value="1">Berlin</option>
                     <option value="2" selected="selected">Hamburg</option>
@@ -48,18 +52,26 @@
                     <option value="4">Köln</option>
                 </select>
             </p>
-            
             <p>
-            <label for="">Message:</label>
-            <textarea placeholder="write your message here" name="message" id="txt" cols="30" rows="10"></textarea>
+                <label for="">Can we keep you informed with our offers?</label>
+                <input checked="checked" type="checkbox" name="info" id=""><span>Yes please</span>
+                <input type="checkbox" name="info" id=""><span>No thanks</span>
             </p>
-            
             <p>
-            <input id= submit type="submit" value="Send">
+                <label id="gender" for="gender">Gender:</label>
+                <div class="radio"><input type="radio" name="gender" id="" value="M"><span>Male</span>
+                <input type="radio" name="gender" id="" value="F"><span>Female</span>
+                <input type="radio" name="gender" id="" value="O"><span>Other</span>
+                </div>
             </p>
-        
+            <p>
+                <label for="">Message:</label>
+                <textarea placeholder="write your message here" name="message" id="txt" cols="30" rows="10"></textarea>
+            </p>
+            <p>
+                <input type="submit" value="Send">
+            </p>
         </form>
     </div>
-    
 </body>
 </html>
