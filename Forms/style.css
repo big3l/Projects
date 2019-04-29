@@ -6,17 +6,17 @@
     linear-gradient(to right bottom,rgba(174,36,179,0.8), rgba(127,216,228,0.8));
     padding: 25px;
 }
-.container label{
+.container label, select{
     display: inline-block;
     width: 60%;
     text-align: left;
 }
-.container, input, textarea{ 
+.container, input, textarea, select{ 
     width: 60%;
     box-sizing: border-box;
 }
 @media only screen and (max-width:600px){
-    .container input, textarea, label, p{
+    .container input, textarea, label, p, select{
         width: 100%;
         text-align: left;
     }
