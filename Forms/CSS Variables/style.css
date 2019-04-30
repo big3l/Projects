@@ -1,0 +1,81 @@
+:root{
+    --txtcolor:rgba(233,44,55,0.8);
+    --bgcolor:linear-gradient(to right, lightgrey, lightblue,lightgreen);
+    --divheight: 300px;
+    --divborder: 5px solid blue;
+    --h1size: 3.5em;
+    --txtfont: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background-image: var(--bgcolor);
+}
+.main h1{
+    color: var(--txtcolor);
+    font-family: var(--txtfont);
+    font-size: var(--h1size);
+}
+.main{
+    /* the height here is 300px */
+    height: var(--divheight);
+    background-color: lightseagreen;
+}
+.mydiv{
+    /* the height here is only 100px */
+    height: var(--divheight);
+    --divheight:100px;
+    background-color: lightcoral;
+    margin: 30px;
+    font-size: 2.5em;
+}
+.new{
+    padding: 50px;
+    --txtcolor:gold;
+    border-radius: 25px;
+}
+#alert{
+    --txtcolor:red;
+    border: 3px solid grey;
+    font-size: 1.6em;
+}
+#ok{
+    --txtcolor:green; /*overrides the "*" instruction below*/
+    border: 3px solid grey;
+    margin-top: 20px;
+    font-size: 1.6em;
+}
+*{  /*applies color to everything */
+    color: var(--txtcolor);
+}
+.btn{
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 10px 15px;
+    margin: 10px;   
+}
+.btn:hover{
+    background-color: var(--color, black);
+    box-shadow: 3px 5px;
+}
+.btn.red{
+    --color:pink;
+}
+.btn.blue{
+    --color: lightblue;
+}
+.btn.green{
+    --color: lightgreen;
+}
+.red{
+    background: red;
+    filter: brightness(70%)
+}
+.blue{
+    background-color: blue;
+    filter: blur(2px)
+}
+.green{
+    background-color: green;
+}
+
