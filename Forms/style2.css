@@ -24,10 +24,10 @@ h1{
 }
 label{
     color: white;
-    margin-left: 15%;
+    margin-left: 50px;
 }
 input{
-    width: 70%;
+    width: 350px;;
     display: block;
     margin: 0 auto;
     padding: 10px;
@@ -35,6 +35,6 @@ input{
 }
 .container input[type='submit']{
     width: 100px;
-    margin: 0% auto;
+    margin: 0 auto;
     border-radius: 20px;
 }
