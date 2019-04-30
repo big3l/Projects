@@ -25,6 +25,7 @@ h1{
 label{
     color: lightgrey;
     margin-left: 50px;
+    text-align: left;
 }
 input{
     background-color: transparent;
