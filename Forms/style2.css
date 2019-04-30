@@ -10,7 +10,7 @@ body{
     background-attachment: fixed;     
 }
 .container{
-    background-color:rgba(0,0,0,0.6);
+    background-color:rgba(0,0,0,0.7);
     max-width: 450px;
     border-radius: 20px;
     margin: 0 auto;
@@ -23,18 +23,33 @@ h1{
     padding-top: 30px;
 }
 label{
-    color: white;
+    color: lightgrey;
     margin-left: 50px;
 }
 input{
+    background-color: transparent;
+    border-radius: 5px;
     width: 350px;;
     display: block;
     margin: 0 auto;
     padding: 10px;
     font-weight: bold; 
+    color: lightgrey;    
 }
 .container input[type='submit']{
+    color: white;
+    font-size: 1.3em;
+    font-weight: 500;
+    background-color: rgb(20, 113, 141);
     width: 100px;
     margin: 0 auto;
-    border-radius: 20px;
+    border-radius: 30px;
+}
+.container input[type='submit']:hover{
+    background-color: grey;
+    color: white;
+}
+.container input[type=text]:focus,[type=email]:focus,[type=password]:focus{
+    border: 2px solid grey;
+    border-bottom: 2px dotted gray;
 }
