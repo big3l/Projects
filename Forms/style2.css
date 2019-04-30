@@ -24,13 +24,13 @@ h1{
 }
 label{
     color: lightgrey;
-    padding-left: 50px;
+    padding-left: 10%;
     text-align: left;
 }
 input{
     background-color: transparent;
     border-radius: 5px;
-    width: 350px;;
+    width: 80%;
     display: block;
     margin: 0 auto;
     padding: 10px;
