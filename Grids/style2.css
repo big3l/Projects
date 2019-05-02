@@ -1,0 +1,25 @@
+.item{
+    background-color: blue;
+    color: white;
+    border: 3px solid black;
+    padding: 20px;
+    text-align: center;
+}
+.grid{
+    display: grid;
+    /* grid-template-columns: 30% 40% 30%; */
+    grid-template-columns: 600px 400px 300px; 
+    grid-template-rows: 200px 200px;
+    background-color: darkblue;
+    padding: 10px;
+}
+/*.footer{
+    grid-column-start: 2;
+    grid-column-end: 4;
+} */
+
+.centre{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3
+}
