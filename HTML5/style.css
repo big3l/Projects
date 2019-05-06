@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0 auto;
+    background-image: linear-gradient(to right, lightblue,lightgreen, lightgrey);
+}
+header,footer{
+    background-color:#000000;
+    color: white;    
+    text-align: center;
+    padding: 15px;    
+}
+.fa-html5{
+    color: orange;
+}
+.fa-css3-alt{
+    color: rgb(73, 183, 219);
+}
+.fa-js-square{
+    color: orange;
+}
+.fa-node-js{
+    color: green;
+}
+  main,h1,h2,h3,section,summary,details{
+    width: 100%;
+    padding: 4px;
+    text-align: center;
+}  
+/* footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+} */
+article,p{
+   padding: 10px;
+   font-family: verdana;
+   font-size: 17px;
+   text-align: justify;
+   color: #333; 
+   }
+nav{
+    background-color: #333;
+    border: 1px solid black; 
+    overflow: hidden;
+    text-align: center;
+    font-family: java;
+}
+nav a{
+    display: inline-block;
+    color: white;
+    padding:16px;
+    text-decoration: none;
+    font-size:26px;     
+}
+nav a:hover{
+    background-color: bisque;
+    color: #000000;
+}
+@font-face{
+    src: url(Shadows_Into_Light/ShadowsIntoLight.ttf);
+    font-family: html;
+}
+.top{
+    font-family: html;
+    font-size: 1.5em;
+    color: #000000;
+    font-weight: bold;    
+}
+@font-face{
+    src: url(IndieFlower.ttf);
+    font-family: node;
+}
+.node{
+    font-family: node;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1.5em;
+}
+@font-face{
+    src: url(Shadows_Into_Light/ShadowsIntoLight.ttf);
+    font-family: html;
+}
+.html{
+    font-family: html;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1.5em;
+}
+@font-face{
+    src: url(Karla/Karla-BoldItalic.ttf);
+    font-family: css;
+}
+.css{
+    font-family: css;
+    color: #000000;
+    font-size: 1.5em;
+}
+@font-face{
+    src: url(Acme/Acme-Regular.ttf);
+    font-family: java;
+}
+.java{
+    font-family: java;
+    color: #000000;
+    font-size: 1.5em;
+}
+@font-face{
+    src: url(Satisfy-Regular.ttf);
+    font-family: h1;
+}
+h1{
+    font-family: h1;
+    font-size: 3em;
+    letter-spacing: 20px;
+    text-decoration: underline;
+}
+
+@media screen and (max-width:600px){
+
+    nav a{
+        display: block; 
+        width: 100%;   
+    }
+}

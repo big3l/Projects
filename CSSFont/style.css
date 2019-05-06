@@ -1,0 +1,43 @@
+body{
+    font-size: 2em;
+}
+@font-face{
+    src: url(Fontimports/Indie_Flower/IndieFlower.ttf);
+    font-family: importfont1;
+}
+@font-face{
+    src: url(Fontimports/Permanent_Marker/PermanentMarker-Regular.ttf);
+    font-family: importfont2;
+}
+@font-face{
+    src: url(Fontimports/Libre_Barcode_128_Text/LibreBarcode128Text-Regular.ttf);
+    font-family: importfont3;
+}
+@font-face{
+    src: url(Fontimports/Kumar_One_Outline/KumarOneOutline-Regular.ttf);
+    font-family: importfont4;
+}
+
+h1{ /*google font */
+    font-family: importfont1;
+    text-decoration: underline;
+}
+.font-itallic{
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+}
+.sans-serif{
+    font-family: serif;
+        
+}
+.googlefonts{
+    font-family: importfont2;   
+}
+.moregoogle{
+    font-family: importfont3; 
+    font-size: 2em
+}
+.another{
+    font-family: importfont4;
+}

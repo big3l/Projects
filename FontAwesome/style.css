@@ -1,0 +1,27 @@
+body{
+    margin-left: 300px;
+}
+.fa-clock{
+    color: aqua;
+}
+.fa-facebook-square{
+    color: blue;
+}
+li{
+    font-size: 2em
+}
+.fa-li-0{
+    color: green;
+}
+.fa-li-1{
+    color: blue;
+}
+.fa-li-2{
+    color: red;
+}
+.fa-bolt{
+    color: yellow;
+}
+.fa-youtube{
+    color: red;
+}

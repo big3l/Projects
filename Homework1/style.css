@@ -147,3 +147,10 @@ button:hover{
 #bottomt{
     padding-top: 50px;
 }
+@media screen and (max-width:600px){
+    nav {
+        display: none; 
+        width: 100%; 
+        position: absolute;  
+    }
+}
