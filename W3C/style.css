@@ -1,0 +1,8 @@
+h1, h2, p{
+    font-family: 'Inconsolata', monospace;
+    color: white;
+    text-align: center;
+}
+a, tr, .w3-button{
+    font-family: 'Inconsolata', monospace;
+}
