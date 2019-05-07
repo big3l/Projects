@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  -->
+    <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,20 +31,20 @@
     <br>
 
     <table class="w3-table w3-striped w3-border w3-mobile w3-animate-bottom">
-        <tr class="w3-large">
+        <tr class="w3-xlarge">
             <th>First Name</th>
             <th>Last Name</th>
             <th>Points</th>
             <th>Prizes</th>
         </tr>
-        <tr class="w3-hover-grey">
-            <td>Dan</td>
+        <tr class="w3-hover-grey w3-large">
+            <td class="w3-tooltip">Dan <span class="w3-text w3-tag w3-pink w3-xxlarge w3-animate-zoom">CLEAR WINNER!!</span></td>
             <td>Lewis</td>
             <td>123,456,789</td>
             <td>Pagani Huayra</td>
         </tr>
-        <tr class="w3-hover-grey">
-            <td>Abi</td>
+        <tr class="w3-hover-grey w3-large">
+            <td class="w3-tooltip">Abi <span class="w3-text w3-tag w3-brown w3-xxlarge w3-animate-zoom">LOOOOSER!!</span></td>
             <td>Lewis</td>
             <td>15</td>
             <td>Potato</td>
@@ -60,12 +61,14 @@
     </div>
 
     <p class="w3-center-align"> 
-        <button style="width:80%" class=" w3-button w3-animate-top w3-wide w3-padding-large w3-green w3-margin w3-round-large w3-hover-purple"  
-                onclick="document.getElementById('id01').style.display='block'" >Click for more info</button>
+        <button style="width:80%" class=" w3-button w3-animate-top w3-wide w3-large w3-padding-large w3-green w3-margin w3-round-large w3-hover-purple"  
+                onclick="document.getElementById('id01').style.display='block'"  >Click for more info</button>
     </p> 
     <div id="id01"class="w3-panel w3-grey w3-round w3-display-container w3-margin w3-animate-top" style="display:none">
-        <span onclick="this.parentElement.style.display='none'"class="w3-button w3-red w3-display-topright ">x</span>
-        <p>The Pagani Huayra (Italian pronunciation: [ˈwai̯ra]) is a mid-engine sports car produced by Italian sports car manufacturer Pagani, succeeding the company's previous offering, the Zonda. It is named after Huayra-tata, a Quechua wind god.</p>
+        <span onclick="this.parentElement.style.display='none'"class="w3-button w3-red w3-display-topright  ">x</span>
+        <p class="w3-tooltip w3-large"> The Pagani Huayra <span class="w3-text w3-tag w3-green w3-round-xlarge w3-xlarge w3-animate-left w3-animate-opacity">(<em>pronunciation: [ˈwai̯ra]</em>)</span> is a mid-engine sports car 
+            produced by Italian sports car manufacturer Pagani, succeeding the company's previous offering, the Zonda. It is named after 
+            Huayra-tata, a Quechua wind god.</p>
     </div>  
     
 
