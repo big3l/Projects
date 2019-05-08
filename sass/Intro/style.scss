@@ -1,0 +1,45 @@
+// These are functions....
+$font-stack:    Helvetica, sans-serif;
+$my-font: 3em;
+$primary-color: red;
+$link-color: green;
+$body-back: lightblue;
+$backcol: lightgreen;
+$headerback: lightgrey;
+$border: 3px solid navy;
+
+body {
+  font: 100% $font-stack;
+  font-size: $my-font;
+  color: $primary-color;
+  background: $body-back;
+  border: $border;
+}
+header{
+    background-color: $headerback;
+    border: $border;  
+    text-align: center;
+    padding: 50px;
+    margin: 5px;
+}
+
+// nesting
+nav{
+    ul{
+        margin: 20px;
+        padding: 50px;
+        list-style: none;
+        background-color: $backcol;
+        border: $border;
+    }
+    li{
+        display: inline-block;
+        border-right: $border;
+        a{
+            text-decoration: none;
+        }
+        a:visited{
+            color: $link-color; 
+        }
+    }
+}

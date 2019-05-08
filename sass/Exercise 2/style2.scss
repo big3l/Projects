@@ -1,0 +1,111 @@
+
+
+
+body{
+    background-image: linear-gradient(to right,lightgrey, lightblue,lightgreen);
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    text-align: center;
+    padding: 30px;
+    background-color: lightcyan;
+    h1{
+       color: blue;
+       font-size: 3rem;              
+    }
+}
+
+nav{
+    background-color: lightcyan;
+    ul{
+        text-align: center;
+        padding: 10px;
+        li{
+            display: inline-block;
+            list-style: none;
+            padding: 20px;            
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+main{
+    .cards{
+        background-color: lightcyan;
+        .card{
+            display: inline-block;
+            width: 400px;
+            padding:20px;
+            text-align: center;
+            h4{
+                color: blue;
+                text-align: center;
+                p{
+                    text-align: center;
+                    button{
+
+                    }
+                }
+            }
+        }
+    }
+    .portion{
+        display: inline;
+        figure{
+            margin: 20px;
+            img{
+                margin: 20px;
+                float: left;
+                width: 30%;
+            }
+        }
+        article{
+            padding: 50px;
+            h3{
+            }
+            p{
+            }
+        }
+    }
+}
+
+aside{
+    margin: 20px;
+    padding-top: 50px;
+    h3{
+        p{
+
+        }
+    }
+}
+
+section{
+    margin: 20px;
+    padding-top: 20px;
+    h3{
+        p{
+
+        }
+    }
+}
+
+footer{
+    background-color: lightcyan; 
+    ul{
+        text-align: center;
+        li{
+            display: inline-block;
+            font-size: 1.5rem;
+            padding: 20px;
+            
+            a{
+
+            }
+        }        
+    }
+}

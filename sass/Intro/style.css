@@ -1,0 +1,37 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  font-size: 3em;
+  color: red;
+  background: lightblue;
+  border: 3px solid navy;
+}
+
+header {
+  background-color: lightgrey;
+  border: 3px solid navy;
+  text-align: center;
+  padding: 50px;
+  margin: 5px;
+}
+
+nav ul {
+  margin: 20px;
+  padding: 50px;
+  list-style: none;
+  background-color: lightgreen;
+  border: 3px solid navy;
+}
+
+nav li {
+  display: inline-block;
+  border-right: 3px solid navy;
+}
+
+nav li a {
+  text-decoration: none;
+}
+
+nav li a:visited {
+  color: green;
+}
+/*# sourceMappingURL=style.css.map */

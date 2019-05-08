@@ -1,0 +1,102 @@
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(lightgrey), color-stop(lightblue), to(lightgreen));
+  background-image: linear-gradient(to right, lightgrey, lightblue, lightgreen);
+  margin: 0;
+  border: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  background-color: lightcyan;
+}
+
+header h1 {
+  color: blue;
+  font-size: 3rem;
+}
+
+nav {
+  background-color: lightcyan;
+}
+
+nav ul {
+  text-align: center;
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+main .cards {
+  background-color: lightcyan;
+}
+
+main .cards .card {
+  display: inline-block;
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+}
+
+main .cards .card h4 {
+  color: blue;
+  text-align: center;
+}
+
+main .cards .card h4 p {
+  text-align: center;
+}
+
+main .portion {
+  display: inline;
+}
+
+main .portion figure {
+  margin: 20px;
+}
+
+main .portion figure img {
+  margin: 20px;
+  float: left;
+  width: 30%;
+}
+
+main .portion article {
+  padding: 50px;
+}
+
+aside {
+  margin: 20px;
+  padding-top: 50px;
+}
+
+section {
+  margin: 20px;
+  padding-top: 20px;
+}
+
+footer {
+  background-color: lightcyan;
+}
+
+footer ul {
+  text-align: center;
+}
+
+footer ul li {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 20px;
+}
+/*# sourceMappingURL=style2.css.map */
