@@ -69,7 +69,7 @@ main .portion figure {
 main .portion figure img {
   margin: 20px;
   float: left;
-  width: 30%;
+  width: 400px;
 }
 
 main .portion article {
