@@ -1,0 +1,18 @@
+nav, footer{
+    background-color: $backcol;
+    ul{
+        text-align: $center;
+        li{
+            display: inline-block;
+            list-style: none;
+            padding: $pad;       
+            a{
+                font-family: font3;
+                font-size: $hsize;
+                text-decoration: none;
+                color: $txtcol;
+                transition: all ease-in-out 300ms
+            }
+        }
+    }
+}

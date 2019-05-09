@@ -1,0 +1,15 @@
+aside, section{
+    margin: $marg;
+    padding: $pad;
+    h3{
+        font-family: font1;
+        font-size: $hsize;
+        color: $txtcol;
+    }
+    p{
+        font-size: $psize;
+        font-family: font2;
+        color: $txtcol;
+    }
+    
+}

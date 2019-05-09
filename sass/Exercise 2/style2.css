@@ -1,65 +1,137 @@
+@font-face {
+  src: url(font1/font1.ttf);
+  font-family: font1;
+}
+
+@font-face {
+  src: url(font2/font2.ttf);
+  font-family: font2;
+}
+
+@font-face {
+  src: url(font3/font3.ttf);
+  font-family: font3;
+}
+
 body {
   background-image: -webkit-gradient(linear, left top, right top, from(lightgrey), color-stop(lightblue), to(lightgreen));
   background-image: linear-gradient(to right, lightgrey, lightblue, lightgreen);
-  margin: 0;
-  border: 0;
-  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 header {
+  font-family: font1;
   text-align: center;
-  padding: 30px;
-  background-color: lightcyan;
+  padding: 20px;
+  background: #7affff;
 }
 
 header h1 {
-  color: blue;
-  font-size: 3rem;
+  margin-top: 20px;
+  color: #6666ff;
+  font-size: 4rem;
+  text-decoration: underline;
 }
 
-nav {
+h1:hover {
+  color: green;
+  padding: 10px;
+  border: 2px solid darkgreen;
+  border-radius: 50px;
+  background: white;
+  -webkit-transition: all ease-in-out 500ms;
+  transition: all ease-in-out 500ms;
+}
+
+nav, footer {
   background-color: lightcyan;
 }
 
-nav ul {
+nav ul, footer ul {
   text-align: center;
-  padding: 10px;
 }
 
-nav ul li {
+nav ul li, footer ul li {
   display: inline-block;
   list-style: none;
   padding: 20px;
 }
 
-nav ul li a {
+nav ul li a, footer ul li a {
+  font-family: font3;
+  font-size: 22px;
   text-decoration: none;
+  color: blue;
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
 }
 
-main .cards {
-  background-color: lightcyan;
-}
-
-main .cards .card {
-  display: inline-block;
-  width: 400px;
-  padding: 20px;
+.cards {
+  background: lightcyan;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-align: center;
 }
 
-main .cards .card h4 {
+.cards .card {
+  border: 2px solid blue;
+  border-radius: 20px;
+  padding-bottom: 20px;
+  margin: 20px;
+  -webkit-box-shadow: 15px 10px #5fb3ce;
+          box-shadow: 15px 10px #5fb3ce;
+}
+
+.cards .card h4 {
+  font-size: 22px;
+  font-family: font1;
   color: blue;
   text-align: center;
 }
 
-main .cards .card h4 p {
+.cards .card p {
+  color: blue;
+  font-family: font2;
+  font-size: 18px;
   text-align: center;
 }
 
+.cards .card button {
+  padding: 5px;
+  font-size: 18px;
+  background-color: lightblue;
+  color: blue;
+  font-family: font2;
+  border-radius: 10px;
+}
+
+.card:hover {
+  background-color: lightblue;
+}
+
+button:hover {
+  cursor: progress !important;
+  background-color: blue !important;
+  color: white !important;
+}
+
+.card h4:hover {
+  color: white !important;
+}
+
+.card p:hover {
+  color: white !important;
+}
+
 main .portion {
-  display: inline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .portion figure {
@@ -68,35 +140,69 @@ main .portion figure {
 
 main .portion figure img {
   margin: 20px;
-  float: left;
-  width: 400px;
+  width: 30vw;
 }
 
 main .portion article {
-  padding: 50px;
-}
-
-aside {
-  margin: 20px;
-  padding-top: 50px;
-}
-
-section {
-  margin: 20px;
-  padding-top: 20px;
-}
-
-footer {
-  background-color: lightcyan;
-}
-
-footer ul {
-  text-align: center;
-}
-
-footer ul li {
-  display: inline-block;
-  font-size: 1.5rem;
+  text-align: justify;
   padding: 20px;
+}
+
+main .portion article h3 {
+  font-size: 22px;
+  font-family: font1;
+  color: blue;
+}
+
+main .portion article p {
+  font-size: 18px;
+  font-family: font2;
+  color: blue;
+}
+
+aside, section {
+  margin: 20px;
+  padding: 20px;
+}
+
+aside h3, section h3 {
+  font-family: font1;
+  font-size: 22px;
+  color: blue;
+}
+
+aside p, section p {
+  font-size: 18px;
+  font-family: font2;
+  color: blue;
+}
+
+a:hover {
+  font-size: 18px;
+  color: #000033;
+}
+
+li:hover {
+  background-color: lightblue;
+  border: 1px solid blue;
+  border-radius: 10px;
+}
+
+article:hover {
+  color: green;
+  padding: 10px;
+  border: 2px solid darkgreen;
+  border-radius: 50px;
+  background: white;
+  -webkit-transition: all ease-in-out 500ms;
+  transition: all ease-in-out 500ms;
+}
+
+img:hover {
+  border: 2px solid green;
+  border-radius: 30px;
+  opacity: 0.5;
+  -webkit-transition: all ease-in-out 500ms;
+  transition: all ease-in-out 500ms;
 }
 /*# sourceMappingURL=style2.css.map */

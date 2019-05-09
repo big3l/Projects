@@ -1,0 +1,29 @@
+main{
+    .portion{
+        display: flex;
+        align-items: $center;
+
+        figure{
+            margin: $marg;
+            img{
+                margin: $marg;
+                width: 30vw;
+            }
+        }
+        article{
+            text-align: justify;
+            padding: $pad;
+            h3{
+                font-size: $hsize;
+                font-family: font1;
+                color: $txtcol;
+            }
+            p{
+                font-size: $psize;
+                font-family: font2;
+                color: $txtcol;
+            }
+           
+        }
+    }
+}

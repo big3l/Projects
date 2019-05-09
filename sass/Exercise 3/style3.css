@@ -1,0 +1,35 @@
+.container1, .container2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 150px;
+  border: 2px solid #006400;
+}
+
+div {
+  display: inline-block;
+  width: 200px;
+}
+
+.green {
+  background: #008000;
+}
+
+.darken {
+  background: #004d00;
+}
+
+.lighten {
+  background: #00b300;
+}
+
+.footer {
+  border: 2px solid #006400;
+  width: 200px;
+  height: 110px;
+}
+
+p {
+  margin: 8px;
+}
+/*# sourceMappingURL=style3.css.map */

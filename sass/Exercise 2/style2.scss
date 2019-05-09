@@ -1,108 +1,57 @@
+$backcol: lightcyan;
+$txtcol: blue;
+$lblu: lightblue;
+$txtcolH: white;
+$center: center;
+$pad: 20px;
+$marg: 20px;
+$hsize: 22px;
+$psize: 18px;
 
+@font-face{ src: url(font1/font1.ttf);font-family: font1}
+@font-face{ src: url(font2/font2.ttf);font-family: font2}
+@font-face{src: url(font3/font3.ttf);font-family: font3}
 
-
+@mixin hover-effect {
+    color:green;
+    padding: 10px;
+    border: 2px solid darkgreen;
+    border-radius: 50px;  
+    background: white;
+    transition: all ease-in-out 500ms;  
+}
 body{
     background-image: linear-gradient(to right,lightgrey, lightblue,lightgreen);
     box-sizing: border-box;
 }
-header{
-    text-align: center;
-    padding: 30px;
-    background-color: lightcyan;
-    h1{
-       color: blue;
-       font-size: 3rem;              
-    }
+@import "_header";
+
+@import "_navfooter";
+
+@import "_cards";
+
+@import "_main";
+
+@import "asidesection";
+
+@mixin img-hover {
+    border: 2px solid green;
+    border-radius: 30px;
+    opacity: 0.5;
+    transition: all ease-in-out 500ms;    
 }
-
-nav{
-    background-color: lightcyan;
-    ul{
-        text-align: center;
-        padding: 10px;
-        li{
-            display: inline-block;
-            list-style: none;
-            padding: 20px;            
-            a{
-                text-decoration: none;
-            }
-        }
-    }
+a:hover{
+    font-size: $psize;
+    color: darken($txtcol,40%); 
 }
-
-main{
-    .cards{
-        background-color: lightcyan;
-        .card{
-            display: inline-block;
-            width: 400px;
-            padding:20px;
-            text-align: center;
-            h4{
-                color: blue;
-                text-align: center;
-                p{
-                    text-align: center;
-                    button{
-
-                    }
-                }
-            }
-        }
-    }
-    .portion{
-        display: inline;
-        figure{
-            margin: 20px;
-            img{
-                margin: 20px;
-                float: left;
-                width: 400px;
-            }
-        }
-        article{
-            padding: 50px;
-            h3{
-            }
-            p{
-            }
-        }
-    }
+li:hover{
+    background-color: $lblu;
+    border: 1px solid $txtcol;
+    border-radius: 10px;
 }
-
-aside{
-    margin: 20px;
-    padding-top: 50px;
-    h3{
-        p{
-
-        }
-    }
+article:hover{
+    @include hover-effect;
 }
-
-section{
-    margin: 20px;
-    padding-top: 20px;
-    h3{
-        p{
-
-        }
-    }
-}
-
-footer{
-    background-color: lightcyan; 
-    ul{
-        text-align: center;
-        li{
-            display: inline-block;
-            font-size: 1.5rem;
-            padding: 20px;
-            
-            a{
-
-            }
-        }        
-    }
+img:hover{
+    @include img-hover;
 }

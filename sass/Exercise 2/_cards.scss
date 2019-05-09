@@ -1,0 +1,49 @@
+
+    .cards{
+        background: $backcol;
+        display: flex;
+        text-align: $center;        
+        .card{
+            border: 2px solid $txtcol;
+            border-radius: 20px;
+            padding-bottom: $pad;
+            margin: $marg;
+            box-shadow: 15px 10px darken($lblu,20%);
+            h4{
+                font-size: $hsize;
+                font-family: font1;
+                color: $txtcol;
+                text-align: $center;
+            }
+            p{
+                color: $txtcol;
+                font-family: font2;
+                font-size: $psize;
+                text-align: $center;
+            }
+            button{
+                padding: 5px;
+                font-size: $psize;
+                background-color: $lblu;
+                color: $txtcol;
+                font-family: font2;
+                border-radius: 10px;
+                
+            }
+
+        }
+    }
+.card:hover{
+    background-color: $lblu;
+}
+button:hover{
+    cursor: progress !important;
+    background-color: $txtcol !important;
+    color: $txtcolH !important;
+}
+.card h4:hover{
+    color: white !important;
+}
+.card p:hover{
+    color: white !important;
+}
