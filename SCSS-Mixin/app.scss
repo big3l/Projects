@@ -1,0 +1,159 @@
+
+$font1:'Bitter', serif;
+$font2: 'Gugi', cursive;
+$txtcol: #555;
+$linkcol: darkblue;
+$fsize: 1.5em;
+$centre: center;
+
+@mixin txtformat ($color, $align, $fontfam, $fontsize){
+    color: $color;
+    text-align: $align;
+    font-family: $fontfam;
+    font-size: $fontsize;
+}
+
+@mixin links{
+    &:hover{
+        background-color: #555;
+        font-size: 1.6em;
+        font-weight: bold;
+        border-radius: 30px;
+        transition: ease-in-out 400ms;
+        
+    }
+    &:active{
+        background-color: green;
+    }
+
+}
+@mixin animate($duration, $tfunc, $name){
+    animation-duration: $duration;
+    animation-timing-function: $tfunc;
+    animation-name: $name;
+    
+    @keyframes slidein {
+        from {
+            margin-top: -150px;
+            opacity: 0;
+        }
+        to {
+        margin-top: 0px;
+        }
+    }
+    
+}
+
+*{
+    box-sizing: border-box;
+}
+
+%light-text{
+    border: 3px solid orange;
+    background: linear-gradient(to top, lightblue, lightgreen, lightgrey);
+    color: $txtcol;
+    font-weight: bold;
+    text-align: $centre;
+}
+.light{
+    @extend %light-text;
+}
+.text{
+    @extend %light-text;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 20px;
+    @include links;
+}
+header{
+    text-align: $centre;
+    padding: 20px;
+    text-transform: uppercase;
+    font-family: $font1;
+
+    h1{
+        color: lighten(darkblue, 20%);
+    }
+    h2{
+        color: darken(lightgrey, 30%);
+    }
+}
+.nav{
+    .nav-links{
+        display: flex;
+        justify-content: $centre;
+        background-color: rgba(0,0,255,0.5);
+        
+        li{
+            list-style: none;
+            padding: 15px;
+            @include links;
+            
+            a{
+                text-decoration: none;
+                font-family: $font2;
+                color: #fff;
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+.text-section{
+    margin-top: 20px;
+
+    h3{
+        text-align: $centre;
+        font-size: 1.7em;
+        font-family: $font1;
+    }
+    p{
+        @include txtformat($txtcol, justify, $font2, $fsize)
+    }
+}
+
+.section-images{
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: $centre;
+    align-items: $centre;
+    
+    img{
+        height: 200px;
+        width: 250px;
+        margin: 0 30px 50px 30px;
+        @include animate (3s, ease-in, slidein);
+    }
+}
+
+footer{
+    background-color: rgba(0,0,255,0.5);
+    
+    .footer-links{
+        display: flex;
+        justify-content: $centre;
+        list-style: none;
+        padding: 15px;
+        li{
+            padding: 20px;
+            @include links;
+        }
+       a{
+            text-decoration: none;
+            font-family: $font2;
+            color: #fff;
+            font-size: 1.5em;
+        }    
+    }
+}
+
+
+@media screen and (max-width:600px){
+    .nav-links, .footer-links, .section-images{
+        display: flex;
+        flex-direction: column;
+        li{
+            text-align: $centre;
+        }
+    }
+}
