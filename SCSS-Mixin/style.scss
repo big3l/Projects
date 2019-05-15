@@ -1,0 +1,67 @@
+
+// Use if to specify a block of code to be executed, if a specified condition is true
+// Use else to specify a block of code to be executed, if the same condition is false
+// Use else if to specify a new condition to test, if the first condition is false
+
+@mixin text-styler ($fsize) {
+    font-size: $fsize;  
+    @if $fsize > 2em{
+        color: red;
+        text-transform: lowercase;
+        font-weight: bold;
+    }  
+    @if $fsize == 2em {
+        color: darkblue;
+    }    
+    @if $fsize == 3em {
+        color: green;
+    }
+    @if $fsize < 1em {
+        color:purple;
+    }
+}
+
+.main{
+    @include text-styler(2em);
+}
+
+////////////////////////////////////////////EXERCISE//////////////////////
+@mixin balls ($width, $height, $bord, $brad, $selectors){
+    #{$selectors}{
+    width: $width;
+    height: $height;
+    border: $bord;
+    border-radius: $brad;    
+    }
+}
+
+@mixin anim ($duration, $tfunc, $name, $animdir, $anic){
+    animation-duration: $duration;
+    animation-timing-function: $tfunc;
+    animation-name: $name;
+    animation-direction: $animdir;
+    animation-iteration-count: $anic;
+    
+    @keyframes rollin {
+        from {
+            margin-left: 0;
+        }
+        to {
+        margin-left: 55%;
+        }
+    }
+    
+}
+
+@mixin color ($animdel) {
+    animation-delay: $animdel;
+    @if $animdel == 2s{
+        background: red;
+
+    }
+}
+
+@include balls (200px, 200px, 3px solid black, 100%, ".ball1, .ball2, .ball3");
+@include anim (2s, ease-in-out, rollin, alternate, infinite);
+  
+

@@ -1,0 +1,32 @@
+.title, .htext {
+  text-align: center;
+  font-size: 2.5em;
+  color: white;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border: 3px solid blue;
+  border-radius: 30%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#dd9595), color-stop(#503737), to(#e4c9c9));
+  background-image: linear-gradient(to right, #dd9595, #503737, #e4c9c9);
+}
+
+.title .title, .title .htext, .title :hover, .htext .title, .htext .htext, .htext :hover {
+  color: orange;
+}
+
+.content, .text {
+  text-align: left;
+  font-size: 2em;
+  color: blue;
+  font-weight: bold;
+  text-transform: capitalize;
+  border: 3px solid red;
+  border-radius: 20px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#dd9595), color-stop(#503737), to(#e4c9c9));
+  background-image: linear-gradient(to right, #dd9595, #503737, #e4c9c9);
+}
+
+.content .content, .content .text, .content :hover, .text .content, .text .text, .text :hover {
+  color: orange;
+}
+/*# sourceMappingURL=main.css.map */

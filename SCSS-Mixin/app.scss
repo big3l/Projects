@@ -80,7 +80,7 @@ header{
 }
 .nav{
     .nav-links{
-        display: flex;
+        display: fixed;
         justify-content: $centre;
         background-color: rgba(0,0,255,0.5);
         

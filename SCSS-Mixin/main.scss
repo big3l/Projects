@@ -1,0 +1,70 @@
+// NORMAL STYLE...
+// .title{
+//     text-align: center;
+//     font-size: 2em;
+//     color: red;
+//     text-transform: uppercase;
+// }
+
+// .text{
+//     text-align: center;
+//     font-size: 2em;
+//     color: blue;
+//     text-transform: capitalize;
+// }
+////////////////////////////////////////////////////////////
+
+// BASIC MIXIN.......
+// @mixin styler{
+//     text-align: center;
+//     font-size: 2em;
+//     color: red;
+//     text-transform: uppercase;
+// }
+
+// .title{
+//     @include styler;
+//     font-weight: bold;
+// }
+
+// .text{ 
+//     @include styler;
+//     color: blue;
+//     text-transform: capitalize;
+// }
+//////////////////////////////////////////////////////////////
+
+// MIXIN WITH PARAMETERS.....
+@mixin styler ($talign, $fsize, $color, $fweight, $capital, $bord, $b-rad, $selectors){
+    #{$selectors}{
+    text-align: $talign;
+    font-size: $fsize;
+    color: $color;
+    font-weight: $fweight;
+    text-transform: $capital;
+    border: $bord;
+    border-radius: $b-rad;
+    @include bgcol (to right, rgb(221, 149, 149), rgb(80, 55, 55), rgb(228, 201, 201));
+    #{$selectors}:hover{
+        color: orange; 
+    }
+    
+    }
+    
+}
+// @mixin hover{
+//     #{$selectors}:hover{
+//     color: orange; 
+//    }
+
+@mixin bgcol ($direction, $color1, $color2, $color3){
+    background-image: linear-gradient($direction, $color1, $color2, $color3);
+}
+
+@include styler (center, 2.5em, white, bolder, uppercase, 3px solid blue, 30%, ".title,.htext,");
+
+@include styler (left, 2em, blue, bold, capitalize, 3px solid red, 20px,".content,.text,");
+
+// .title{
+//     @include hover;
+//     }
