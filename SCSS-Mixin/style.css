@@ -3,7 +3,14 @@
   color: darkblue;
 }
 
-.container {
+.ball1, .ball2, .ball3 {
+  width: 200px;
+  height: 200px;
+  border: 3px solid black;
+  border-radius: 100%;
+}
+
+.ball1 {
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
   -webkit-animation-timing-function: ease-in-out;
@@ -14,33 +21,96 @@
           animation-direction: alternate;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.container .ball1, .container .ball2, .container .ball3 {
-  width: 200px;
-  height: 200px;
-  border: 3px solid black;
-  border-radius: 100%;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  background: red;
 }
 
 @-webkit-keyframes rollin {
   from {
-    margin-left: 0;
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
   to {
-    margin-left: 55%;
+    margin-left: 20%;
+    margin-top: 10%;
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
   }
 }
 
 @keyframes rollin {
   from {
-    margin-left: 0;
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
   to {
-    margin-left: 55%;
+    margin-left: 20%;
+    margin-top: 10%;
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+  }
+}
+
+.ball2 {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-name: rollin;
+          animation-name: rollin;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  background: blue;
+}
+
+@keyframes rollin {
+  from {
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  to {
+    margin-left: 20%;
+    margin-top: 10%;
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+  }
+}
+
+.ball3 {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-name: rollin;
+          animation-name: rollin;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  background: yellow;
+}
+
+@keyframes rollin {
+  from {
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  to {
+    margin-left: 20%;
+    margin-top: 10%;
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
   }
 }
 /*# sourceMappingURL=style.css.map */

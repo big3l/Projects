@@ -34,34 +34,53 @@
     border-radius: $brad;    
     }
 }
+@include balls (200px, 200px, 3px solid black, 100%, ".ball1, .ball2, .ball3");
 
-@mixin anim ($duration, $tfunc, $name, $animdir, $anic){
-    animation-duration: $duration;
+@mixin anim($dura, $tfunc, $name, $animdir, $anic){
+    animation-duration: $dura;
     animation-timing-function: $tfunc;
     animation-name: $name;
     animation-direction: $animdir;
     animation-iteration-count: $anic;
     
-    @keyframes rollin {
+    @keyframes rollin{
         from {
-            margin-left: 0;
+            left: 0%;
+            transform: scale(1, 1);
         }
         to {
-        margin-left: 55%;
+            margin-left: 20%;
+            margin-top: 10%;
+            transform: scale(0.5, 0.5);
         }
     }
-    
+                                                                                                    
 }
 
 @mixin color ($animdel) {
     animation-delay: $animdel;
-    @if $animdel == 2s{
+    @if $animdel == 1s{
         background: red;
-
+    }
+    @if $animdel == 1.5s{
+        background: blue;
+    }
+    @if $animdel == 2s{
+        background: yellow; 
     }
 }
 
-@include balls (200px, 200px, 3px solid black, 100%, ".ball1, .ball2, .ball3");
-@include anim (2s, ease-in-out, rollin, alternate, infinite);
+.ball1{
+    @include anim (2s, ease-in-out, rollin, alternate, infinite);
+    @include color (1s);
+}
+.ball2{
+    @include anim (2s, ease-in-out, rollin, alternate, infinite);
+    @include color(1.5s);
+}
+.ball3{
+    @include anim (2s, ease-in-out, rollin, alternate, infinite);
+    @include color(2s);
+}
   
 
