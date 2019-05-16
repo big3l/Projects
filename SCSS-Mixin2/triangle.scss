@@ -1,0 +1,52 @@
+//////////////////////TRIANGE EXERCISE//////////////////////////////////////
+
+.tri1 {
+  height: 0px;
+  width: 0px;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 150px solid black;
+  border-top: 150px solid black;
+}
+
+@mixin tri($color, $direction) {
+  height: 0px;
+  width: 0px;
+  
+  @if $direction == "up" {
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid $color;
+  }
+  @if $direction == "down" {
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 150px solid transparent;
+    border-top: 150px solid $color;
+  }
+  @if $direction == "left" {
+    border-left: 150px solid transparent;
+    border-right: 150px solid $color;
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
+  }
+  @if $direction == "right" {
+    border-left: 150px solid $color;
+    border-right: 150px solid transparent;
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
+  }
+}
+.up {
+  @include tri(red, "up");
+}
+.down {
+  @include tri(blue, "down");
+}
+.left {
+  @include tri(orange, "left");
+}
+.right {
+  @include tri(black, "right");
+}

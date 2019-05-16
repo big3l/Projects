@@ -1,0 +1,23 @@
+.a {
+  color: black;
+}
+
+.a:visited {
+  color: blue;
+}
+
+.a:hover {
+  color: green;
+}
+
+.a:active {
+  color: red;
+}
+
+h1 {
+  background: palegreen;
+  font-size: 3em;
+  color: green;
+  padding: 20px 30px 50px 50px;
+}
+/*# sourceMappingURL=style.css.map */

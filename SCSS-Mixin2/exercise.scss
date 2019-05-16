@@ -1,0 +1,150 @@
+//////////////////////FIRST OPTION//////////////////
+// .title {
+//   font-size: 2rem;
+//   text-align: center;
+// }
+
+// @media (min-width: 100px) {
+//   .title {
+//     column-count: 1;
+//   }
+//   .title:before {
+//     content: "- - - 'Phones' - - -";
+//   }
+// }
+// @media (min-width: 600px) {
+//   .para {
+//     column-count: 2;
+//   }
+//   .title:before {
+//     content: "- - - 'Tablets' - - -";
+//   }
+// }
+// @media (min-width: 800px) {
+//   .para {
+//     column-count: 3;
+//   }
+//   .title:before {
+//     content: "- - - 'Desktops' - - -";
+//   }
+// }
+// @media (min-width: 1100px) {
+//     .para {
+//       column-count: 4;
+//     }
+//     .title:before {
+//       content: "- - - 'Widescreens' - - -";
+//     }
+//   }
+
+////////////////////SECOND OPTION////////////////
+
+// @mixin phone {
+//   @media (min-width: 100px) {
+//     & {
+//       column-count: 1;
+//     }
+//     &:before {
+//       content: "- - - 'Phones' - - -";
+//     }
+//   }
+// }
+// @mixin tablet {
+//   @media (min-width: 600px) {
+//     & {
+//       column-count: 2;
+//     }
+//     &:before {
+//       content: "- - - 'Tablets' - - -";
+//     }
+//   }
+// }
+// @mixin desktop {
+//   @media (min-width: 800px) {
+//     & {
+//       column-count: 3;
+//     }
+//     &:before {
+//       content: "- - - 'Desktops' - - -";
+//     }
+//   }
+// }
+// @mixin widescreen {
+//   @media (min-width: 1100px) {
+//     & {
+//       column-count: 4;
+//     }
+//     &:before {
+//       content: "- - - 'Widescreens' - - -";
+//     }
+//   }
+// }
+// .title {
+//   font-size: 2rem;
+//   text-align: center;
+//   @include phone;
+//   @include tablet;
+//   @include desktop;
+//   @include widescreen;
+// }
+
+/////////////////THIRD OPTION////////////////
+
+// $breakpoints: (
+//   Phone: 300px,
+//   Tablet: 600px,
+//   Desktop: 800px,
+//   Widescreen: 1100px
+// );
+
+// @mixin for-size($device) {
+//   @if map-has-key($breakpoints, $device) {
+//     @media (min-width: #{map-get($breakpoints, $device)}) {
+//       @content;
+//       &:before {
+//         content: $device;
+//       }
+//     }
+//   }
+// }
+
+// .title {
+//   font-size: 2rem;
+//   @include for-size("Phone") {
+//     column-count: 1;
+//   }
+//   @include for-size("Tablet") {
+//     column-count: 2;
+//   }
+//   @include for-size("Desktop") {
+//     column-count: 3;
+//   }
+//   @include for-size("Widescreen") {
+//     column-count: 4;
+//   }
+// }
+
+///////////////////////////FOURTH OPTION/////////////////////////
+
+$breakpoints: (
+  1: 100px, 
+  2: 600px, 
+  3: 800px, 
+  4: 1100px, 
+);
+
+@mixin for-size {
+  @for $i from 1 through 4 {
+    @media (min-width: #{map-get($breakpoints, $i)}) {
+      column-count: $i;
+      border: $i*10+px solid hsl($i*100, 100%, 64%);
+      font-size: $i*5+px;
+      border-radius: $i*20+%;
+    }
+  }
+}
+
+.title {
+    align-content: center;
+    @include for-size;
+}

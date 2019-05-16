@@ -1,0 +1,44 @@
+// a:link {
+//   color: black;
+// }
+// a:visited {
+//   color: blue;
+// }
+// a:hover {
+//   color: green;
+// }
+// a:active {
+//   color: red;
+// }
+
+@mixin link($link, $visit, $hover, $active) {
+  color: $link;
+  &:visited {
+    color: $visit;
+  }
+  &:hover {
+    color: $hover;
+  }
+  &:active {
+    color: $active;
+  }
+}
+.a {
+  @include link(black, blue, green, red);
+}
+
+@mixin headline($size, $color: orange) {
+  //$color: orange is now a default color
+  font-size: $size;
+  color: $color;
+}
+@mixin pad($pad...) {
+  // 3 x "..." lets you input more than 1 value in @include
+  padding: $pad;
+}
+
+h1 {
+  background: palegreen;
+  @include headline(3em, green);
+  @include pad(20px 30px 50px 50px);
+}
