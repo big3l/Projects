@@ -1,0 +1,182 @@
+//vw and vh make the viewport responsive
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0;
+}
+body{
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.main {
+  width: 40vw;
+  height: 40vh;
+  border: 3px solid red;
+  overflow: hidden;
+}
+.article {
+  width: 25vw;
+  height: 25vh;
+  background: linear-gradient(to right, green, yellow, blue, orange, grey, pink);
+}
+
+button {
+  //all buttons
+  background: lightgreen;
+  padding: 10px;
+  color: gray;
+}
+.button {
+  //class button
+  all: unset; //removes the style for this class only.
+  margin: 20px;
+  color: blue;
+  background: lightblue;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+}
+p {
+  background: lightgreen;
+  font-size: 1.5em;
+  color: blue;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}
+#par {
+  all: unset;
+}
+
+.clip-path {
+  width: 30vw;
+  height: 30vh;
+  background: orange;
+  clip-path: polygon(40% 5%, 6% 93%, 89% 94%);
+}
+.shapes {
+  width: 50vw;
+  height: 50vh;
+  background: grey;
+  clip-path: polygon(
+    42% 17%,
+    0% 20%,
+    21% 8%,
+    52% 78%,
+    35% 88%,
+    61% 37%,
+    80% 100%,
+    87% 84%,
+    32% 41%,
+    88% 26%,
+    86% 9%,
+    34% 60%
+  );
+}
+.position {
+  width: 50vw;
+  height: 50vh;
+  background: lightseagreen;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+}
+
+.position2 {
+  width: 100vw;
+  height: 50vw;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.08)), url(hero.jpg);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+  background-size: cover;
+  background-position: center;
+  .img {
+    height: 50px;
+    margin: 30px;
+  }
+  .text-box {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+
+    .first {
+      color: white;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 30px;
+      font-size: 3em;
+      font-weight: 400;
+      
+    }
+    .second {
+      color: #fff;
+      font-size: 1.5em;
+      letter-spacing: 10px;
+      display: block;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+}
+.nav-icon {
+    position: relative;
+    margin-top: 35px;
+    left: 20px;
+}
+.nav-icon::after,.nav-icon::before,.nav-icon {
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+}
+.nav-icon::before{ 
+    top: -8px;
+}
+.nav-icon::after{
+    top: 8px;
+}
+.nav-icon::after,.nav-icon::before{
+    content: '';
+    position: absolute;
+    left: 0;
+}
+.nav-button:hover .nav-icon::before{
+    top: -10px;
+}
+.nav-button:hover .nav-icon::after{
+   top: 10px;
+}
+.nav-check:checked ~ .nav-bg{
+    transform: scale(40);
+}
+.nav-check{
+    display: none;
+}
+.nav-bg{  
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    background-image: radial-gradient(#7ed56f, #28b485);
+    z-index: 1;
+    top: 65px;
+    right: 65px;
+    border-radius: 50%;
+    transition: all 1s cubic-bezier(0.86,0,0.07, 1);
+}
+.nav-button{
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    top: 60px;
+    right: 60px;
+    z-index: 2;
+    cursor: grabbing;
+}
+.nav-item{
+    
+    
+}

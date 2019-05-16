@@ -58,8 +58,14 @@ li:last-child {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
 }
-
+.logo2{
+    position: relative;
+    left: -40%;
+    top: 5%;
+    height: 100px;
+}
 h1{
     padding-top: 250px;
     font-size: 51px;
