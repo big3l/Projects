@@ -190,4 +190,9 @@ p {
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
+
+.nav-item {
+  position: absolute;
+  z-index: 4;
+}
 /*# sourceMappingURL=style.css.map */
