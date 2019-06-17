@@ -59,7 +59,7 @@ document.write('<br>');
 for (let i = 0; i < 10; i++) {
 
     for (let j = 0; j <= i; j++) {
-        document.write(' * ');
+        document.write(' § ');
     }
     document.write('<br>');
 }
@@ -94,20 +94,20 @@ for (let i = 1; i <= 8; i++) {
         document.write('&nbsp');
     }
     for (let j = 1; j < i; j++) {
-        document.write('* ');
+        document.write('@ ');
     }
     document.write('<br>');
 }
 
 ////////////////////////////////////////////////////////
-for (let i = 0; i <= 4; i++) {
+for (let i = 0; i <= 10; i++) {
 
-    for (let j = 0; j < 4 - i; j++) {
+    for (let j = 0; j < 10 - i; j++) {
         alert('j=' + j)
         document.write('&nbsp;');
     }
     for (let c = 0; c < i; c++) {
-        document.write('* ');
+        document.write('? ');
         alert('c=' + c)
     }
     alert('i=' + i)
