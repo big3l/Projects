@@ -103,13 +103,15 @@ for (let i = 1; i <= 8; i++) {
 for (let i = 0; i <= 10; i++) {
 
     for (let j = 0; j < 10 - i; j++) {
-        alert('j=' + j)
+        //alert('j=' + j)
         document.write('&nbsp;');
     }
     for (let c = 0; c < i; c++) {
         document.write('? ');
-        alert('c=' + c)
+        //alert('c=' + c)
     }
-    alert('i=' + i)
+    //alert('i=' + i)
     document.write('<br>');
 }
+
+
