@@ -179,8 +179,9 @@
         //Exercise - print triangle of stars form 4 line and 4 columns
 
         function tri(h) {
-            let shape = prompt ("Type symbol");
+            let shape = prompt("Type symbol");
             for (let i = 0; i < h; i++) {
+                for (let k = 0; k <= i; k++) { document.write("&nbsp;"); }//This line creates the spacing
                 for (let j = i; j < h; j++) {
                     document.write(shape + " ");
                 }
