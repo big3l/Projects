@@ -1,23 +1,47 @@
 //To Do List - we create to do list array
 
-let toDoList = ["Learn Javascript, Learn HTML, Write CSS"];
+let toDoList = ["Learn Javascript", "Learn HTML", "Write CSS"];
 
 let userAnswer = prompt("What would you like to do?");
 while (userAnswer !== "quit") {
     if (userAnswer == "list") {
-        console.log(toDoList);
-        document.write(toDoList);
+        printList(); //function
+
     }
     else if (userAnswer == "new") {
-        let newToDo = prompt(" add new task");
-        toDoList.push(newToDo);
+        addNew(); //function
+    }
+    else if (userAnswer == "del"){
+        delItem();
     }
     userAnswer = prompt("what would you like to do?");
+
 
 }
 console.log("Okay you close the app!!!");
 alert("Okay you close the app!!!");
 
+
+////////////////////FUNCTIONS///////////////////////
+function printList(){
+    toDoList.forEach(function(item){  
+        console.log(item);
+    });
+}
+function addNew(){
+    toDoList.forEach(function(newAdd){
+        newToDo= prompt(" add new task");
+        toDoList.push(newToDo);
+        console.log(newToDo + " has been added.");
+    });
+}
+function delItem(){
+    let delIndex= prompt("What do you want to delete?");
+
+    toDoList.splice(delIndex,1);
+    
+    console.log(delIndex + " has been removed" );
+}
 
 
 

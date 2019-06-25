@@ -1,6 +1,0 @@
-nano is a small and friendly editor.  It copies the look and feel of Pico, but is
-free software, and implements several features that Pico lacks, such as:  opening
-multiple  files,  scrolling per line, undo/redo, syntax coloring, line numbering,
-and soft-wrapping overlong lines.
-
-I love the wifey

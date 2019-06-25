@@ -3,7 +3,6 @@ p{
 }
 .para1{
     display: inline;
-<<<<<<< HEAD
 }
 .para2{
     display: block;
@@ -13,8 +12,6 @@ p{
 }
 .para4{
     display: inline-block;
-}
-=======
     height: 100px;
     width: 100px;
     border: 2px solid red;
@@ -35,7 +32,8 @@ p{
     width: 100px;
     border: 2px solid red;
     padding-left: 50px;
-    margin-left: 50px;}
+    margin-left: 50px;
+}
 .para4{
     display: inline-block;
     height: 100px;
@@ -71,4 +69,4 @@ p{
     text-align: center;
     margin: 10px;
 }
->>>>>>> final upload of the day
+
