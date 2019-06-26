@@ -1,38 +1,37 @@
 // //////////////////////////////////////////////
 // /////Printing numbers 1 - 20 with while loop
 
-// let i = 0;
-// while (i <= 20) {
-
-//     console.log(i);
-//     i = i + 1;
-//     //i++
-// }
+//  let i = 0;
+//  while (i <= 20) {
+//      console.log(i);
+//      i = i + 1;
+//      i++
+//  }
 
 // /////////////////////////////////////////////
 // //break the loop on 5
 
-// i = 0;
+//  i = 0;
 // while (i <= 20) {
 
-//     if (i == 10) {
-//         break;
-//     }
-//     console.log(i);
-//     i++;
-// }
+//      if (i == 10) {
+//          break;
+//      }
+//      console.log(i);
+//      i++;
+//  }
 
 // /////////////////////////////////////////////
 // //printing numbers between 0 - 100 x 9
 
-// c = 0;
+//  c = 0;
 // while (c <= 100) {
-//     if (c * 9 > 306) {
-//         break;
-//     }
-//     console.log(c + " * 9 =" + c * 9);
-//     c++;
-// }
+//      if (c * 9 > 306) {
+//          break;
+//      }
+//      console.log(c + " * 9 =" + c * 9);
+//      c++;
+//  }
 
 // /////////////////////////////////////////////
 // //Printing between 0 and 30 skipping the number 10
@@ -48,7 +47,7 @@
 // }
 
 // ////////////////////////////////////////////
-// //Printing
+// //Printing array
 
 // drinklist = ["water", "tea", "coffee", "milk", "cola", "beer", "juice", "milk"];
 // counter = -1;
@@ -59,8 +58,8 @@
 //         continue;
 //     }
 
-//     //    alert(drinklist[counter]);
-//     //   console.log(drinklist);
+//     alert(drinklist[counter]);
+//     console.log(drinklist);
 
 // }
 
