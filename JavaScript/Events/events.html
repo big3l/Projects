@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events</title>
+</head>
+
+<body>
+
+    <button onclick="sayHi ()">Click Me</button>
+
+    <div>
+        <button onclick="changeBg () ">Change Background</button>
+        <button onclick="chBg ('Red') ">Red</button>
+        <button onclick="chBg ('green') ">Green</button>
+        <button onclick="chBg ('blue') ">Blue</button>
+    </div>
+
+    <br>
+
+    <div id="logo1">
+        <img id="logoImg1" src="https://picsum.photos/id/222/400/400" alt="">
+        <br>
+        <button onclick="changeImg1 ()">Change img1</button>
+        <button onclick="startAuto()">Auto change</button>
+        <button onclick="clearInterval(startAuto)">Stop Auto Change</button>
+    </div>
+
+    <br>
+
+    <div id="logo2">
+        <img id="logoImg2" src="https://picsum.photos/id/227/400/400" alt="">
+        <br>
+        <button onmouseover="changeImg2 ()">Change img2</button>
+    </div>
+
+    <br>
+
+    <div id=logo3>
+        <button id=butCol onclick="BgChange()">Background Changed</button>
+    </div>
+
+    <br>
+
+    <input type="text" id="name" onchange="showValue()">
+
+    <p id="para" onmouseover="over()" onmouseout="out()">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Corporis iste ab sequi voluptas, error doloribus architecto.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="events.js"></script>
+</body>
+
+</html>
