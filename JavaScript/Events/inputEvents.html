@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Input Events</title>
+</head>
+
+<body>
+    <form onsubmit="formSubmit()"method="POST" action="https://www.w3schools.com/">
+        <label for="fullname">Enter Your Name</label>
+        <input type="text" name="fullname" onfocus="myfunction(0)" onblur="inputBlur()" onkeydown="inputKeyDown()"
+            onkeyup="inputKeyUp()">
+
+        <label for="email">Enter your email</label>
+        <input type="email" name="email" onchange="inputChange()" onselect="inputSelect()" onblur="inputBlur()"
+            onkeypress="inputKeyPress()">
+
+        <label for="userPass">Write your Password</label>
+        <input type="Password" name="userpass">
+        <input type="submit" value="Submit the Data">
+    </form>
+
+    <!--v
+    onfocus works when clicking to input something
+    onselect works when highlighting text
+    onblur works when clicking away from the input
+    keydown works when pressing any key down
+    keyup works when lifting any key
+    -->
+
+    <script src="inputEvents.js"></script>
+</body>
+
+</html>
