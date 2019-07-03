@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date Forms</title>
+</head>
+
+<body>
+
+    <!-- get current date -->
+    <button onclick="getCurrentDate()" style="background-color: red">Get current date</button>
+    <!-- 12345678 -->
+    <button onclick="getUnixTime()" style="background-color: yellow">Get Unix Time </button>
+    <!-- hh:mm:ss -->
+    <button onclick="getTimeStamp()" style="background-color: pink">Get Time Stamp </button>
+    <!-- 2019.07.03 -->
+    <button onclick="getOnlyDate()" style="background-color: blue">Get Date Stamp </button>
+    <!-- Live time -->
+    <button onclick="liveTime()" style="background-color: orange">Live time</button>
+    <!-- Live date and time -->
+    <button onclick="liveDT()" style="background-color: purple">Live date and time</button>
+
+    <p id="in"></p>
+    <p id="out"></p>
+    <p id="shake"></p>
+    <p id="it"></p>
+    <p id="all"></p>
+    <p id="about"></p>
+
+
+    <script>
+        // get current date
+        function getCurrentDate() {
+            let date = new Date(2019, 06, 03, 9, 50);
+            document.getElementById("in").innerHTML = date;
+        }
+        // 12345678
+        function getUnixTime() {
+            let lin = new Date();
+            unixTime = lin.getTime();
+            document.getElementById("out").innerHTML = unixTime;
+        }
+        // hh:mm:ss
+        function getTimeStamp() {
+            let time = new Date();
+            timeStamp = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+            document.getElementById("shake").innerHTML = timeStamp;
+        }
+        // 2019.07.03
+        function getOnlyDate() {
+            let only = new Date();
+            let mnth = only.getMonth() + 1;
+            onlyDate = only.getFullYear() + "." + mnth + "." + only.getDay();
+            document.getElementById("it").innerHTML = onlyDate;
+        }
+        // Live time 
+        function liveTime() {
+            let today = new Date();
+            let h = today.getHours();
+            let n = today.getMinutes();
+            let s = today.getSeconds();
+            let j = today.getMilliseconds();
+            document.getElementById('all').innerHTML = " The time is: " + h + ":" + n + ":" + s + ":" + j;
+            setInterval(liveTime, 1000) //will check time every 1000ms's (1 second)
+        }
+        // Live date and time
+        function liveDT() {
+            let today = new Date();
+            let d = today.getDate();
+            let m = today.getMonth() + 1;
+            let y = today.getFullYear();
+            let h = today.getHours();
+            let n = today.getMinutes();
+            let s = today.getSeconds();
+            let j = today.getMilliseconds();
+            document.getElementById('about').innerHTML = "The Date is: " + d + ":" + m + ":" + y + "<br>" +
+                " The time is: " + h + ":" + n + ":" + s + ":" + j;
+            setInterval(liveDT, 1); //will check time every 1ms's
+        }
+
+    </script>
+
+
+
+
+    <script src="dateForms.js"></script>
+</body>
+
+</html>

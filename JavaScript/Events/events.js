@@ -1,22 +1,22 @@
 ////////////////////////////////////////////////////////////////
 
-// function sayHi() {
-//     let name = prompt("Hello what is your name?");
-//     alert(" Hi " + name);
-//     console.log(" Hi " + name);
-// }
+function sayHi() {
+    let name = prompt("Hello what is your name?");
+    alert(" Hi " + name);
+    console.log(" Hi " + name);
+}
 
-// let body = document.getElementsByTagName("body")[0]; // you have to select the element number with index
-// function changeBg() {
-//     //these 3 attributes do the same thing
-//     //let body = document.querySelector("body"); //selector gets the 1st element
-//     //let body = document.querySelectorAll("body")[0]; // you have to select the element number with indexr
-//     body.style.backgroundColor = ("hotPink");
-// }
+let body = document.getElementsByTagName("body")[0]; // you have to select the element number with index
+function changeBg() {
+    //these 3 attributes do the same thing
+    //let body = document.querySelector("body"); //selector gets the 1st element
+    //let body = document.querySelectorAll("body")[0]; // you have to select the element number with indexr
+    body.style.backgroundColor = ("hotPink");
+}
 
-// function chBg(color) {
-//     body.style.backgroundColor = color;
-// }
+function chBg(color) {
+    body.style.backgroundColor = color;
+}
 
 ////////////////////////////////////////////////////////////////
 //logo 1 in html

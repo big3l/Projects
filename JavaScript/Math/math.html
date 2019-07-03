@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math</title>
+</head>
+
+<body>
+    <!-- /////////////////////////////////////////////////////////////////////////// -->
+
+    <p>Value in Degrees <input id="input" /></p>
+    <button onclick="ConvertDegToRadians()">Convert to Radians</button>
+    <p id="output"></p>
+
+    <script>
+        function ConvertDegToRadians() {
+            let input = document.getElementById("input").value;
+            console.log(input);
+            let output = input * Math.PI / 180;
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+
+    <!-- /////////////////////////////////////////////////////////////////////////// -->
+
+    <div id="col" style="width: 300px; height:300px; border: 1px solid black"></div>
+    <button onclick="changeColor()">Generator</button>
+
+    <script>
+        function changeColor() {
+            let r = Math.floor(Math.random() * 255);
+            let g = Math.floor(Math.random() * 255);
+            let b = Math.floor(Math.random() * 255);
+            document.getElementById("col").style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+        }
+
+    </script>
+
+    <!-- /////////////////////////////////////////////////////////////////////////// -->
+
+    <div id="colBox" style="border:2px solid black; width: 300px; height: 300px;"></div>
+    <p id="colCode"></p>
+    <button onclick="changeCol()">Change color</button>
+    <br>
+    <br>
+    <script>
+
+        let div = document.getElementById("colBox");
+        let p = document.getElementById("colCode");
+
+        function changeCol() {
+            let color = "#";
+            let code = "0123456789ABCDEF";
+            for (let i = 0; i < 6; i++) {
+                color += code[Math.floor(Math.random() * 16)];
+                console.log(color);
+            }
+            p.innerHTML = color;
+            div.style.background = color;
+        }
+
+    </script>
+
+    <!-- /////////////////////////////////////////////////////////////////////////// -->
+
+    <button id="press" onclick="newPw()">New Password</button>
+    <input type="text" name="" id="new">
+
+    <script>
+        let button = document.getElementById("press");
+        let input = document.getElementById("new");
+
+        function newPw() {
+            let selection = "abcdefgABCDEFG123456789!$%&?@"
+            for (let i = 0; i < 8; i++) {
+                selection = [Math.floor(Math.random() * 29)];
+                console.log(selection);
+            }
+            document.getElementById("new").innerHTML = selection;
+        }
+    </script>
+
+
+    <!-- /////////////////////////////////////////////////////////////////////////// -->
+
+
+    <p>Length<input id="input" /></p>
+    <button onclick="generatePass()">Generate</button>
+    <p id="output"></p>
+
+    <script>
+        function generatePass() {
+            let abc = "abcdefghijklmnopqrstuvwxyz";
+            let nums = "0123456789";
+            let specs = "§$%&()=?!";
+            let base = abc + nums + specs;
+            console.log(base);
+            
+            let length = document.getElementById("input").value;
+            console.log(length);
+            let pass = '';
+
+            for (let i = 0; i < length; i++) {
+                index = Math.floor(Math.random() * base.length)
+                console.log(index);
+                pass += base[index];
+                console.log(pass);
+            }
+            document.getElementById("output").innerHTML = pass;
+        }
+    </script>
+
+</body>
+
+</html>

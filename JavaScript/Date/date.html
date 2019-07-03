@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date</title>
+</head>
+
+<body>
+
+    <script>
+        //standard call
+        let d = new Date();
+        document.write("<br>" + " - Standard call...." + "<br>" + d);
+
+        //using milli-seconds
+        let d_mil = new Date(0);
+        document.write("<br>" + " - Using (0) Milliseconds...." + "<br>" + d_mil); //1st recorded date on the system is 0
+
+        // still milli seconds
+        d_mil = new Date(500000000);
+        document.write("<br>" + " - With 500000000 milli seconds...." + "<br>" + d_mil);
+
+
+        //current date using epoch
+        d_mil = new Date(1562139302000); //search google for unix current time stamp
+        document.write("<br>" + " - Current actual date...." + "<br>" + d_mil);
+
+
+        //entering specific date - year, month, day, hour, minute, seconds etc..
+        let d_norm = new Date(2019, 06, 03, 9, 50); //months are in array go from 0 -11 so 6 month is July
+        document.write("<br>" + " - Entering todays date manually...." + "<br>" + d_norm);
+
+    </script>
+
+    
+</body>
+
+</html>
