@@ -186,7 +186,7 @@ multi = (number) => { return number * 2; }
 multi = number => { return number * 2; }
 multi = number => number * 2;
 
-let callMe = () => { console.log("Hello"); } //Without arguments
+let callMe = () => { console.log("Hello"); } //Without arguments in the function
 
 newArr = arr.map(multi);
 newArr = arr.map(number => number * 2); //the shortest way
