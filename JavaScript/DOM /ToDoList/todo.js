@@ -20,7 +20,7 @@ newItem.addEventListener("click", function () {
     newItem.removechild(newItem.childNodes[0])
 });
 
-
+//Ahmads way...
 // document.getElementById('add').addEventListener('click', function () {
 //     let div = document.createElement('div');
 //     let text = document.createTextNode(input.value);
