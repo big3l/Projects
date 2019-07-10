@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error Handling</title>
+</head>
+
+<body>
+    The try statement lets you test a block of code for errors.
+    The try statement allows you to define a block of code to be tested for errors while it is being executed.
+    <br>
+    The catch statement lets you handle the error.
+    The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+    <br>
+    The finally statement lets you execute code, after try and catch, regardless of the result.
+    
+    <script>
+        try {
+            // let myvar = 10;
+            // let myvar = 20;
+            // console.log(myvar);
+            let x = document.getElementById("myID").value;
+            console.log(x);
+        }
+        catch (error) {
+            console.error("You fucked up!");
+            console.error("Error type: " + error.name);
+            console.error("Error message: " + error.message)
+        }
+        finally {
+            alert("something");
+        }
+
+    </script>
+</body>
+
+</html>

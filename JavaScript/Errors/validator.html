@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validate your age</title>
+</head>
+
+<body>
+    <!-- age validator -->
+    <p>Input your age: <input type="text" id="age"></p>
+    <button onclick="validate()">Validate Age</button>
+
+    <!-- divide validator -->
+    <p>Number N: <input type="text" id="n-number"></p>
+    <p>Number M: <input type="text" id="m-number"></p>
+    <button onclick="divide()">Divide N / M</button>
+
+    <!-- Password validator -->
+    <p>Enter Password <input type="text" id="password">
+        <button id="btn" onclick="pword()">New Password</button></p>
+    <div id="main"></div>
+
+    <script>
+        // age validator
+        function validate() {
+            try {
+                let age = document.getElementById("age").value;
+                console.log("Your age is: " + age);
+                if (age < 18) throw "You're not old enough";
+            }
+            catch (err) {
+                console.error("You fucked up! " + err);
+                alert("You fucked up! " + err);
+            }
+        }
+
+        // divide validator 
+        function divide() {
+            try {
+                let n = document.getElementById("n-number").value;
+                let m = document.getElementById("m-number").value;
+                alert("Your calculation is " + n + " / " + m + " = " + n / m);
+                if (isNaN(n / m)) throw "This is not a number";
+                if (m == 0) throw "Cannot divide by 0";
+            }
+            catch (e) {
+                alert("You fucked up! " + e);
+            }
+        }
+
+        // Password validator
+        function pword() {
+            try {
+                let pw = document.getElementById("password").value;
+                let errMessage = "Your password must include uppercase, numbers, special characters and be between 6-20 letters long.";
+
+                if (pw.length < 6) throw (alert(errMessage));
+                if (pw.length > 20) throw (alert(errMessage));
+                if (pw == 0) throw (alert(errMessage));
+                if (!pw.match("[!§$%&?@#_/]")) throw (alert(errMessage));
+                if (!pw.match("[0123456789]")) throw (alert(errMessage));
+                if (!pw.match("[ABCDEFGHIJKLMNOPQRSTUVWXYZ]")) throw (alert(errMessage));
+                alert("Your password has been changed to " + pw);
+            }
+            catch (errPass) { }
+
+            finally {
+                function prevPW() {
+                    let used = document.createElement("h2");
+                    let input = document.getElementById("password");
+                    let usedPW = document.createTextNode(input.value);
+                    used.appendChild(usedPW);
+                    document.getElementById("main").appendChild(used);
+                    input.value = "";
+                }
+                document.getElementById("btn").addEventListener("click", function () {
+                    prevPW();
+                });
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
