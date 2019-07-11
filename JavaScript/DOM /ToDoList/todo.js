@@ -15,18 +15,31 @@ function newList() {
         input.value = "";
         input.focus();
 
-        //Remove items from list
+        //strike through completed items 
         let el = document.getElementsByTagName("h3");
         for (let i = 0; i < el.length; i++) {
             el[i].onclick = function () {
-                mainDiv.removeChild(this);
+                console.log(el[i].getAttribute("class"));
+                if (el[i].getAttribute("class") == null) {
+                    this.classList.add("after");
+                }
+                else (this.classList.remove("after"));
             }
         }
+        //Remove items from list
+        // let el = document.getElementsByTagName("h3");
+        // for (let i = 0; i < el.length; i++) {
+        //     el[i].onclick = function () {
+        //         mainDiv.removeChild(this);
+        //     }
+        // }
     }
     else {
         alert("Enter an item to the to do list");
     }
 }
+
+//Press enter not click to add list 
 function pressEnter(myEvent) {
     if (myEvent.keyCode == 13) {
         newList();
