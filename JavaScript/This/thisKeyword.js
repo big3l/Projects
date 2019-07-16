@@ -1,8 +1,12 @@
 ////////////////////////////////////////////////////////////
+//parseInt with "this" to style positions of the button
 
+//styling the button
 let btn = document.getElementById("myBtn");
-btn.style.left = "10px";
+btn.style.left = "50px";
 btn.style.top = "0px";
+btn.style.background = "green";
+btn.style.color = "white";
 btn.style.position = "relative";
 
 btn.addEventListener("click", function () {
@@ -12,6 +16,7 @@ btn.addEventListener("click", function () {
 });
 
 ////////////////////////////////////////////////////////////
+//As above but with transition 
 
 let img = document.getElementById("myImg");
 let aBtn = document.getElementById("aBtn");
@@ -25,6 +30,7 @@ aBtn.addEventListener("click", function () {
 });
 
 ////////////////////////////////////////////////////////////
+//image 2 will move 10px every 0.5ms 
 
 let bBtn = document.getElementById("bBtn");
 let img2 = document.getElementById("myImg2");
@@ -35,10 +41,11 @@ function moveRight() {
     img2.style.left = parseInt(img2.style.left) + 10 + "px";
 }
 bBtn.addEventListener("click", function () {
-    setInterval(moveRight, 30);
+    setInterval(moveRight, 50);
 });
 
 ////////////////////////////////////////////////////////////
+//animating the image using @webkit equivalent
 let cBtn = document.getElementById("cBtn");
 
 function anim() {
