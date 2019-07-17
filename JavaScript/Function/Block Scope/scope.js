@@ -43,7 +43,7 @@ console.log(userColor);
 // }
 
 const name = "Dan";
-// name = "Dave"; gives error because const wont let me change it
+// name = "Dave"; gives error because const wont let me change it to Dave
 console.log(name);
 
 //////////////////////////////////////////////////////////
@@ -73,7 +73,7 @@ const drink = ["water", "coffee", "milk", "tea"];
 
 console.log(drink);
 
-drink[0] = "Lemon Juice"; //can change/add items using item [0]
+drink[0] = "Lemon Juice"; //can change/add items using items in the Array
 console.log(drink);
 
 //error cannot change all at once with const - will work with let

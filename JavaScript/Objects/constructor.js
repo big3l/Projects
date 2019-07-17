@@ -1,4 +1,9 @@
 //////////////////////////////////////////////////////////
+//Constructor, building all the properties with this, building 'new'
+//objects to call as function
+
+//Adding a single object, to add another person would mean repeating
+//this process each time. This can be built in constructor and recalled
 
 
 // let person = {
@@ -16,13 +21,13 @@
 //Instead of using the above example for each additional person,
 //create a constructor function and add below shorthand
 
-function Person(first, last, age, hair) {
+function Person(first, last, age, hair) { //set the parimeters format being declaired below
 
     this.firstName = first;
     this.lastName = last;
     this.age = age;
     this.hair = hair;
-    this.personInfo = function () {
+    this.personInfo = function () { //function inside a function is no probs
         return (this.firstName + " " + this.lastName + " " + this.age);
         //can use return here as its within a function
     }
@@ -120,7 +125,7 @@ console.log(student2.studentInfo());
 //using class and constructor instead of function
 //class is the same as object 
 
-class Students {
+class Students { // class name must always start with capital
     constructor(Name, Age, City, Univercity, Language, USD, changeRate) {
         this.name = Name;
         this.age = Age;
@@ -142,7 +147,7 @@ class Students {
     }
 }
 
-let student3 = new Students("Luke Cage", 41, "New York", "Streets", "American", 1000, 5.8);
+student3 = new Students("Luke Cage", 41, "New York", "Streets", "American", 1000, 5.8);
 let student4 = new Students("Matt Murdock", 27, "Hells Kitchen", "Lawyer Uni", "American", 1000, 6.8);
 console.log(student3.studentInfo());
 console.log(student4.studentInfo());

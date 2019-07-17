@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rectangle</title>
+</head>
+
+<body>
+    <p>H: <input type="text" id="height"></p>
+    <p>W: <input type="text" id="width"></p>
+    <p>C: <input type="text" id="color"></p>
+    <button type="button" onclick="createRect()">Create</button>
+    <div id="myRect"></div>
+
+
+    <script>
+
+        function createRect(){
+            height = document.getElementById("height").value();
+            width = document.getElementById("width").value();
+            color = document.getElementById("color").value();
+
+            const rect = new Rectangle(height, width, color);
+            rect.create();
+        }
+        
+
+        class Rectangle {
+            constructor(height, width, color) {
+                this.height = height;
+                this.width = width;
+                this.color = color;
+            }
+
+            create() {
+                let myRect = document.getElementById("myRect");
+                let newDiv = document.createElement("div");
+                myRect.appendChild(newDiv);
+                newDiv.style.height = this.height;
+                newDiv.style.width = this.width;
+                newDiv.style.background = this.color;
+            }
+        }
+
+       
+        
+
+
+        // //btn.addEventListener("click", function () {
+        // let myDiv = document.getElementById("myRect");
+        // let btn = document.getElementById("myBtn");
+
+        // class Rectangle {
+        //     constructor(height, width, color) {
+        //         this.height = height;
+        //         this.width = width;
+        //         this.color = color;
+
+
+        //         function line1(){
+        //             btn.addEventListener("click", function () {
+        //             let width = document.getElementById("myRect");
+        //             width.style.background = "blue";
+        //         }
+        //     }
+        // }
+
+        // create() {
+        //     let myRect = document.getElementById("myRect")
+        // }
+    </script>
+
+</body>
+
+</html>

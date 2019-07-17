@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Names</title>
+</head>
+
+<body>
+    <script>
+        ///////////////////////////////////////////////////////////////////////
+
+        class User {
+            constructor(username, password, ip, startTime) {
+                this.username = username;
+                this.password = password;
+                this.ip = ip;
+                this.startTime = new Date();
+            }
+
+            getActivityTime() {
+                let start = this.startTime.getTime();
+                let now = new Date();
+                this.now = now.getTime();
+                document.write(`The Time on load is = ${this.now}`);
+                return (now - start) / 1000;
+
+            }
+
+            sayHello() {
+                alert(`Welcome back ${this.username}`);
+            }
+            writeUser() {
+                document.write(`<br> Using the class User: <br> The username is ${this.username} 
+                                <br> The password is: ${this.password}
+                                <br> The IP Address is: ${this.ip} <br>`);
+            }
+            isRejected() {
+                if (this.ip == "127.2.2.2") {
+                    return alert(`IP ${this.ip} Accepted, you are not a robot`);
+                }
+                else {
+                    return alert("IP is not accepted, you are a robot!");
+                }
+            }
+
+        }
+        const u = new User("Steve Sevens", "Memorable Password", "127.4.4.4");
+        u.getActivityTime();
+        u.sayHello();
+        u.isRejected();
+        u.writeUser(User);
+
+
+        class Admin extends User {
+            constructor(username, password, ip, adminName, category) {
+                super(username, password, ip);
+                this.adminName = adminName;
+                this.category = category;
+            }
+            getadminName() {
+                document.write(`The admin user is ${this.adminName} <br>
+                                ${this.adminName} is in charge of ${this.category} <br>`)
+            }
+            notAdmin() {
+                if (this.adminName == "Mickey Mouse") {
+                    return alert(`Admin Name: ${this.adminName} is Accepted`);
+                }
+                else {
+                    return alert(`Go and find ${this.adminName}, you're not ${this.adminName}! <br>`);
+                }
+            }
+
+        }
+        const a = new Admin("", "", "", "Mickey Mouse", "User Access");
+        a.notAdmin(Admin);
+        a.getadminName(Admin);
+
+
+        class Owner extends Admin {
+            constructor(username, password, ip, adminName, category, ownerAge) {
+                super(username, password, ip, adminName, category);
+                this.age = ownerAge;
+            }
+            blockUser() {
+                if (this.age < 18) {
+                    return alert(`You are only ${this.age} years old! Grow up!`);
+                }
+                else {
+                    return alert(`You are ${this.age} years old, come on in!`);
+                }
+            }
+            ownerAge() {
+                document.write(`The user is ${this.age} years old`);
+            }
+
+        }
+        const o = new Owner("", "", "", "Mickey Mouse", "User Access", 21);
+        o.blockUser();
+        o.ownerAge(Owner);
+
+
+    </script>
+</body>
+
+</html>

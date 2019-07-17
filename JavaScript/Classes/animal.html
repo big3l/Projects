@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animal</title>
+</head>
+
+<body>
+    <!-- Java script Class -->
+
+    <script>
+
+        class Pet {
+            constructor(Name, Breed) {
+                this.name = Name;
+                this.breed = Breed;
+            }
+            writeName() {
+                document.write(`Pet name = ${this.name} <br>`);
+            }
+            getName() {
+                return this.name + "<br>";
+            }
+        }
+        p = new Pet("Pussy");
+        p.writeName(Pet);
+        document.write(p.getName());
+
+        ///////////////////////////////////////////////////////////////////////
+
+        class Pets {
+            constructor(Name, Breed, Color) {
+                this.name = Name;
+                this.breed = Breed;
+                this.color = Color;
+            }
+            writeName() {
+                document.write(`<br> Using writeName : <br> Pet name =  ${this.name} <br> Breed = ${this.breed} <br> 
+                Color = ${this.color} <br>`);
+            }
+            getName() {
+                return `<br> Using Get : <br> Pet name =  ${this.name} <br> Breed = ${this.breed} <br> 
+                Color = ${this.color} <br>`;
+            }
+        }
+        p = new Pets(" Pussy", " Cat", " Green, ");
+        p.writeName(Pet);
+        document.write(p.getName());
+
+        ///////////////////////////////////////////////////////////////////////
+        //Extending the class (doesnt add to class, just extends)
+
+        class Cat extends Pets { //Cat takes Pets properties + addtional properties
+            constructor(name, breed, color, age, sound) { //define Pet properties + the new one (Age)
+                super(name, breed, color); //super calls properties from Pet constructor
+                this.age = age; //this + the new addition
+                this.sound = sound;
+            }
+            writeAge() {
+                document.write(`<br> Extending with Cat class: <br> Age = ${this.age} <br> `);
+            }
+            sounds() {
+                document.write(`Sound = ${this.sound} <br>`)
+            }
+        }
+        const c = new Cat("#", "#", "#", 19); //pet properties cannot be changed here
+        c.writeAge(Cat);
+
+        const s = new Cat("Paul", "Giraffe", "Pink", 31, "Mooooooooo! ");
+        s.sounds(Cat);
+
+        ///////////////////////////////////////////////////////////////////////
+
+        class Dog extends Pets {
+            constructor(name, breed, color, age, sound, owner, address) {
+                super(name, breed, color, age, sound);
+                this.address = address;
+                this.owner = owner;
+            }
+            writeAddress() {
+                document.write(`<br> Extending with Dog class: <br> Address = ${this.address} <br>`);
+            }
+            writeOwner() {
+                document.write(`Owner = ${this.owner} <br>`)
+            }
+        }
+        const a = new Dog("", "", "", "", "", "Dog Lover");
+        a.writeAddress(Dog);
+
+        const o = new Dog("", "", "", "", "", "Dog Lover", "Hundstraße");
+        o.writeOwner(Dog);
+
+
+
+    </script>
+
+</body>
+
+</html>
