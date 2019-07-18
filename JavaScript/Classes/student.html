@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Person {
+            constructor(firstname, lastName, DOB, Address) {
+                this.firstname = firstname;
+                this.lastname = lastName;
+                this.dob = DOB;
+                this.address = Address;
+            }
+
+            greeting() {
+                alert(`Hello ${this.firstname} ${this.lastname}`);
+            }
+
+            getBirthday() {
+                let today = new Date();
+                let day = today.getDate();
+                let month = today.getMonth();
+                let bday = new Date(this.dob);
+
+                if (day == bday.getDate() && month == bday.getMonth()) {
+                    alert(`Happy Birthday ${this.firstname} ${this.lastname}!`);
+                }
+                else { alert("Today is not your birthday") };
+            }
+        };
+        let b = new Person("John", "Johnson", "1983-06-18", "Johnson Street"); //alert works when dates change to today
+        b.greeting();
+        b.getBirthday();
+
+
+        class Student extends Person {
+            constructor(firstname, lastname, dob, address, id, univercity) {
+                super(firstname, lastname, dob, address);
+                this.id = id;
+                this.univercity = univercity;
+            }
+            getAge() {
+                let currentDate = new Date(); //the current date (today)
+                let year = currentDate.getFullYear(); //just year 2019
+
+                let birthDate = new Date(this.dob); //taking the users input
+                return year - birthDate.getFullYear(); // 2019 - user input
+            }
+
+        };
+
+        let s = new Student("John", "Johnson", "1928-07-12", "Johnson Street", "20G400G", "Hamburg Univercity");
+        document.write(s.firstname + " " + s.lastname + " is " + s.getAge() + " Years Old" +
+            " Lives on " + s.address + " ID Number is " + s.id + " goes to " + s.univercity);
+
+    </script>
+</body>
+
+</html>

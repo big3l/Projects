@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Circle</title>
+</head>
+
+<body>
+    <p>H: <input type="text" id="height"></p>
+    <p>W: <input type="text" id="width"></p>
+    <p>C: <input type="text" id="color"></p>
+    <p>R: <input type="text" id="radius"></p>
+
+
+    <button type="button" id="rectangle">Create Rectangle</button>
+    <button id="circle">Create Circle</button>
+
+    <div id="mainDiv"></div>
+    <script>
+
+        class Rectangle {
+            constructor(height, width, color) {
+                this.height = height;
+                this.width = width;
+                this.color = color;
+                this.newDiv = document.createElement("div");
+            }
+
+            create() {
+                let mainDiv = document.getElementById("mainDiv");
+                mainDiv.appendChild(this.newDiv);
+                this.newDiv.style.height = this.height;
+                this.newDiv.style.width = this.width;
+                this.newDiv.style.background = this.color;
+            }
+        }
+        
+        const rectBtn = document.getElementById("rectangle");
+        rectBtn.addEventListener("click", function () {
+            const rect = new Rectangle(height, width, color);
+            rect.create();
+        });
+
+
+        ///////////////////////////////////////////////////////////////////////
+
+        class Circle extends Rectangle {
+            constructor(height, width, color, radius) {
+                super(height, width, color);
+                this.radius = radius;
+            }
+            createCircle() {
+                this.create();
+                this.newDiv.style.borderRadius = this.radius;
+            }
+        };
+        const height = document.getElementById("height").value;
+        const width = document.getElementById("width").value;
+        const color = document.getElementById("color").value;
+        const radius = document.getElementById("radius").value;
+
+        const circleBtn = document.getElementById("circle");
+        circleBtn.addEventListener("click", function () {
+            let circle = new Circle(height, width, color, radius);
+            circle.createCircle();
+        });
+
+        ///////////////////////////////////////////////////////////////////////
+
+
+        
+
+
+    </script>
+
+</body>
+
+</html>
