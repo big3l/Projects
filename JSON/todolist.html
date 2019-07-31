@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .after {
+            text-decoration: line-through;
+            opacity: 0.3;
+        }
+    </style>
+
+    <input id=textInput type="text" placeholder="Enter Item to do">
+    <button id="button">Add to the list</button>
+    <div id="mainDiv" class="before"></div>
+
+    <script>
+        let mainDiv = document.getElementById("mainDiv");
+        let input = document.getElementById("textInput");
+
+        class Todo {
+
+            newList() {
+                if (input.value !== "") {
+                    let newItem = document.createElement("h3");
+                    let newItemName = document.createTextNode(input.value);
+
+                    newItem.appendChild(newItemName);
+                    document.getElementById("mainDiv").appendChild(newItem);
+                    input.value = "";
+                    input.focus();
+
+                    //strike through completed items 
+                    let el = document.getElementsByTagName("h3");
+                    for (let i = 0; i < el.length; i++) {
+                        el[i].onclick = function () {
+                            console.log(el[i].getAttribute("class"));
+                            if (el[i].getAttribute("class") == null) {
+                                this.classList.add("after");
+                            }
+                            else (this.classList.remove("after"));
+                        }
+                    }
+                    //Remove items from list
+                    // let el = document.getElementsByTagName("h3");
+                    // for (let i = 0; i < el.length; i++) {
+                    //     el[i].onclick = function () {
+                    //         mainDiv.removeChild(this);
+                    //     }
+                    // }
+                }
+                else {
+                    alert("Enter an item to the to do list");
+                }
+            }
+        }
+
+        //Press enter not click to add list 
+        function pressEnter(myEvent) {
+            if (myEvent.keyCode == 13) {
+                newList();
+            }
+        }
+        button.addEventListener("click", newList);
+        input.addEventListener("keypress", pressEnter);
+
+        let item1 = new Todo();
+        item1.newList();
+
+    </script>
+</body>
+
+</html>
