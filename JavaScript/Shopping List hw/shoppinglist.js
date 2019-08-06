@@ -50,3 +50,16 @@ addBtn.addEventListener("click", function () {
 //   Key             value
 // product    [{productName: "Apple iPhone", productDesc : "Product Desc", productCode: "20100110023"}];
 //https://codepen.io/bradtraversy/pen/OrmKWZ
+//setTimeOut for add to list confirmed message
+// delete Product(el){
+//   if(el.classList.contains('delete')){
+//      el.parentElement.parentElement.remove();
+//     }
+// };
+
+// //insert new elements...
+// let h1 = document.body.childNodes[0];
+// let newh2 = document.createElement("h2");
+
+// newh2.innerHTML = " The new h2 has replaced h1";
+// document.body.insertBefore(newh2, h1);
