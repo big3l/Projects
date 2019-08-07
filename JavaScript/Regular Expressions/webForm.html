@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Form</title>
+</head>
+
+<body>
+
+    <div id="webForm">
+        <label for="email">Email</label>
+        <input type="text" id="myEmail"><br>
+        <label for="">First Name</label>
+        <input type="text" id="fName"><br>
+        <label for="">Second Name</label>
+        <input type="text" id="sName"><br>
+        <label for="">ZIP</label>
+        <input type="text" id="zip"><br>
+        <label for="">Age</label>
+        <input type="text" id="age"><br>
+        <label for="">Sex</label>
+        <input type="text" id="sex"><br>
+        <label for="">Height</label>
+        <input type="text" id="myHeight"><br>
+        <label for="">Tel no</label>
+        <input type="text" id="telNo"><br>
+        <label for="">Date of Birth</label>
+        <input type="text" id="dob"><br>
+
+        <button onclick="validate()">Validate</button>
+    </div>
+
+
+
+    <script>
+
+        function validate() {
+            var email = document.getElementById("myEmail");
+            var emPatt = /^w+\@\w+.com$/g;
+
+            if (email.value.match(emPatt)) {
+                console.log("Email Ok");
+            }
+            else {
+                console.error("Email bad");
+            }
+            var fName = document.getElementById("fName");
+            var fNamePatt = /^[A-Z]\w+$/g;
+            if (fName.value.match(fNamePatt)) {
+                console.log("First Name Ok");
+            }
+            else {
+                console.error("First Name bad");
+            }
+            var sName = document.getElementById("sName");
+            var sNamePatt = /^[A-Z]\w+$/g;
+            if (sName.value.match(sNamePatt)) {
+                console.log("Surname Ok");
+            }
+            else {
+                console.error("Surname bad");
+            }
+            var zip = document.getElementById("zip");
+            var zipPatt = /^[1-9]{5}$/;
+            if (zip.value.match(zipPatt)) {
+                console.log("Zip Ok");
+            }
+            else {
+                console.error("Zip bad");
+            }
+            var age = document.getElementById("age");
+            var agePatt = /^[14-99]$/;
+            if (age.value.match(agePatt)) {
+                console.log("Age Ok");
+            }
+            else {
+                console.error("Age bad");
+            }
+            var sex = document.getElementById("sex");
+            var sexPatt = /^(male|female)$/g;
+            if (sex.value.match(sexPatt)) {
+                console.log("Sex Ok");
+            }
+            else {
+                console.error("Sex bad");
+            }
+            var height = document.getElementById("myHeight");
+            var heightPatt = /^(1|2)\.[1-9]$/;
+            if (height.value.match(heightPatt)) {
+                console.log("Height Ok");
+            }
+            else {
+                console.error("Height bad");
+            }
+            var telNo = document.getElementById("telNo");
+            var telNoPatt = /^[+]\[0-9]{2}\[(]\[0]{1}\[)]\-[0-9]{3}\-[0-9]{4}\-[0-9]{3}$/;
+            if (telNo.value.match(telNoPatt)) {
+                console.log("Tel Ok");
+            }
+            else {
+                console.error("Tel bad");
+            }
+            var dob = document.getElementById("dob");
+            var dobPatt = /^[1-9]{2}\.[0-1]{2}\.[1-9]{4}$/
+            if (dob.value.match(dobPatt)) {
+                console.log("DOB Ok");
+            }
+            else {
+                console.error("DOB bad");
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

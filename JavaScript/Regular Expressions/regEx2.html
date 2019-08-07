@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RegEx2</title>
+</head>
+
+<body>
+
+
+    
+    <script>
+        //////////////////////////////////////////////////////////////////////
+        //Regular Expression
+        //see list of expressions - https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+
+        //modifiers g, i (g will match all) (i will match case insensitive  )
+        // g = global, case sensitive
+        // i = case insensitive
+        // brackets
+        // [abc]
+        // [a-z] letter range
+        // \w - find word character
+        // [0-9] number range
+        // \d - find digits
+        // [] = find any character between the brackets
+        // ^ = exclude
+        // (x|y) Find any of the alternatives specified
+        // . (dot) selects any character
+        // /W Find special characters (capital W)
+        // n+ matches any string that contains at least one "n"
+        // l+ matches any string that contains at least one "l"
+        // n? Matches any string that contains zero or one occurrances of n
+        // n{2,3} Matches any string that contains a sequence of 2 to 3 n's
+        // ^n Matches any string with n at the beginning of it
+        // n$ matches any string with n at the end of it
+
+        //////////////////////////////////////////////////////////////////////
+
+        var patt = /dci/;
+        var str = "I like dci very much";
+
+        str = "I like dci very much, DCI dCi dci dci...."
+        var patt = /dci/; //will search 1st "dci" matched 
+        //Array [ "dci" ]
+
+        str = "I like dci very much, DCI dCi dci dci...."
+        var patt = /dci/g; //will search all "dci" matched (case sensitive) 
+        //Array(3) [ "dci", "dci", "dci" ]
+
+        str = "I like dci very much, DCI dCi dci dci...."
+        var patt = /dci/ig;//will search all "dci" match in any case
+        //Array(5) [ "dci", "DCI", "dCi", "dci", "dci" ]
+
+        //////////////////////////////////////////////////////////////////////
+
+        str = "test_a test_b test_c test_m"
+        patt = /test_[acm]/g // will search all test_[defined letters] in any case
+        //Array(3) [ "test_a", "test_c", "test_m" ] - it did not print b as not defined
+
+        str = "test_a test_b test_c test_m"
+        patt = /test_[^acm]/g //will exclude all defined letters
+        //Array [ "test_b" ] - b was not defined
+
+        str = "test_a test_b test_c test_m"
+        patt = /test_[b-m]/g // using a "-" will print the range b - m
+        //Array(3) [ "test_b", "test_c", "test_m" ] - a excluded as out of range
+
+        str = "test_a test_b test_c test_m"
+        patt = /test_[^b-m]/g //will exclude letters in range b-m
+        //Array [ "test_a" ] - test_a is only letter in range
+
+        //////////////////////////////////////////////////////////////////////
+
+        //[0-9] find any character between the brackets (any digit)
+        str = "test_0 test_2 test_3 test_7"
+        patt = /test_[023]/g
+        patt = /test_[0-3]/g //same
+        //Array(3) [ "test_0", "test_2", "test_3" ]
+
+        //[0-9] find any character NOT between the brackets (any digit)
+        str = "test_0 test_2 test_3 test_7"
+        patt = /test_[^023]/g
+        patt = /test_[^0-6]/g //same
+        //Array [ "test_7" ]
+
+        //////////////////////////////////////////////////////////////////////
+
+        //(x|y) Find any of the alternatives specified
+        //Search for both variants of spelling colour/color
+        str = "colour color"
+        patt = /col(o|ou)r/g // col(with o or| ou)r /g 
+        //Array [ "colour", "color" ]
+
+        str = "My name is Sergey with y and also Sergej with j"
+        patt = /Serge(y|j)/g //Array [ "Sergey", "Sergej" ]
+
+        str = "colour color"
+        patt = /col(^o|ou)r/g //Array [ "colour" ]
+
+        str = "colour color"
+        patt = /col(o|^ou)r/g // Array [ "color" ]
+
+        //////////////////////////////////////////////////////////////////////
+
+        //Metacharacters
+        // . (dot) selects any character
+        str = "car car? cars car2"
+        patt = /car./g // car. = car +next character global
+        //Array(4) [ "car ", "car?", "cars", "car2" ]
+
+        str = "car4567 carsGGRr caratat carwwww"
+        patt = /car.../g
+        //Array(4) [ "car456", "carsGG", "carata", "carwww" ]
+
+
+        // \w Find a word character
+        str = "google.com facebook.com hotmail.com java.it"
+        patt = /\w+\.com/g // find word + .com
+        //Array(3) [ "google.com", "facebook.com", "hotmail.com" ]
+
+        str = "google.com facebook.com hotmail.com java.it"
+        patt = /\w+\.(com|it)/g //word + . com or it
+        //Array(4) [ "google.com", "facebook.com", "hotmail.com", "java.it" ]
+
+        // /W Find a special characters (capital W)
+        str = "google.com google##.it google123$&§.com googleSuper+++.com"
+        patt = /\W+\.com/g // find special character + .com global
+        //Array [ "$&§.com", "+++.com" ]
+
+        //////////////////////////////////////////////////////////////////////
+        //Quantifiers
+
+        var str = "n l nn ll nnn lll nnn"
+        var patt = /n+/g // n+ matches any string that contains at least one "n"
+        //Array(4) [ "n", "nn", "nnn", "nnn" ]
+
+        str = "n l nn ll nnn lll nnn"
+        patt = /l+/g // l+ matches any string that contains at least one "l"
+        //Array(3) [ "l", "ll", "lll" ]
+
+        str = "n k nn kK nnn KKK nnn"
+        patt = /k+/gi //above with gi will match both cases k & K
+        //Array(3) [ "k", "kK", "KKK" ]
+
+        //n? Matches any string that contains zero or one occurrances of  n
+        str = "3 July, 3rd August"
+        patt = /3(rd)?/g //will find 3 and or +rd. (rd) is grouped and is optional
+        //Array [ "3", "3rd" ]
+
+        //n{2,3} Matches any string that contains a sequence of 2 to 3 n's
+        str = "n, l, nn, ll, nnn, lll, nnn"
+        patt = /l{2,3}/g // asks for "l" 2 and 3 characters long
+        //Array [ "ll", "lll" ] //has excluded the 1st single "l"
+
+        str = "n l nn ll nnn lll nnn llll"
+        patt = /l{2,4}/g // asks for "l" 2 and 4 characters long
+        //Array(3) [ "ll", "lll", "llll" ]
+
+        patt = /l{2}/g // asks for "l" 2 characters long
+        //Array(4) [ "ll", "ll", "ll", "ll" ]
+
+        patt = /l{3,}/g // asks for minimum of 3 to unlimited/infinitiy characters long
+        //Array [ "lll", "llll" ]
+
+        //^n Matches any string with n at the beginning of it
+        str = "google.it google.com google.de"
+        patt = /^google\.\w+/g // ^ finds 1st elementgoogle + . + word
+        //Array [ "google.it" ]
+
+        //n$ matches any string with n at the end of it
+        str = "google.it google.com google.de"
+        patt = /google\.\w+$/g // \w+$ searches for the final word in the string
+        //Array [ "google.de" ]
+
+        //////////////////////////////////////////////////////////////////////
+
+        //output
+        var arr = str.match(patt);
+        console.log(arr);
+
+
+    </script>
+</body>
+
+</html>

@@ -13,7 +13,7 @@ function checkLength(input) {
 };
 
 function checkLower(input) {
-    if (input.value.match(/^(?=.*[A-Z]).+$/)) {
+    if (input.value.match(/[a-z]/)) {
         document.querySelector(".lowercase").style.color = "Green";
         document.querySelector(".lowercase").style.fontWeight = "bold";
     }
@@ -23,7 +23,7 @@ function checkLower(input) {
 };
 
 function checkUpper(input) {
-    if (input.value.match(/^(?=.*[a-z]).+$/)) {
+    if (input.value.match(/[A-Z]/)) {
         document.querySelector(".uppercase").style.color = "Green";
         document.querySelector(".uppercase").style.fontWeight = "bold";
     }
@@ -33,7 +33,7 @@ function checkUpper(input) {
 };
 
 function checkSpecial(input) {
-    if (input.value.match(/^(?=.*[0-9_\W]).+$/)) {
+    if (input.value.match(/[0-9_\W]/)) {
         document.querySelector(".special").style.color = "Green";
         document.querySelector(".special").style.fontWeight = "bold";
     }

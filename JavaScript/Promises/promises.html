@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promises</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        ///////////////////////////////////////////////////////////////////////
+        // Promises
+        // https://scotch.io/tutorials/javascript-promises-for-dummies#toc-promises-are-asynchronous
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+
+        var isMomHappy = true; //different result when false
+
+        //promise
+        var willIGetNewPhone = new Promise(
+            function (resolve, reject) {
+                if (isMomHappy) {
+                    var phone = {
+                        brand: "Apple",
+                        color: "pink"
+                    }
+                    resolve(phone); //the promise is fulfilled
+                }
+                else {
+                    var error = new Error(" Mum is not happy! ");
+                    reject(error); // the promise is rejected
+                }
+            }
+        );
+
+        //call the promise
+        var askMum = function () {
+            willIGetNewPhone
+                .then(function (phone) { //.then = sucess, if promise is fulfilled
+                    console.log(phone); //prints { brand: "Apple", color: "pink"}
+
+                })
+                .catch(function (error) {                    //.catch = 
+                    console.error(error.message); //prints "Mum is not happy!"
+                });
+        }
+
+        askMum();
+
+        ///////////////////////////////////////////////////////////////////////
+        //Example
+
+        var myDelay = 3500;
+
+        var willIGetDBResponse = new Promise(
+            function (resolve, reject) {
+                if (myDelay < 3000) {
+                    var response = {
+                        username: "JohnSmith",
+                        name: "John",
+                        surname: "Smith"
+                    }
+                    setInterval(function () {
+                        resolve(response);
+                    }, 3000);
+                }
+                else {
+                    var error = new Error("It took too long");
+                    setInterval(function () {
+                        reject(error);
+                    }, 3000);
+                }
+            }
+
+        );
+
+        var sendRequest = function () {
+            willIGetDBResponse
+                .then(function (response) {
+                    console.log(response);
+
+                })
+                .catch(function (error) {
+                    console.error(error.message);
+                });
+        }
+
+        sendRequest();
+
+
+        ///////////////////////////////////////////////////////////////////////
+        //my attempt - not far off but "var done" wasnt defined properly
+        // var Delay = 3500;
+
+        // var willIGetResponse = new Promise(
+        //     function (resolve, reject) {
+        //         if (willIGetResponse < 2000) {
+        //             var done = console.log("Thanks!");
+        //             resolve(done);
+        //         }
+        //         else {
+        //             var error = new Error("Time up");
+        //             reject(error);
+        //         }
+        //     }
+        // );
+
+        // var askResp = function () {
+        //     willIGetResponse
+        //         .then(funtion(done){
+        //             console.log(done);
+        //         })
+        //         .catch(function (error) {
+        //             console.error(error.message);
+        //         });
+
+        // }
+        // askResp();
+
+
+        ///////////////////////////////////////////////////////////////////////
+
+
+
+    </script>
+</body>
+
+</html>
