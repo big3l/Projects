@@ -50,7 +50,7 @@ let header = document.querySelector("#main-header");
 header.style.borderBottom = "5px dashed red";
 console.log(header);
 
-let input = document.querySelector("input");
+let input = document.querySelectorAll("input")[1];
 input.placeholder = "added a placeholder text"
 
 let btn = document.querySelector('input[type="submit"]');
@@ -164,12 +164,12 @@ newDiv.style.background = "grey";
 
 // create new li befor the first one
 let newLi = document.createElement("li"); //create new li
-liText=document.createTextNode("im the new li :)"); // create text
+liText = document.createTextNode("im the new li :)"); // create text
 newLi.appendChild(liText); //add the text to the li
-newLi.className="list-group-item"; // we add the class to the li
-let itemParent=document.querySelector("#items"); // we select the parent
-let firstLi=document.querySelector(".list-group-item") // we select the element where we insert before
-itemParent.insertBefore(newLi,firstLi); // we insert the new li before the first li
+newLi.className = "list-group-item"; // we add the class to the li
+let itemParent = document.querySelector("#items"); // we select the parent
+let firstLi = document.querySelector(".list-group-item") // we select the element where we insert before
+itemParent.insertBefore(newLi, firstLi); // we insert the new li before the first li
 
 //////////////////////////////////////////////////////////////////
 
@@ -208,7 +208,7 @@ itemParent.insertBefore(newLi,firstLi); // we insert the new li before the first
 let btn1 = document.getElementById("btn1");
 btn1.addEventListener("dblclick", btnClick); //callback function
 
-function btnClick(e){
+function btnClick(e) {
     document.getElementById("header-title").textContent = "changed"
     console.log(e);
     console.log(e.target.class);
@@ -219,4 +219,79 @@ function btnClick(e){
 
 
 //////////////////////////////////////////////////////////////////
+
+//adding the entry from the input as ul
+
+let form = document.getElementById("formItems");
+form.addEventListener("submit", addItem)
+function addItem(e) {
+    e.preventDefault(); //prevent form submit
+
+    //get the input value
+    let newItem = document.getElementById("item").value;
+
+    //create new li element
+    let li = document.createElement("li");
+    li.className = "list-group-item";
+    li.appendChild(document.createTextNode(newItem));
+
+    //select the ul
+    let ul = document.getElementById("items");
+    // ul.appendChild(li); //added li to ul
+    itemParent.insertBefore(li, firstLi);// add to the top of the list
+
+    //add the delete button
+    let delBut = document.createElement("button");
+    delBut.className = "bnt btn-danger btn-group-lg float-right delete";
+    //append text to the delete button
+    delBut.innerHTML = "X";
+    //delBut.appendChild(document.createTextNode("X")); same as above
+
+    li.appendChild(delBut)
+};
+
+//delete the li using the button
+let ul = document.getElementById("items");
+ul.addEventListener("click", removeItem);
+function removeItem(e) {
+    if (e.target.classList.contains("delete")) {
+        ul.removeChild(e.target.parentElement);
+    }
+    console.log(e.target.classList);
+
+
+//contains example - will show class found when "delete" is in classList
+    if(e.target.classList.contains("delete")){
+        console.log("class found");
+        console.log(e.target.classList);
+    }
+    else{
+        console.log("class NOT found");        
+    }
+};
+
+//////////////////////////////////////////////////////////////////
+//filter searched items
+
+let inputFilter = document.getElementById("filter");
+
+inputFilter.addEventListener("keyup", filterItems);
+function filterItems(e){
+    
+    let text = e.target.value.toLowerCase();
+
+    //search for all the li
+    let liItems = ul.getElementsByTagName("li");
+    
+    for(let i= 0; i <liItems.length; i++){
+        let liText = liItems[i].firstChild.textContent;
+        
+        if (liText.toLowerCase().indexOf(text)!= -1){
+            liItems[i].style.display ="block";
+        }
+        else{
+            liItems[i].style.display="none";
+        }
+    }
+}
 
