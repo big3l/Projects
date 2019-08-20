@@ -16,8 +16,8 @@ class Product {
     };
 
     static additemToList(item) {
-        const list = document.querySelector('#item-list');
-        const row = document.createElement('tr');
+        let list = document.querySelector('#item-list');
+        let row = document.createElement('tr');
         row.innerHTML = `
         <td>${item.name}</td>
         <td>${item.desc}</td>

@@ -248,27 +248,55 @@ function addItem(e) {
     //delBut.appendChild(document.createTextNode("X")); same as above
 
     li.appendChild(delBut)
+
+    let alert = document.createElement("div"); 
+    alert.className = "alert alert-info"; 
+    alert.textContent = "The item has been added"; 
+    
+    let mainParent = document.getElementById("main"); 
+    let head2 = document.querySelector(".title"); 
+    
+    mainParent.insertBefore(alert, head2); 
+    setTimeout (function(){alert.remove(); }, 3000);
 };
 
 //delete the li using the button
 let ul = document.getElementById("items");
 ul.addEventListener("click", removeItem);
 function removeItem(e) {
-    if (e.target.classList.contains("delete")) {
-        ul.removeChild(e.target.parentElement);
-    }
+    if (e.target.classList.contains("delete"))
+        if (confirm("Are you sure you want to delete?")) {
+            ul.removeChild(e.target.parentElement);
+        }
     console.log(e.target.classList);
 
 
-//contains example - will show class found when "delete" is in classList
-    if(e.target.classList.contains("delete")){
+    //contains example - will show class found when "delete" is in classList
+    if (e.target.classList.contains("delete")) {
         console.log("class found");
         console.log(e.target.classList);
     }
-    else{
-        console.log("class NOT found");        
+    else {
+        console.log("class NOT found");
     }
+
+    //add deleted item confirmation message
+    let msg = document.createElement("div"); //create the msg div
+    msg.className = "alert alert-warning"; // add the bootstrap class
+    msg.textContent = "The item has been deleted"; //add the text message
+    
+    let parentMain = document.getElementById("main"); //the parent div to add inside
+    let h2 = document.querySelector(".title"); // the h2 to add before
+    
+    parentMain.insertBefore(msg, h2); //insert the new div after parent before h2
+    setTimeout (function(){msg.remove(); }, 3000); //remove div after 3 seconds
+    
+    // setTimeout(hidediv, 3000); 
+    // function hidediv() {
+    //     msg.style.display = "none";
+    //};
 };
+
 
 //////////////////////////////////////////////////////////////////
 //filter searched items
@@ -276,22 +304,24 @@ function removeItem(e) {
 let inputFilter = document.getElementById("filter");
 
 inputFilter.addEventListener("keyup", filterItems);
-function filterItems(e){
-    
+function filterItems(e) {
+
     let text = e.target.value.toLowerCase();
 
     //search for all the li
     let liItems = ul.getElementsByTagName("li");
-    
-    for(let i= 0; i <liItems.length; i++){
+
+    for (let i = 0; i < liItems.length; i++) {
         let liText = liItems[i].firstChild.textContent;
-        
-        if (liText.toLowerCase().indexOf(text)!= -1){
-            liItems[i].style.display ="block";
+
+        if (liText.toLowerCase().indexOf(text) != -1) {
+            liItems[i].style.display = "block";
         }
-        else{
-            liItems[i].style.display="none";
+        else {
+            liItems[i].style.display = "none";
         }
     }
 }
+
+//////////////////////////////////////////////////////////////////
 
