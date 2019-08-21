@@ -1,6 +1,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 
+const addBtn = document.getElementById("addProduct");
+
 class List {
     constructor(pName, pDesc, pNum) {
         this.name = pName;
@@ -9,123 +11,147 @@ class List {
     }
 };
 
-class Product {
-    static displayItems() {
-        const items = Store.getItems();
-        items.forEach((item) => Product.addItemToList(item));
-    };
+addBtn.addEventListener("click", addBtnClick);
+function addBtnClick(e) {
+    const pName = document.getElementById("productName").value;
+    // const pDesc = document.getElementById("productDesc").value;
+    // const pNum = document.getElementById("productNumber").value;
 
-    static additemToList(item) {
-        let list = document.querySelector('#item-list');
-        let row = document.createElement('tr');
-        row.innerHTML = `
-        <td>${item.name}</td>
-        <td>${item.desc}</td>
-        <td>${item.num}</td>
-        <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>`;
-        list.appendChild(row);
-    };
+    let th = document.createElement("td");
+    th.className = "list-group-item";
+    th.appendChild(document.createTextNode(pName));
 
-    static deleteItem(el) {
-        if (el.classList.contains('delete')) {
-            el.parentElement.parentElement.remove();
-        }
-    };
+    let itemParent = document.getElementsByClassName("table table-striped mt-5");
+    let tr = document.querySelector("tr");
+    tr.appendChild(th);
+    // itemParent.insertBefore(th, tr);
+}
 
-    static showAlert(message, className) {
-        const div = document.createElement('div');
-        div.className = `alert alert-${className}`;
-        div.appendChild(document.createTextNode(message));
-        const container = document.querySelector('.container');
-        const form = document.querySelector('#list-form');
-        container.insertBefore(div, form);
 
-        setTimeout(() => document.querySelector('.alert').remove(), 2000);
-    };
 
-    static clearFields() {
-        document.querySelector('#productName').value = '';
-        document.querySelector('#procuctDescripton').value = '';
-        document.querySelector('#productNumber').value = '';
-    };
-};
+// document.querySelector('#list-form').addEventListener('submit', (e) => {
+//     // Prevent actual submit
+//     e.preventDefault();
 
-class Store {
-    static getProducts() {
-        let products;
-        if (localStorage.getItem('products') === null) {
-            products = [];
-        } else {
-            products = JSON.parse(localStorage.getItem('products'));
-        }
+//     // Get form values
+//     const pName = document.querySelector('#productName').value;
+//     const pDesc = document.querySelector('#procuctDescripton').value;
+//     const num = document.querySelector('#productNumber').value;
 
-        return products;
-    }
+//     // Validate
+//     if (pName === '' || pDesc === '' || num === '') {
+//         Product.showAlert('Please fill in all fields', 'danger');
+//     } else {
+//         // Instatiate
+//         const product = new List(pName, pDesc, num);
 
-    static addProduct(product) {
-        const products = Store.getProducts();
-        products.push(product);
-        localStorage.setItem('products', JSON.stringify(products));
-    }
+//         // Add to UI
+//         Product.addProductToList(product);
 
-    static removeProduct(num) {
-        const products = Store.getProducts();
+//         // Add to store
+//         Store.addProduct(product);
 
-        products.forEach((item, index) => {
-            if (item.num === num) {
-                products.splice(index, 1);
-            }
-        });
+//         // Show success message
+//         Product.showAlert('Product Added', 'success');
 
-        localStorage.setItem('products', JSON.stringify(products));
-    }
-};
+//         // Clear fields
+//         Product.clearFields();
+//     }
+// });
 
-// Display 
-document.addEventListener('DOMContentLoaded', Product.displayItems);
+// class Product {
+//     static displayItems() {
+//         const items = Store.getItems();
+//         items.forEach((item) => Product.addItemToList(item));
+//     };
 
-// Add
-document.querySelector('#list-form').addEventListener('submit', (e) => {
-    // Prevent actual submit
-    e.preventDefault();
+//     static additemToList(item) {
+//         let list = document.querySelector('#item-list');
+//         let row = document.createElement('tr');
+//         row.innerHTML = `
+//         <td>${item.name}</td>
+//         <td>${item.desc}</td>
+//         <td>${item.num}</td>
+//         <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>`;
+//         list.appendChild(row);
+//     };
 
-    // Get form values
-    const pName = document.querySelector('#productName').value;
-    const pDesc = document.querySelector('#procuctDescripton').value;
-    const num = document.querySelector('#productNumber').value;
+//     static deleteItem(el) {
+//         if (el.classList.contains('delete')) {
+//             el.parentElement.parentElement.remove();
+//         }
+//     };
 
-    // Validate
-    if (pName === '' || pDesc === '' || num === '') {
-        Product.showAlert('Please fill in all fields', 'danger');
-    } else {
-        // Instatiate
-        const product = new List(pName, pDesc, num);
+//     static showAlert(message, className) {
+//         const div = document.createElement('div');
+//         div.className = `alert alert-${className}`;
+//         div.appendChild(document.createTextNode(message));
+//         const container = document.querySelector('.container');
+//         const form = document.querySelector('#list-form');
+//         container.insertBefore(div, form);
 
-        // Add to UI
-        Product.addProductToList(product);
+//         setTimeout(() => document.querySelector('.alert').remove(), 2000);
+//     };
 
-        // Add to store
-        Store.addProduct(product);
+//     static clearFields() {
+//         document.querySelector('#productName').value = '';
+//         document.querySelector('#procuctDescripton').value = '';
+//         document.querySelector('#productNumber').value = '';
+//     };
+// };
 
-        // Show success message
-        Product.showAlert('Product Added', 'success');
+// // class Store {
+// //     static getProducts() {
+// //         let products;
+// //         if (localStorage.getItem('products') === null) {
+// //             products = [];
+// //         } else {
+// //             products = JSON.parse(localStorage.getItem('products'));
+// //         }
 
-        // Clear fields
-        Product.clearFields();
-    }
-});
+// //         return products;
+// //     }
 
-// Event: Remove 
-document.querySelector('#product-list').addEventListener('click', (e) => {
-    // Remove from UI
-    Product.deleteProductBook(e.target);
+// //     static addProduct(product) {
+// //         const products = Store.getProducts();
+// //         products.push(product);
+// //         localStorage.setItem('products', JSON.stringify(products));
+// //     }
 
-    // Remove from store
-    Store.removeProduct(e.target.parentElement.previousElementSibling.textContent);
+// //     static removeProduct(num) {
+// //         const products = Store.getProducts();
 
-    // Show success message
-    Product.showAlert('Product Removed', 'success');
-});
+// //         products.forEach((item, index) => {
+// //             if (item.num === num) {
+// //                 products.splice(index, 1);
+// //             }
+// //         });
+
+// //         localStorage.setItem('products', JSON.stringify(products));
+// //     }
+// // };
+
+// // Display 
+// document.addEventListener('DOMContentLoaded', Product.displayItems);
+
+// // Add
+
+
+
+
+
+
+// // Event: Remove 
+// document.querySelector('#product-list').addEventListener('click', (e) => {
+//     // Remove from UI
+//     Product.deleteProductBook(e.target);
+
+//     // Remove from store
+//     Store.removeProduct(e.target.parentElement.previousElementSibling.textContent);
+
+//     // Show success message
+//     Product.showAlert('Product Removed', 'success');
+// });
 
 
 

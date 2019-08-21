@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recursions</title>
+</head>
+
+<body>
+    <script>
+        /////////////////////////////////////////////////////
+        //recursions
+        //recursive function is faster than non-recursive function
+
+        //print from 10 to 0
+        function countdown(n) {
+            while (n >= 0) {
+                console.log(n);
+                n--;
+            }
+        }
+        countdown(10);
+
+        /////////////////////////////////////////////////////
+
+        //prints from 10 to 0
+        function countdownRec(n) {
+            if (n >= 0) {
+                console.log(n);
+                return countdownRec(n - 1)
+            }
+        }
+        countdownRec(10);
+
+        /////////////////////////////////////////////////////
+        //non-recursive function using for-loop
+        let sum = 0;
+        function sumTo(n) {
+            for (let i = 0; i <= n; i++) {
+                sum = sum + i;
+            }
+            console.log(sum);
+        }
+        sumTo(100);
+
+        //recursive function using if (this is quicker than above)
+        let sum1 = 0;
+        function sumToo(n) {
+            if (n >= 1) {
+                sum1 += n;
+                return sumToo(n - 1);
+            }
+            console.log(sum1)
+        }
+        sumToo(100);
+
+        /////////////////////////////////////////////////////
+        //factorial
+
+        let sum3 = 1;
+        function factorial(n) {
+            if (n >= 1) {
+                sum3 *= n;
+                return factorial(n - 1);
+            }
+            console.log(sum3)
+        }
+        factorial(5);
+
+        /////////////////////////////////////////////////////
+        //Fibonacci numbers +++DOESNT WORK FOR ME+++
+
+        // function fib(n) {
+        //     let sum4 = 1;
+        //     let sum5 = 0
+        //     if (n >= 0) {
+        //         sum4 += n;
+        //         return fib(n)
+        //     }
+        // }
+
+        // let sum4 = 1;
+        // function fib(n) {
+        //     if (n <= 1) return 1;
+
+        //     return fib(n - 1) + fib(n - 2);
+        //     console.log(sum4);
+        // }
+        // fib(3); // 2
+        // fib(7); // 13
+        // fib(77); // 5527939700884757
+
+
+        /////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////
+
+
+    </script>
+</body>
+
+</html>
