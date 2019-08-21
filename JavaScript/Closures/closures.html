@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Closure function</title>
+</head>
+
+<body>
+    <script>
+        //Closure function - child function has access to parent function
+        ///////////////////////////////////////////////////////
+
+        //returning number as output
+        function incr(n) {
+            return n += 1;
+        };
+        var res = incr(3); //returns 4 (n is 3, + 1)
+        console.log(res);
+
+        ///////////////////////////////////////////////////////
+        //if n is defined locally (inside function) it will always be 10 
+        //if n is defined globally (outside function) it wont work
+
+        let n = 20; //global variable wont work and confuses code, too many n's!
+
+        function makeCounter1(n) {
+            var n = 10; //this value has overridden the value declared below in var res var
+            function incr() {
+                return n += 1;
+            };
+            return incr();
+        };
+        var res = makeCounter1(4); //returns 5 (n is 4, + 1)
+        console.log(res);
+
+        ///////////////////////////////////////////////////////
+
+        function makeCounter2(n) {
+            function incr(m) {
+                return n += m;
+            };
+            return incr; // () removed so they can be declared below in makeCounter
+        };
+        var res = makeCounter2(4)(3); //returns 7 (n is 4(n) + 3(m)).
+        console.log(res);
+
+
+        //same as above
+        function makeCounter3(n) {
+            function incr(m) {
+                return n += m;
+            };
+            return incr(3); // () removed so they can be declared below in makeCounter
+        };
+        var res = makeCounter3(4); //returns 7 (n is 4(n) + 3(m)).
+        console.log(res);
+
+
+        ///////////////////////////////////////////////////////
+        //Closure function - child function has access to parent function
+        //without closure the counter will not increase, it will stay the same
+
+        function makeCounter4() { //parent function
+            var currentValue = 0; //variable defined in parent function
+            return function () { //child function
+                return currentValue++; //currentValue defined in parent function with counter(++)
+            };
+        };
+        var counter = makeCounter4();
+        console.log(counter()); //0
+        console.log(counter()); //1
+        console.log(counter()); //2
+        console.log(counter()); //3
+        console.log(counter()); //4
+
+        var counter2 = makeCounter4();
+        console.log(counter2()); //starts at 0
+        console.log(counter()) //will be 5 as counting from above
+
+        /////////////////////////////////////////////////////
+        //same as above but you can modify the counter start value
+
+        function makeCounter5() {
+            function incr() {
+                return incr.currentValue++;
+            }
+            incr.currentValue = 1;
+            return incr;
+        };
+        var counter3 = makeCounter5();
+        counter3.currentValue = 9; //modify counter start value to 9
+        console.log(counter3()); //9
+        console.log(counter3()); //10
+        console.log(counter3()); //11
+
+
+        ///////////////////////////////////////////////////////
+        //Exersise1 - make n = 2n
+
+        function mult() {
+            var n = 2;
+            return function () {
+                return n *= 2;
+            };
+        };
+        var counter = mult();
+        console.log(counter()); //4
+        console.log(counter()); //8
+        console.log(counter()); //16
+        console.log(counter()); //32
+
+        ///////////////////////////////////////////////////////
+        //exersise2 - modify counter start value from prev exersise
+
+        function mult1() {
+            function mu() {
+                return mu.c *= 2;
+            }
+            mu.c = 0;
+            return mu;
+        }
+        var counter4 = mult1();
+        counter4.c = 30; //counter value starts from 30
+        console.log(counter4()); //30 x 2 = 60
+        console.log(counter4()); //120
+        console.log(counter4()); //240
+        console.log(counter4()); //480
+
+        /////////////////////////////////////////////////////// 
+        //Exercise 3
+        // Here we make two counters: counter and counter2 using the same makeCounter function.
+        // Are they independent? a = YES
+        // What is the second counter going to show? 0,1 or 2,3 or something else? a = 0,1
+
+        function makeCounter6() {
+            let count = 0;
+
+            return function () {
+                return count++;
+            };
+        }
+
+        let counter5 = makeCounter6();
+        let counter6 = makeCounter6();
+
+        console.log(counter5()); // 0
+        console.log(counter5()); // 1
+
+        console.log(counter6()); // 0
+        console.log(counter6()); // 1
+
+        ///////////////////////////////////////////////////////
+        //Exercise 4
+        // Here a counter object is made with the help of the constructor function.
+        // Will it work ? What will it show ?
+
+        function Counter() {
+            let count = 0;
+
+            this.up = function () {
+                return ++count;
+            };
+            this.down = function () {
+                return --count;
+            };
+        }
+
+        let counter7 = new Counter();
+        console.log(counter7.up()); // 1
+        console.log(counter7.up()); // 2
+        console.log(counter7.down()); // 1
+
+        ///////////////////////////////////////////////////////
+        //Exercise 5
+        // Write function sum that works like this: sum(a)(b) = a + b.
+        // Yes, exactly this way, using double parentheses(not a mistype).
+        // For instance:
+        // sum(1)(2) = 3
+        // sum(5)(-1) = 4
+
+        function sum(a) {
+            function childsum(b) {
+                return a += b;
+            };
+            return childsum;
+        };
+        var ans1 = sum(1)(2); console.log(ans1); // 3
+        var ans2 = sum(5)(-1); console.log(ans2); // 4
+
+        ///////////////////////////////////////////////////////
+
+
+        
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+    </script>
+</body>
+
+</html>
