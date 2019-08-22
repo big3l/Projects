@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .dragdrop {
+            width: 300px;
+            height: 300px;
+            float: left;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid blue;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>drag and drop example</title>
+</head>
+
+<body>
+    <div class="dragdrop" ondrop="drop(event)" ondragover="over(event)">
+        <img ondragstart="start(event)" id="dragImg" src="https://source.unsplash.com/random/300x300" draggable="true"
+            alt="">
+    </div>
+
+    <div class="dragdrop" ></div>
+    <div class="dragdrop"></div>
+    <div class="dragdrop"></div>
+
+
+
+    <script>
+        let imgTag = document.getElementById("dragImg");
+        let dropDiv = document.querySelectorAll(".dragdrop");
+        imgTag.addEventListener("dragstart", start);
+
+        for (div of dropDiv) {
+            div.addEventListener("dragover", over);
+            div.addEventListener("dragenter", enter);
+            div.addEventListener("dragleave", leave);
+            div.addEventListener("drop", drop);
+        }
+
+        function start(e) {
+            e.dataTransfer.setData("myElement", e.target.id); //the img id
+        }
+        function drop(e) {
+            e.preventDefault();
+            let data = e.dataTransfer.getData("myElement"); //the img id
+            let img = document.getElementById(data);
+            e.target.append(img);
+            e.target.style.border = "2px solid blue";
+        }
+        function over(e) {
+            e.preventDefault();
+        }
+
+        function enter(e) {
+            e.preventDefault();
+            e.target.style.border = "2px dashed red";
+        }
+
+        function leave(e){
+            e.preventDefault();
+            e.target.style.border = "2px solid blue";
+        }
+
+    </script>
+</body>
+
+</html>

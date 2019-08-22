@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .dropArea {
+            float: left;
+            width: 200px;
+            margin: 10px;
+            height: 300px;
+            background: lightblue;
+        }
+
+        #main {
+            width: 150px;
+            height: 150px;
+            background-color: darkblue;
+            color: white;
+            margin: 10px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drag and drop</title>
+</head>
+
+<body>
+    <div class="dropArea">1st div DropArea - This is the drop area
+        <div id="main" draggable="true">Main - Drag and drop in JavaScript</div>
+    </div>
+
+    <div class="dropArea">DropArea - This is the drop area</div>
+    <div class="dropArea">DropArea - This is the drop area</div>
+    <div class="dropArea">DropArea - This is the drop area</div>
+    
+    <script>
+
+        let myDiv = document.getElementById("main");
+        let dropArea = document.querySelectorAll(".dropArea");
+
+        myDiv.addEventListener("dragstart", start);
+        myDiv.addEventListener("dragend", end);
+
+        function start() {
+            console.log("Drag Started");
+        };
+        function end() {
+            console.log("Drag Ended");
+        };
+
+        // for (let i = 0; i < dropArea.length; i++) {
+        //     dropArea[i].addEventListener("dragover", over);
+        //     dropArea[i].addEventListener("dragenter", enter);
+        //     dropArea[i].addEventListener("dragleave", leave);
+        //     dropArea[i].addEventListener("drop", drop);
+        // };
+
+        //same as above but - special 'for of loop' for arrays, doesnt need [i]
+        // for (let forof of dropArea) {
+        //     forof.addEventListener("dragover", over);
+        //     forof.addEventListener("dragenter", enter);
+        //     forof.addEventListener("dragleave", leave);
+        //     forof.addEventListener("drop", drop);
+        // };
+
+        //same as above with foreach loop which has a function inside
+        // dropArea.forEach(function (foreach) {
+        //     foreach.addEventListener("dragover", over);
+        //     foreach.addEventListener("dragenter", enter);
+        //     foreach.addEventListener("dragleave", leave);
+        //     foreach.addEventListener("drop", drop);
+        // });
+
+        //same foreach loop as above but with arrow function
+        dropArea.forEach(foreach => {
+            foreach.addEventListener("dragover", over);
+            foreach.addEventListener("dragenter", enter);
+            foreach.addEventListener("dragleave", leave);
+            foreach.addEventListener("drop", drop);
+        });
+
+        function over(e) {
+            e.preventDefault();
+            console.log("Drag Over");
+        };
+        function enter(e) {
+            e.preventDefault();
+            console.log("Drag Enter = mouse entered a Div")
+        };
+        function leave() {
+            console.log("Drag Leave = mouse left a Div")
+        };
+        function drop() {
+            this.append(myDiv);
+        };
+
+
+    </script>
+</body>
+
+</html>

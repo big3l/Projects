@@ -1,0 +1,67 @@
+.content {
+  width: 150px;
+  height: 70vh;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  background-color: rgb(62, 62, 68);
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+  float: left;
+  transition: background-color 0.5s;
+}
+
+.stapel {
+  width: 400px;
+  height: 260px;
+  background-color: beige;
+  float: left;
+  overflow: scroll;
+}
+
+.stapel div {
+  width: 50px;
+  float: left;
+  margin: 5px;
+}
+
+.content div {
+  margin-bottom: 60px;
+}
+
+div {
+  border: 1px solid rgb(218, 200, 40);
+  height: 50px;
+  width: 95%;
+  background-color: yellow;
+  margin: 10px auto;
+  opacity: 0.92;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.719);
+}
+
+.green {
+  border: 1px solid rgb(120, 218, 40);
+  background-color: rgb(142, 196, 42);
+}
+
+.pink {
+  border: 1px solid rgb(151, 77, 180);
+  background-color: rgb(204, 145, 228);
+}
+
+.blue {
+  border: 1px solid rgb(92, 140, 146);
+  background-color: rgb(176, 228, 235);
+}
+
+.red {
+  border: 1px solid rgb(226, 22, 73);
+  background-color: rgb(231, 56, 100);
+}
+
+.darkblue {
+  border: 1px solid rgb(30, 61, 121);
+  background-color: rgb(47, 110, 146);
+}
