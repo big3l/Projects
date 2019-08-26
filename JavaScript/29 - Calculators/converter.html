@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Converter</title>
+</head>
+
+<body class="bg-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body text-center mt-5">
+                    <h1 class="heading display-5">Converter</h1>
+                    <form action="" id="converter">
+                        <div class="form-group">
+                            <label for="unit">Unit Select</label>
+                            <select class="form-control" id="unit">
+                                <option value="cm-inch">Convert Centimeters to Inches</option>
+                                <option value="km-mile">Convert Kilometers to Miles</option>
+                                <option value="far-cel">Convert Fahrenheit to Celcius</option>
+                            </select>
+                            <div class="form-group mt-3">
+                                <label for="firstInput">Kilometers</label>
+                                <input type="number" id="firstInput">
+                            </div>
+                            <div class="form-group">
+                                <label for="secondInput">Miles</label>
+                                <input type="number" name="" id="secondInput">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+
+
+    <select name="" id="selector">
+        <option id="inchtocms">Inches to Centimeters</option>
+        <option id="milestok">Miles to Kilometers</option>
+        <option id="feettom">Feet to meters</option>
+    </select>
+    </div>
+    <br>
+    <div>
+        <input type="number" id="input">
+        <span> = </span>
+        <input type="number" id="result">
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="converter.js"></script>
+</body>
+
+</html>
