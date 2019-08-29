@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Carousel</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        width: 50vw;
+        background: rgba(0, 0, 0, 0.7);
+        margin: 5vw auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    img {
+        width: 100%;
+        height: 30vw;
+        transition: transform 0.5s ease-in-out
+    }
+
+    .right {
+        right: 0;
+    }
+
+    span {
+        width: 10%;
+        height: 100%;
+        background: rgba(139, 130, 130, 0.5);
+        position: absolute;
+        top: 0;
+        z-index: 5;
+        font-size: 5vw;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    span:hover {
+        background: rgba(139, 130, 130, 0.9);
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <span class="left">&lArr;</span>
+        <span class="right">&rArr;</span>
+        <img src="img/img1.jpg" alt="">
+        <img src="img/img2.jpg" alt="">
+        <img src="img/img3.jpg" alt="">
+        <img src="img/img4.jpg" alt="">
+        <img src="img/img5.jpg" alt="">
+        <img src="img/img6.jpg" alt="">
+    </div>
+
+
+
+    <script src="carousel.js"></script>
+</body>
+
+</html>
