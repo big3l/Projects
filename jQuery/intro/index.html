@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- This is the link to the jQuery library which I downloaded -->
+    <script src="/jQuery/jquery-3.4.1.min.js"></script>
+
+    <!-- This is the source to the jQuery library on line from jQuery CDN -->
+    <!--<script 
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"> 
+        </script>  -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Intro</title>
+</head>
+
+<body>
+    <h1 id="heading">jQuery - write less do more!</h1>
+
+    <ul>
+        <li>First li</li>
+        <li>Second li</li>
+        <li>Third li</li>
+    </ul>
+    <h1 class="heading">Learning jQuery is fun</h1>
+
+
+    <div>Div 1</div>
+    <div class="highlight">Div 2</div>
+    <div id="third">Div 3</div>
+    <div class="highlight">Div 4</div>
+
+    <img src="https://picsum.photos/id/1074/400/300" alt="">
+    <img src="https://picsum.photos/id/1074/400/300" alt="">
+    <img src="https://picsum.photos/id/1074/400/300" alt="">
+    <img src="https://picsum.photos/id/1074/400/300" alt="">
+
+    <script>
+        ////////////////////////////////////////////////////////////////////////////////////
+
+        // jquery code: $("h1"); 
+        // is the same as
+        // vanilla js: document.querySelector("h1");
+
+        //$("#heading") - selects the id # 
+        //$(".heading") selects the class
+        //$("h1")[1] - selects the 2nd h1 in array
+
+        //change color of heading
+        $("#heading").css("color", "blue");
+
+        //change color of li's using vanilla JS
+        let li = document.querySelectorAll("li");
+        for (let i = 0; i < li.length; i++) {
+            li[i].style.color = "green";
+        };
+
+        //change css of li's using jQuery
+        $("li").css({
+            "color": "red",
+            "border": "solid green 3px",
+            "background": "lightblue",
+            "fontSize": "2em",
+            "margin": "50px"
+        });
+        console.log($("li").css("backgroundColor")); //jQuery
+        console.log(document.querySelector("li").style.backgroundColor); //vanilla JS
+
+
+        $(".heading").css("color", "orange");
+
+        //change all div background to purple
+        $("div").css("background", "purple");
+
+        //select all divs with class highlight and change width to 200px
+        $("div.highlight").css("width", "200px");
+
+        //select div with id third and change border to orange
+        $("#third").css("border", "4px solid orange");
+
+        //Select first div and change color to blue
+        $("div:first-of-type").css("color", "blue");
+        // $("div:first").css("color","blue");
+        // $("div:eq(0)").css("color", "blue");
+
+        //select the 1st div with class hightlight and change font color to orange
+        $("div.highlight:first").css("color", "orange");
+
+        //change the text of h1 to jQuery is Awesome using JS
+        document.querySelectorAll("h1")[1].textContent = "jQuery is awesome";
+
+        //change the text of h1 to jQuery is Awesome using jQuery
+        $("h1:eq(1)").text("jQuery is Easy"); //.text = text content in js
+
+        //insert button into innerHTML
+        $("h1:eq(0)").html("<button> Click Me </button> Learning jQuery is fun"); //.html = innerHTML in js
+        $("button").text("clicker");
+
+        //insert input into innerHTML
+        $("h1:eq(1)").html("<input type = text> jQuery is Easy");
+
+        //add a value to the input. val = value
+        $("input").val("This is the value")
+
+        //changing input type from text to color
+        console.log($("input").attr("type"));
+        $("input").attr("type", "color");
+        console.log($("input").attr("type"));
+
+        //changing images using attribute
+        $("img").attr("src", "https://picsum.photos/id/174/400/300");
+        $("img").css("width", "200px");
+        $("img:eq(1)").attr("src", "https://picsum.photos/id/104/400/300");
+        $("img:eq(0)").attr("title", "Jungle Ballon");
+
+
+    </script>
+
+
+</body>
+
+</html>

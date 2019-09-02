@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .correct {
+            color: green;
+            background: palegreen;
+            border: 4px solid limegreen;
+        }
+
+        .wrong {
+            color: red;
+            background: orange;
+            border: 4px solid palevioletred;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: khaki;
+            float: left;
+            margin: 20px;
+        }
+    </style>
+    <script src="/jQuery/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Listener</title>
+</head>
+
+<body>
+    <h1>jQuery Events</h1>
+    <button>Don't Click Me</button>
+    <button>Seriously, DONT CLICK ME!</button>
+    <button>This is your last warning</button>
+<br>
+    <div>Please fade me</div>
+    <div>second effect</div>
+    <div>third effect</div>
+
+    <script>
+        /////////////////////////////////////////////////////////////////////////////////////
+
+        //addEventListener in vanilla javascript
+        let btn = document.querySelectorAll("button");
+
+        // for (let i = 0; i < btn.length; i++) {
+        //     btn[i].addEventListener("click", function () {
+        //         alert("You clicked it!");
+        //     })
+        // };
+
+        //same as above but in jQuery
+        $("button").click(function () {
+            alert("You clicked it!")
+        });
+
+        //getting the button value (text inside the button)
+        // for (let i = 0; i < btn.length; i++) {
+        //     btn[i].addEventListener("click", function () {
+        //         let btnText = this.textContent;
+        //         alert(btnText);
+        //     })
+        // };
+
+        //same as above in jQuery
+        $("button").click(function () {
+            alert($(this).text())
+        })
+
+        //change background to pink when clicked
+        $("button").click(function () {
+            $(this).css("background", "pink"); //jQuery
+            //  this.style.background = "pink"; as above in vanilla JS, still works.
+            $("h1").addClass("correct");
+            console.log($("h1").attr("class"));
+            $("h1").text($("h1").attr("class"));
+
+            $("div:eq(0)").slideToggle(1000, function(){
+                $(this).remove();
+            })
+            $("div:eq(1)").fadeToggle(1000, function(){
+                $(this).remove();
+            })
+            $("div:eq(2)").slideToggle(1000, function(){
+                $(this).remove();
+            })
+        })
+
+
+        $("h1").click(function () {
+            $("h1").toggleClass("wrong")
+        });
+
+    </script>
+</body>
+
+</html>
