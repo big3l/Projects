@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        p {
+            padding: 15px;
+            background: red;
+            display: none;
+        }
+
+        div {
+            margin: 20px;
+
+        }
+    </style>
+    <script src="/jQuery/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Key up Event jQuery</title>
+</head>
+
+<body>
+
+    <input type="text" id="up">
+    <div>KeyUp counter : <span>0</span></div>
+    <p>KeyUp event is triggered</p>
+
+    <script>
+        /////////////////////////////////////////////////////////////////////////////////////
+        let i = 0;
+        $("#up").keyup(function () {
+            $("span").text(i += 1)
+            $("p").show().fadeOut();
+        })
+
+    </script>
+</body>
+
+</html>

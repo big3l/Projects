@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+    p{
+        background: palegoldenrod;
+        padding: 20px;
+        border: 3px solid goldenrod;
+        font: 20px arial;
+    }
+    </style>
+    <script src="/jQuery/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Double Click Event jQuery</title>
+</head>
+
+<body>
+    
+    <p>Double Click here to disappear</p>
+    <p>Double Click here to disappear</p>
+    <p>Double Click here to disappear</p>
+    <p>Double Click here to disappear</p>
+
+
+
+    <script>
+    ////////////////////////////////////////////////////////////////////////////////////////////    
+    
+    //used document.ready function if script is outside of body in HTML.
+    // $(document).ready(function(){
+    // });
+
+
+    $("p").dblclick(function(){
+        $(this).slideUp();
+
+    });
+
+    </script>
+
+</body>
+
+</html>

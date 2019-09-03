@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <script src="/jQuery/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Submit event in jQuery</title>
+</head>
+
+<body>
+
+    <form action="../Events/keyup.html" id="users">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname">
+        <input type="submit" value="Submit">
+        <div id="result"></div>
+    </form>
+    <script>
+        //////////////////////////////////////////////////////////////////////////////////////////
+
+        $("#users").submit(function (e) {
+            e.preventDefault();
+            let regEx = /^[a-zA-Z]+$/;
+            let inputVal = $("#fname").val();
+            
+            if (regEx.test(inputVal) == false) {
+                $("#result").html("<h1 class = 'error'> Not a valid name </h1>").show().fadeOut(2000);
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

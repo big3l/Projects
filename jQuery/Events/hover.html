@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        p {
+            background: palegoldenrod;
+            padding: 20px;
+            border: 3px solid goldenrod;
+            font: 20px arial;
+        }
+
+        .highlight {
+            background: palevioletred;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .bold {
+            font-weight: bold;
+            font-size: 25px;
+        }
+    </style>
+    <script src="/jQuery/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hover Event jQuery</title>
+</head>
+
+<body>
+
+    <p>Hover here to change background</p>
+    <p>Hover here to change background</p>
+    <p>Hover here to change background</p>
+    <p>Hover here to change background</p>
+
+    <script>
+        ////////////////////////////////////////////////////////////////////////////////////////////    
+
+        //used document.ready function if script is outside of body in HTML.
+        // $(document).ready(function(){
+        // });
+
+
+        $("p").hover(function () {
+            $(this).addClass("highlight");
+        }, function () {
+            $(this).removeClass("highlight");
+        });
+
+        $("p").mouseenter(function () {
+            $(this).addClass("bold");
+        })
+        $("p").mouseleave(function () {
+            $(this).removeClass("bold");
+
+        })
+
+    </script>
+
+</body>
+
+</html>

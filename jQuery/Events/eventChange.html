@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        p {
+            padding: 15px;
+            background: orange;
+            display: none;
+        }
+    </style>
+    <script src="/jQuery/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Change in jQuery</title>
+</head>
+
+<body>
+    <form>
+        <label for="">City</label>
+        <select name="" id="">
+            <option value="Hamburg">Hamburg</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Dusseldorf">Dusseldorf</option>
+        </select>
+    </form>
+    <p>
+
+    </p>
+
+
+
+    <script>
+        ///////////////////////////////////////////////////////////////////////////////
+
+        //Using jQuery
+        $("select").change(function(){
+            $("p").text("You have selected: " + $(this).val());
+            $("p").show().fadeOut(2200);
+        });
+
+        //above using javaScript
+        // let select = document.querySelector("select");
+        // select.addEventListener("change",function msg() {
+        //     alert("You have selected: " + this.value)
+        // });
+        
+        //another way using javaScript
+        // let select = document.querySelector("select");
+        // selectElement.onchange = function () {
+        //     alert("You have selected: " + this.value);
+        // }
+
+    </script>
+
+</body>
+
+</html>

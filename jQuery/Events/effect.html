@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        p {
+            padding: 20px;
+            background: yellow;
+        }
+    </style>
+    <script src="/jQuery/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery effects</title>
+</head>
+
+<body>
+
+    <button class="out">fadeOut</button>
+    <button class="in">fadeIn</button>
+    <p class="very-fast">This will fade out very fast</p>
+    <p class="fast">This is will fade out fast</p>
+    <p class="normal">This will fade out normally</p>
+    <P class="slow">this will fade out slowly</P>
+    <p class="very-slow">This will fade out very slowly</p>
+
+    <script>
+        ////////////////////////////////////////////////////////////////////////
+
+        $(document).ready(function () {
+
+            $(".out").on("click", function () {
+                $("p.very-fast").fadeOut(500);
+                $("p.fast").fadeOut("fast");
+                $("p.normal").fadeOut();
+                $("p.slow").fadeOut("slow");
+                $("p.very-slow").fadeOut(3000);
+            })
+
+            $(".in").on("click", function () {
+                $("p.very-fast").fadeIn(500);
+                $("p.fast").fadeIn("fast");
+                $("p.normal").fadeIn();
+                $("p.slow").fadeIn("slow");
+                $("p.very-slow").fadeIn(3000);
+            })
+        });
+
+    </script>
+</body>
+
+</html>

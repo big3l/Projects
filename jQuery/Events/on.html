@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .light {
+            font-weight: bold;
+            color: red;
+            background: lightgreen;
+            font-size: 25px;
+        }
+    </style>
+    <script src="/jQuery/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>.on Event in jQuery</title>
+</head>
+
+<body>
+
+    <p>jQuery Event .on let you write less code</p>
+    <div>This is a random sentence from my brain
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <button id="add">Insert new section</button>
+    </div>
+    <button id="off">Remove the Div event</button>
+
+
+    <script>
+        //////////////////////////////////////////////////////////////////////////////////
+
+        $("p").on("mouseout mouseover", function () {
+            $(this).toggleClass("light");
+        });
+
+        $("p").on({
+            mouseover: function () {
+                $("body").css("background", "blue");
+            },
+            mouseout: function () {
+                $("body").css("background", "green");
+            },
+            click: function () {
+                $("body").css("background", "yellow");
+
+            }
+        });
+
+        $("div").on("click", "section", function () {
+            $(this).css(
+                {
+                    "color": "red",
+                    "background": "pink"
+                });
+            $(this).hide(1000), fadeOut(1000);
+        })
+
+        $("#add").on("click", function () {
+            $("<section> This is some writing in the new section </section>").insertAfter("#add");
+        })
+
+        $("#off").on("click", function () {
+            $("div").off("click");
+        })
+    </script>
+
+</body>
+
+</html>
