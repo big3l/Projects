@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handle bar moustache</title>
+    <script src="handlebars-v4.2.0.js"></script>
+    <script src="/jQuery/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+
+    <script id="hb-intro" type="text/x-handlebars-template">
+
+    <div class="jumbotron text-center bg-warning text-danger">
+        My name is {{name}}. My Occupation is {{occupation}}. I am {{age}} year old.
+    </div>
+    
+    </script>
+
+    <script>
+
+        //Retrieve the template data from the HTML using jQuery script
+        var template = $("#hb-intro").html();
+        console.log(template);
+
+        //Compile the template from the Handlebars script
+        var templateScript = Handlebars.compile(template);
+
+        //Define "name" and "occupation"
+        var context = {
+            "name": "Increadible Hulk",
+            "occupation": "SMASH",
+            "age": 35
+        };
+
+        // My name is Increadible Hulk. My Occupation is SMASH. - from Handlebars script
+        var html = templateScript(context);
+        console.log(html)
+
+        //insert the html code into the page
+        $(document.body).append(html);
+
+        $("div").on("click", function () {
+            $(this).hide(1000).show(1000)
+        })
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Sergey</title>
+    <script src="/jQuery/Handlebars/handlebars-v4.2.0.js"></script>
+    <script src="/jQuery/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+    <script id="hb-objects" type="text/x-handlebars-template">
+        <div class="container">
+            <h1>{{title}}</h1>
+            {{#each posts}}
+            <h2>{{this.author.name}}</h2>
+            <img src="https://i.pravatar.cc/150?img={{imageId}}" class="img-thumbnail">
+            <div class="lead">
+                {{this.text}}
+            </div>
+            {{/each}}
+            </div>
+    </script>
+
+    <script>
+
+
+        var context = {
+            "title": "Vanilla Blog",
+            "posts": [
+                {
+                    "author": { "name": "Boris" },
+                    "text": "It's first post of Boris",
+                    "imageId": "2"
+                },
+
+                {
+                    "author": { "name": "Sergey" },
+                    "text": "It's first post of Sergey",
+                    "imageId": "3"
+                }
+            ]
+
+        };
+
+        // jQuery: Retrieve the template data from the HTML
+        var template = $('#hb-objects').html();
+
+        // HandleBars: Compile the template
+        var templateScript = Handlebars.compile(template);
+
+        // HandleBars: html
+        var html = templateScript(context);
+
+        // jQuery: insert the HTML code into the page
+        $(document.body).append(html);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cards</title>
+    <script src="/jQuery/Handlebars/handlebars-v4.2.0.js"></script>
+    <script src="/jQuery/jquery-3.4.1.min.js"> </script>
+
+</head>
+
+<body>
+
+    <script id="hb-cards" type="text/x-handlebars-template">
+        <div class="container">
+        <h4>{{title}}</h4>
+
+        <div class="card-group">
+        {{#each info}}
+        <div class="card bg-success text-danger m-1 card-body text-center " style="width:300px">
+            
+            <p class="card-text">Hero: {{person}}</p>
+            <img class="card-img-top" src="img/{{imageId}}" alt="Card image" style="width:100%">       
+            <p class="card-text">Alias: {{alias}}</p>
+            <p class="card-text">Age: {{age}}</p>
+        </div>
+        {{/each}}
+        </div>
+        </div>
+    
+        
+        
+
+</script>
+
+    <script>
+
+        var cards = {
+            "title": "Superhero Cards",
+
+            "info": [
+                {
+                    "person": "Incredible Hulk",
+                    "imageId": "the-hulk.jpg",
+                    "alias": "Bruce Banner",
+                    "age": 34
+                },
+
+                {
+                    "person": "Ironman",
+                    "imageId": "ironman.jpg",
+                    "alias": "Tony Stark",
+                    "age": 36
+                },
+
+                {
+                    "person": "Spiderman",
+                    "imageId": "spiderman.jpeg",
+                    "alias": "Peter Parker",
+                    "age": 16
+                }
+
+            ]
+        };
+
+        var template = $('#hb-cards').html();
+        var templateScript = Handlebars.compile(template);
+        var html = templateScript(cards);
+        $(document.body).append(html);
+
+    </script>
+
+</body>
+
+</html>

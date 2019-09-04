@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Each</title>
+    <script src="handlebars-v4.2.0.js"></script>
+    <script src="/jQuery/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+    <script id="hb-each" type="text/x-handlebars-template">
+        <h1>My {{name}} List</h1>
+        <ul class="list-group-item">
+            {{#each myList}} 
+            <li class="list-group-item list-group-item-success">{{this}}</li>
+                {{/each}}
+        </ul>
+
+        <p>Made by {{author}}</p>        
+        
+        <h1>My Friends  </h1>
+        <ul class="list-group-item">
+            {{#each myFriends}}
+            <li class="list-group-item list-group-item-danger"> {{this}} </li>
+        {{/each}}
+        </ul>
+
+        <h1>My {{pics}} Pictures</h1>
+        <p> {{#each img}} <img src= "{{this}}" alt=""></p>{{/each}}
+
+    </script>
+
+    <script>
+
+
+        // Retrieve the template data from the HTML using jQuery script
+        var template = $("#hb-each").html();
+        console.log(template);
+
+        // Compile the template from the Handlebars script
+        var templateScript = Handlebars.compile(template);
+
+        // Define "#each" myList, this, each
+        var list = {
+            "myList": ["Iron Man", "Increadible Hulk", "Captain America"],
+            "name": "Superhero",
+            "author": "Thanos",
+            "myFriends": ["Steve", "Paul", "David"],
+            "pics": "PicSum",
+            "img": ["https://picsum.photos/id/1074/200/200", "https://picsum.photos/id/1014/200/200", "https://picsum.photos/id/1044/200/200"]
+        };
+
+        // list.myFriends.forEach(function (element) {
+        //     console.log(element);
+        // });
+
+        var html = templateScript(list);
+
+        // insert the html code into the page
+        $(document.body).append(html);
+
+
+    </script>
+
+
+</body>
+
+</html>

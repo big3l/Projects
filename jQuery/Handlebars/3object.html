@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object</title>
+    <script src="/jQuery/Handlebars/handlebars-v4.2.0.js"></script>
+    <script src="/jQuery/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+    <script id="hb-objects" type="text/x-handlebars-template">
+        <div class="entry">
+            <h1>{{title}}</h1>
+            <h2>{{author.Hobbys.first}}</h2>
+            <div class="body">
+                {{text}}
+            </div>
+            <div>
+                {{#each list}}
+                <p>{{this.post}}</p>
+                {{/each}}
+            </div>
+        </div>
+
+    </script>
+
+    <script>
+
+
+        // Retrieve the template data from the HTML using jQuery script
+        var template = $("#hb-objects").html();
+
+        // Compile the template from the Handlebars script
+        var templateScript = Handlebars.compile(template);
+
+        // Define "#each" myList, this, each
+        var list = {
+            "title": "This is the title",
+            "author": {
+                "name": "Dave", "Hobbys": { "first": ["Swiming", "Running"], "second": "Football" }
+            },
+            "text": "Here is some text",
+            "title": "This is the title",
+            "author": {
+                "name": "Dave",
+                "Hobbys": {
+                    "first": ["Swiming", "Running"],
+                    "second": "Football"
+                }
+            },
+            {
+            "title": "This is the title",
+                "author": {
+                "name": "Dave",
+                    "Hobbys": {
+                    "first": ["Swiming", "Running"],
+                        "second": "Football"
+                }
+            }
+        }};
+
+
+
+        var html = templateScript(list);
+        // insert the html code into the page
+        $(document.body).append(html);
+
+
+    </script>
+
+
+
+</body>
+
+</html>
+
+<!-- <script> -->
+
+
+// // Retrieve the template data from the HTML using jQuery script
+// var template = $("#hb-objects").html();
+
+// // Compile the template from the Handlebars script
+// var templateScript = Handlebars.compile(template);
+
+// // Define "#each" myList, this, each
+// var list = {
+// "title": "This is the title",
+// "author": { "name": "Dave", "Hobbys": { "first": ["Swiming", "Running"], "second": "Football" } },
+// "text": "Here is some text",
+// };
+
+// var html = templateScript(list);
+// // insert the html code into the page
+// $(document.body).append(html);
+
+
+<!-- // </script> 
