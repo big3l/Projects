@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to the Weekend Countdown!</title>
+    <script src="/jQuery/jquery-3.4.1.min.js"> </script>
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="title"> Welcome to the Weekend Countdown! </h1>
+            <p id="start">Please enter your name <i class="far fa-smile-beam"></i></p>
+            <p id="result"></p>
+            <form id="weekend" action="">
+                <div class="d-flex flex-nowrap" id="change">
+                    <input type="text" class="form-control form-control-lg w-50 btn-outline-dark bg-light text-dark"
+                        id="name">
+                    <input type="submit" class="btn btn-outline-dark p-3 ml-3 w-25 bg-light text-dark" value="GO">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#weekend").submit(function (e) {
+                let inputVal = $("#name").val();
+                e.preventDefault();
+                var d = new Date();
+                var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                let rest = 6 - d.getDay();
+                $("#result").html("<p> Hello " + inputVal + ". Today is " + days[d.getDay()] + " . Only " + rest + " days left until the weekend!</p>").hide().fadeIn(1000);
+                $("#start").hide()
+            });
+        });
+    </script>
+
+</body>
+
+</html>
