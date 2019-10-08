@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+  margin-top: 25px;
+  color: darkblue;
+}
+
+.person{
+  margin: 10px;
+  color: darkblue;
+  border: 3px solid darkblue;
+  box-shadow: 8px 8px 8px blue;
+  width: 40%;
+  display: inline-block;
+  background-color: cadetblue;
+  border-radius: 70px;
+}
+
+.vip{
+  background: red;
+  border-radius: 70px;
+}
+
+.dark{
+  background: darkcyan;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 30px;
+  width: 40%;
+  padding: 10px;
+}

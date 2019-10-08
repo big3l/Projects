@@ -1,0 +1,12 @@
+footer{
+    background-color:#000000;
+    color: white;    
+    text-align: center;
+    padding: 15px;    
+}
+h1{
+    font-family: h1;
+    font-size: 3em;
+    letter-spacing: 20px;
+    text-decoration: underline;
+}

@@ -1,0 +1,44 @@
+.fa-html5{
+    color: orange;
+}
+.fa-css3-alt{
+    color: rgb(73, 183, 219);
+}
+.fa-js-square{
+    color: orange;
+}
+.fa-node-js{
+    color: green;
+}
+  main,h1,h2,h3,section,summary,details{
+    width: 100%;
+    padding: 4px;
+    text-align: center;
+}  
+
+.top{
+    font-family: html;
+    font-size: 1.5em;
+    color: #000000;
+    font-weight: bold;    
+}
+
+.node{
+    font-family: node;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+.html{
+    font-family: html;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+main,summary,details{
+    width: 100%;
+    padding: 4px;
+    text-align: center;
+}  
