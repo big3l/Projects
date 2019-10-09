@@ -3,7 +3,7 @@ import './section.css';
 
 function Section() {
     return (
-        <div>
+        <React.Fragment>
             <section id="css">
                 <h3> <i class="fab fa-css3-alt fa-5x"></i></h3>
                 <article class="css">
@@ -23,7 +23,7 @@ function Section() {
                     As a multi-paradigm language, JavaScript supports event-driven, functional, and imperative (including object-oriented and prototype-based) programming styles. It has APIs for working with text, arrays, dates, regular expressions, and the DOM, but the language itself does not include any I/O, such as networking, storage, or graphics facilities. It relies upon the host environment in which it is embedded to provide these features.
               </article>
             </section>
-        </div>
+            </React.Fragment>
     );
 }
 

@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+body{
+  background: lightseagreen;
+}
+th,td{
+  background: lightblue;
+  border: 3px solid blue;
+  width: 20%;
+  padding: 20px;
+  font-size: 1.5em;
+}
