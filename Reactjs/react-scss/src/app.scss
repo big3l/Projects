@@ -1,0 +1,21 @@
+$my-background: url("./car1.jpeg");
+$my-color: blue;
+
+body {
+  background-repeat: no-repeat;
+  color: $my-color;
+  background: $my-background;
+  background-size: cover;
+}
+
+div {
+  text-align: center;
+    h1 {
+        font-family: "Times New Roman", Times, serif;   
+        color: blue;
+    }
+  img {
+    width: 400px;
+    height: 500px;
+  }
+}
