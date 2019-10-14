@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+body{
+  background: url(https://picsum.photos/200/300/?blur);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

@@ -3,3 +3,10 @@ https://github.com/facebook/create-react-app
 npx create-react-app my-app
 cd my-app
 npm start
+
+
+installing bootstrap
+npm install --save bootstrap
+
+installing bootstrap react
+npm install --save react-bootstrap
