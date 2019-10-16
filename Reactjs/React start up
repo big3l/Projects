@@ -10,3 +10,8 @@ npm install --save bootstrap
 
 installing bootstrap react
 npm install --save react-bootstrap
+
+
+
+state in class, props in function
+
