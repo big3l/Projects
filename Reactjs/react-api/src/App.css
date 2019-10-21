@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  margin: 20px;
+  
+}
+.load-div{
+  background-image: url(Spinner.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30vh;
+}
+

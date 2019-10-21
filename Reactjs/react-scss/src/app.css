@@ -1,0 +1,21 @@
+body {
+  background-repeat: no-repeat;
+  color: blue;
+  background: url("./car1.jpeg");
+  background-size: cover;
+}
+
+div {
+  text-align: center;
+}
+
+div h1 {
+  font-family: "Times New Roman", Times, serif;
+  color: blue;
+}
+
+div img {
+  width: 400px;
+  height: 500px;
+}
+/*# sourceMappingURL=app.css.map */

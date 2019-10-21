@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 export default class Ctime extends Component {
     constructor(props) {
         super(props)
@@ -21,9 +22,9 @@ export default class Ctime extends Component {
 
     render() {
         return (
-            <div>
+            <div className = 'App'>
                 The Time in <span>{this.state.timezone}</span> is: 
-                <span> {this.state.time.toLocaleTimeString('de-DE',
+                <span> {this.state.time.toLocaleTimeString('en-US',
                     { timeZone: this.state.timezone })}</span>
             </div>
         )

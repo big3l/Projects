@@ -24,7 +24,7 @@ export default class Clocks extends Component {
             return <Ctime timezone={item} time={this.state.time} />
         })
         return (
-            <div>
+            <div >
                 {clockList}
             </div>
         )
