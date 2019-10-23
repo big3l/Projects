@@ -1,0 +1,31 @@
+.App {
+  border: 2px solid black;
+  margin: 50px;
+  background: lightblue;
+  color: white;
+}
+
+.header{
+  border-bottom: 2px solid black;
+  padding: 30px;
+  height: 100px;
+  font-size: 3em;
+  
+}
+input{
+  margin: 10px;
+  height: 30px;
+  background: lightgray;
+  border: 2px solid darkblue;
+}
+
+button{
+  height: 35px;
+  border: 2px solid darkblue;
+}
+.table td{
+  font-size: 2em;
+  border: 2px solid blue;
+  color: black;
+  width: 25%;
+}
