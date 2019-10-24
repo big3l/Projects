@@ -4,26 +4,35 @@ import User from './user';
 export default class SearchResult extends Component {
     constructor(props) {
         super(props)
-        
+
         this.state = {
             users: [
                 { id: 1000, name: "Daniel Lewis", email: "dan@dci.com" },
                 { id: 2000, name: "Abi Lewis", email: "abi@dci.com" },
                 { id: 3000, name: "Neil Lewis", email: "neil@dci.com" },
                 { id: 4000, name: "Justin Lewis", email: "justin@dci.com" }
-            ],
-            lastSearchTerm: ''
+            ]
         }
     }
 
-    shouldComponentUpdate(nextProps){
-        if(this.nextProps.searchTerm === this.State.lastSearchTerm){
-        return true;
+    lastSearchTerm = '';
+    shouldComponentUpdate(nextProps) {
+        console.log('nextProps =', nextProps)
+        if (nextProps.searchFor === this.lastSearchTerm) {
+            return false;
         }
+        else {
+            this.lastSearchTerm = nextProps.searchFor;
+            return true;
+        }
+    }
+
+    componentDidMount(){
+        console.log('The SearchResult-component has mounted')
     }
 
     render() {
-
+        console.log('Ím rendering')
         const searchingFor = this.props.searchFor.toLocaleLowerCase();
 
         const filter = this.state.users.filter((user) =>

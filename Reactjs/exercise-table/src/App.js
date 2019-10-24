@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Component/header';
 import SearchResult from './Component/searchResult';
+import About from './Component/about';
 import './App.css';
 
 export default class App extends Component {
@@ -9,7 +10,8 @@ export default class App extends Component {
 
     this.state = {
       searchTerm: '',
-      lastSearchTerm: ''
+      lastSearchTerm: '',
+      currentPage: 'Search'
     }
   }
 
@@ -25,19 +27,31 @@ export default class App extends Component {
     })
   }
 
+  navigate = (page) => {
+    this.setState({
+      currentPage: (page)
+    })
+  }
+
+
   render() {
     // console.log(this.state)
     return (
       <div className="App">
 
-        <Header></Header>
+        <Header navigationHandler={this.navigate} ></Header>
 
-        <input onChange={this.search} type='text' placeholder='Enter Search Term'></input>
+        {this.state.currentPage === 'About' && <About />}
 
-        <button onClick={this.click}>Search</button>
+        {this.state.currentPage === 'Search' &&
+          <React.Fragment>
+            <input onChange={this.search} type='text' placeholder='Enter Search Term' value={this.state.searchTerm}></input>
 
-        <SearchResult searchFor = {this.state.lastSearchTerm}></SearchResult>
+            <button onClick={this.click}>Search</button>
 
+            <SearchResult searchFor={this.state.lastSearchTerm} />
+          </React.Fragment>
+        }
       </div>
     )
   }

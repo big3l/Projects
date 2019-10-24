@@ -1,8 +1,61 @@
-nav {
-  background: lightblue;
-  margin: 10px;
-  padding: 20px;
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
+
+.topnav > li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.topnav > li a:hover {
+  background-color: #111;
+}
+
+ul.topics {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: lightgray;
+  width: 200px;
+  position: absolute;
+  top: 46px;
+  left: 150px;
+}
+
+.topics > li a {
+  display: block;
+  color: black;
+}
+
+.topics > li {
+  float: right;
+  width: 200px;
+}
+
+.topics > li a:hover {
+  background-color: gray;
+}
+
+
+
+
+
+
+/* 
+
 h2 {
   margin-left: 20px;
 }
@@ -23,16 +76,15 @@ li {
   float: left;
 }
 
-li a, .dropbtn {
-  display: inline-block;
+li a {
+  display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-li a:hover,
-.dropdown:hover .dropbtn {
+li a:hover {
   background-color: red;
 }
 
@@ -40,7 +92,7 @@ li.dropdown {
   display: inline-block;
 }
 .dropdown-content {
-  display: none;
+  display: block;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
@@ -62,4 +114,4 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
+} */

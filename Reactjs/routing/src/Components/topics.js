@@ -12,9 +12,8 @@ export default function Topics() {
     let { path, url } = useRouteMatch();
 
     return (
-        <div className="dropdown-content">
-            <h2>Topics</h2>
-            <ul>
+        <div>
+            <ul className='topics'>
                 <li>
                     <Link to={`${url}/Link1`}>Link 1</Link>
                 </li>
@@ -25,6 +24,8 @@ export default function Topics() {
                     <Link to={`${url}/Link3`}>Link 3</Link>
                 </li>
             </ul>
+            <h2>Topics</h2>
+
             <Switch>
                 <Route path={`${path}/:topicId`}>
                     <Topic />
@@ -37,7 +38,7 @@ export default function Topics() {
 export function Topic() {
     let { topicId } = useParams();
     return (
-        <div className='link'>
+        <div >
             <h3>Topic with ID: {topicId}</h3>
         </div>
     );

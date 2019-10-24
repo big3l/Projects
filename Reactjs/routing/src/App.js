@@ -18,7 +18,7 @@ export default class App extends Component {
       <Router>
         <div>
           
-            <ul >
+            <ul className = 'topnav'>
               <li>
                 <Link to='/Home'>Home</Link>
               </li>
@@ -28,8 +28,8 @@ export default class App extends Component {
               <li>
                 <Link to='/Dashboard'>Dashboard</Link>
               </li>
-              <li className="dropdown" >
-                <Link  to='/Topics' className="dropbtn">Topics </Link>
+              <li >
+                <Link  to='/Topics' >Topics </Link>
               </li>
             </ul>
         
