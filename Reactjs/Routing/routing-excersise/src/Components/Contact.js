@@ -5,6 +5,7 @@ export default class Contact extends Component {
     render() {
         return (
             <div className='Contact'>
+                <h1>Contact Me!</h1>
                 <Form>
                     <FormGroup row>
                         <Label for="yourName" sm={2}>Name</Label>
@@ -19,9 +20,9 @@ export default class Contact extends Component {
                         </Col>
                     </FormGroup>
                     <FormGroup row>
-                        <Label for="message" sm={2}>Your Message</Label>
+                        <Label for="message" sm={2} >Your Message</Label>
                         <Col sm={10}>
-                            <Input type="textarea" name="text" id="message" />
+                            <Input type="textarea" name="text" id="message" placeholder="Write your message here" />
                         </Col>
                     </FormGroup>
                     <FormGroup check row>

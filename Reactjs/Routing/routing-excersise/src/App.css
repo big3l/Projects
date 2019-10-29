@@ -2,7 +2,55 @@
   text-align: center;
 }
 
-.Me{
-  display: flex;
+.navbar {
+  height: 120px;
+}
+
+
+
+.Me img {
+  float: left;
+  width: 200px;
+  height: 250px;
+  margin-right: 100px;
+}
+
+.Me {
+  float: left;
+  padding: 20px;
+}
+
+img {
+  margin: 10px;
+  height: 200px;
+  width: 300px;
+}
+
+.Contact {
+  margin: 20px;
+  width: 50%;
   text-align: center;
+}
+
+.Hobbies img {
+  border: 2px solid black;
+}
+
+.Hobbies h1 {
+  margin: 10px;
+  color: blue;
+}
+
+form{
+ align-items: center;
+}
+
+.Error{
+  text-align: center;
+  margin-top: 100px;
+}
+
+.Error h3{
+  font-size: 50px;
+  font-weight: bold;
 }

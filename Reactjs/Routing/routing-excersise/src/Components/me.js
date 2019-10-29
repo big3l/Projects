@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
+import Me1 from '../img/me1.jpg'
 
 export default class Me extends Component {
     render() {
         return (
-            <div className ='Me'>
-                <img alt ='' src = 'https://picsum.photos/id/1005/200/200'></img>
-                <h1>My Name</h1>
-                <h3>Some nice text about my home-town, where I was born and what my skills are. 
-                <br/>
-                 Some websites I frequently use:
-                <a href = 'http://www.google.com'>http://www.google.com</a><br/>
-                <a href = 'http://www.google.com'>http://www.google.com</a><br/>
-                <a href = 'http://www.google.com'>http://www.google.com</a></h3>
+            <div className='Me'>
+                <img alt='' src={Me1}></img>
+                <h1>Daniel Lewis</h1>
+                <h3>Born in the south of England, moved to Hamburg in 2006, began web development course in 2018.
+                <br />
+                    Find me on the following social media platforms
+                 <br />
+                    <a href='http://www.google.com'>Facebook</a><br />
+                    <a href='http://www.google.com'>Instagram</a><br />
+                    <a href='http://www.google.com'>LinkedIn</a></h3>
             </div>
         )
     }
