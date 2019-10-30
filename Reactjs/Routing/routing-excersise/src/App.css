@@ -6,7 +6,10 @@
   height: 120px;
 }
 
-
+.navStyle{
+  margin: 20px;
+  font-size: 1.5em;
+}
 
 .Me img {
   float: left;
@@ -53,4 +56,8 @@ form{
 .Error h3{
   font-size: 50px;
   font-weight: bold;
+}
+
+.chosen{
+  border-bottom: 5px solid #F14B31;
 }

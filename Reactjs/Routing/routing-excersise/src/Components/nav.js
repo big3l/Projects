@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
-import {
-    Navbar, NavbarBrand, Nav, NavItem, NavLink
-} from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+import { Navbar, NavbarBrand, Nav, NavItem } from 'reactstrap';
 
 export default class Navi extends Component {
     render() {
@@ -11,14 +9,14 @@ export default class Navi extends Component {
                 <Navbar color="warning" light expand='md' >
                     <NavbarBrand href="/">About Me</NavbarBrand>
                     <Nav navbar>
-                        <NavItem>
-                            <NavLink tag={Link} to='/me'>Me</NavLink>
+                        <NavItem className='navStyle'>
+                            <NavLink to='/me' activeClassName="chosen">Me</NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink tag={Link} to='/hobbies'>Hobbies</NavLink>
+                        <NavItem className='navStyle'>
+                            <NavLink to='/hobbies' activeClassName="chosen">Hobbies</NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink tag={Link} to='/contact'>Contact</NavLink>
+                        <NavItem className='navStyle'>
+                            <NavLink to='/contact' activeClassName="chosen">Contact</NavLink>
                         </NavItem>
                     </Nav>
                 </Navbar>
