@@ -1,11 +1,13 @@
-// reducer
 
+// reducer
 function counter(state = 0, action) {
     switch (action.type) {
         case 'INCREMENT':
             return state + 1000
-        case 'DECTEMENT':
+        case 'DECREMENT':
             return state - 1000
+        case 'ODD_INCREMENT':
+            return state + 2000
         default:
             return state
     }
@@ -15,16 +17,23 @@ function counter(state = 0, action) {
 let store = Redux.createStore(counter)
 
 //subscribe
-function printState(){
+function printState() {
     console.log(store.getState())
 }
-store.subscribe (printState)
+store.subscribe(printState)
 
 //actions
 store.dispatch({ type: 'INCREMENT' })
-// 1
 store.dispatch({ type: 'INCREMENT' })
-// 2
+store.dispatch({ type: 'INCREMENT' })
+
 store.dispatch({ type: 'DECREMENT' })
-// 1
 store.dispatch({ type: 'DECREMENT' })
+store.dispatch({ type: 'INCREMENT' })
+
+store.dispatch({ type: '' }) // returns current state again
+
+store.dispatch({ type: 'ODD_INCREMENT' })
+store.dispatch({ type: 'ODD_INCREMENT' })
+store.dispatch({ type: 'ODD_INCREMENT' })
+
