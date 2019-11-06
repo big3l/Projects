@@ -1,4 +1,8 @@
-    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+To do list link https://redux.js.org/basics/example#actions-indexjs
+
+
+   
+<script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
 
 Redux:
 - store {subscribe, dispatch, getState}
