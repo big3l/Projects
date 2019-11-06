@@ -29,7 +29,7 @@ export default class App extends Component {
     nextEntry() {
       this.setState({
         index: ++this.state.index,
-        setInterval({this.state.index}), 2000)
+        setInterval({this.state.index}, 2000)
     })
   }
 

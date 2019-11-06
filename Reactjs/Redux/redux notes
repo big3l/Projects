@@ -1,0 +1,6 @@
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+
+Redux:
+- store {subscribe, dispatch, getState}
+- reducer
+- actions
