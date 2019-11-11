@@ -1,6 +1,7 @@
+https://redux.js.org/introduction/getting-started
+npm install --save redux
+
 To do list link https://redux.js.org/basics/example#actions-indexjs
-
-
    
 <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
 
