@@ -65,16 +65,22 @@ class Registration extends Component {
                 <h1>Complete the registration info!</h1>
                 <form onSubmit={this.handleForm}>
                     <label htmlFor='username'>Username:</label>
-                    <input name='username' type='text' placeholder='Enter username'
-                        value={this.state.userinfo.username} onChange={this.handleUsername} />
+                    <input name='username' type='text'
+                        placeholder='Enter username'
+                        value={this.state.userinfo.username}
+                        onChange={this.handleUsername} />
 
                     <label htmlFor='age'>Age:</label>
-                    <input name='age' type='number' placeholder='Enter age'
-                        value={this.state.userinfo.age} onChange={this.handleAge} />
+                    <input name='age' type='number'
+                        placeholder='Enter age'
+                        value={this.state.userinfo.age}
+                        onChange={this.handleAge} />
 
                     <label htmlFor='password'>Password:</label>
-                    <input name='password' type='password' placeholder='Enter Password'
-                        value={this.state.userinfo.password} onChange={this.handlePassword} />
+                    <input name='password' type='password'
+                        placeholder='Enter Password'
+                        value={this.state.userinfo.password}
+                        onChange={this.handlePassword} />
 
                     <input type='submit' value='Register' />
                 </form>

@@ -9,3 +9,7 @@ Redux:
 - store {subscribe, dispatch, getState}
 - reducer
 - actions
+
+
+Redux Dev Tools link:
+const redux_store = createStore(Reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

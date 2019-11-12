@@ -1,6 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { checklogin } from '../actions'
 
-export default class Login extends Component {
+class Login extends Component {
     constructor(props) {
         super(props)
 
@@ -32,20 +35,34 @@ export default class Login extends Component {
 
     handleForm = (e) => {
         e.preventDefault()
+        this.props.LoginUser(this.state.logininfo.username, this.state.logininfo.password)
+    }
+
+    handleRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/Home' />
+        } else {
+            return null
+        }
     }
 
     render() {
         return (
             <div>
+                {this.handleRedirect()}
                 <h1>Complete your login info!</h1>
                 <form onSubmit={this.handleForm}>
                     <label htmlFor='username'>Username:</label>
-                    <input name='username' type='text' placeholder='Enter Username'
-                        value={this.state.logininfo.username} onChange={this.handleUsername} />
+                    <input name='username' type='text'
+                        placeholder='Enter Username'
+                        value={this.state.logininfo.username}
+                        onChange={this.handleUsername} />
 
                     <label htmlFor='password'>Password:</label>
-                    <input name='password' type='text' placeholder='Enter Password'
-                        value={this.state.logininfo.password} onChange={this.handlePassword} />
+                    <input name='password' type='text'
+                        placeholder='Enter Password'
+                        value={this.state.logininfo.password}
+                        onChange={this.handlePassword} />
 
                     <input type='submit' value='Login' />
                 </form>
@@ -53,3 +70,13 @@ export default class Login extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    redirect: state.loggedIn
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    LoginUser: (username, password) => dispatch(checklogin(username, password))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

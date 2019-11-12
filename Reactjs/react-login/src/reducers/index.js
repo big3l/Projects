@@ -1,4 +1,6 @@
-const initialState = {
+import { loadState } from '../storage';
+
+let initialState = {
     usersArray: [
         {
             id: 1,
@@ -17,13 +19,23 @@ const initialState = {
     loggedUser: {}
 }
 
+let defaultState = loadState();
+if (defaultState === null) {
+    console.log('Empty Local Storage')
+}
+else {
+    initialState = defaultState;
+    console.log(initialState)
+}
+
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'LOGIN_ACTION':
             let success = false;
             let loggedUser = {};
             state.usersArray.forEach((user) => {
-                if (user.username === action.username && user.password === action.password) {
+                if (user.username === action.username
+                    && user.password === action.password) {
                     success = true;
                     loggedUser = user;
                 }
@@ -38,7 +50,11 @@ const usersReducer = (state = initialState, action) => {
             let newID = newUserArray.length + 1;
             let newUser = {
                 id: newID,
-                ...action.userinfo
+                ...action.userinfo,
+                // ...action =
+                // username: action.userinfo.username,
+                // password: action.userinfo.password,
+                // age: action.userinfo.age
             }
             newUserArray.push(newUser)
             return ({

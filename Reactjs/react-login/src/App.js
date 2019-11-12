@@ -3,6 +3,7 @@ import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Registration from './components/Registration';
 import Login from './components/Login';
+import './App.css';
 
 export default class App extends Component {
   render() {
@@ -11,7 +12,6 @@ export default class App extends Component {
         <div className='App'>
           <h1>Welcome to the Registration Login App</h1>
           <NavLink to='/Registration'>Registration</NavLink>
-          <br />
           <NavLink to='/Login'>Login</NavLink>
         </div>
         <div className='App'>
@@ -22,7 +22,7 @@ export default class App extends Component {
             <Route path='/Login'>
               <Login />
             </Route>
-            <Route path='/Home'>
+            <Route path='/Home'>  
               <Home />
             </Route>
             <Route path='/'>
