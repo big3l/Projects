@@ -30,6 +30,7 @@ else {
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
+        
         case 'LOGIN_ACTION':
             let success = false;
             let loggedUser = {};
@@ -40,11 +41,13 @@ const usersReducer = (state = initialState, action) => {
                     loggedUser = user;
                 }
             })
+
             return {
                 ...state,
                 loggedIn: success,
                 loggedUser: loggedUser
             }
+
         case 'REGISTER_ACTION':
             let newUserArray = [...state.usersArray];
             let newID = newUserArray.length + 1;
@@ -56,20 +59,24 @@ const usersReducer = (state = initialState, action) => {
                 // password: action.userinfo.password,
                 // age: action.userinfo.age
             }
+
             newUserArray.push(newUser)
             return ({
                 usersArray: newUserArray,
                 loggedIn: true,
                 loggedUser: newUser
             })
+
         case 'LOGOUT_ACTION':
             return ({
                 ...state,
                 loggedIn: false,
                 loggedOut: {}
             })
+
         default:
             return state
     }
 }
+
 export default usersReducer;

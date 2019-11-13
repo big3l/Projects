@@ -21,26 +21,28 @@ export default class App extends Component {
           users: json
         })
       })
-
-    // function myStopFunction() {
-    // clearInterval(this.nextEntry);
-    // }
-
-    nextEntry() {
-      this.setState({
-        index: ++this.state.index,
-        setInterval({this.state.index}, 2000)
-    })
   }
 
-  render() {
-    return (
-      <div>
-        {this.state.users[this.state.index].name}
-        <button onClick={this.nextEntry.bind(this)}>Next Entry</button>
-      </div>
-    )
-  }
+  // function myStopFunction() {
+  // clearInterval(this.nextEntry);
+  // }
+
+  nextEntry() {
+    this.setState({
+      index: ++this.state.index,
+      setInterval({ this.state.index
+    }, 2000)
+  })
+}
+
+render() {
+  return (
+    <div>
+      {this.state.users[this.state.index].name}
+      <button onClick={this.nextEntry.bind(this)}>Next Entry</button>
+    </div>
+  )
+}
 }
 
 

@@ -20,3 +20,9 @@ rconst = constructor with super and this.state
 
 state in class, props in function
 
+with Hooks there is no need to use render
+https://reactjs.org/docs/hooks-intro.html
+
+https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672
+
+https://medium.com/technoetics/create-basic-login-forms-using-create-react-app-module-in-reactjs-511b9790dede
