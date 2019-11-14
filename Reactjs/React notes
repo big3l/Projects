@@ -26,3 +26,9 @@ https://reactjs.org/docs/hooks-intro.html
 https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672
 
 https://medium.com/technoetics/create-basic-login-forms-using-create-react-app-module-in-reactjs-511b9790dede
+
+
+API link:
+fetch('https://swapi.co/api/people/')
+.then(res=> res.json())
+.then (json =>console.log(json))

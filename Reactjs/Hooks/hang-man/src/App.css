@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+.btn{
+  height: 50px;
+  width: 50px;
+  background: lightblue;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+
+
