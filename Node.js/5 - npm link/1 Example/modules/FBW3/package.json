@@ -1,0 +1,11 @@
+{
+  "name": "fbw3",
+  "version": "1.0.0",
+  "description": "This is the fbw3 module",
+  "main": "FBW3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
