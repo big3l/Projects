@@ -1,22 +1,21 @@
-import React from 'react';
 import './App.css';
-import { shoftShadows } from 'softshadows'
-
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { softshadows } from 'softshadows';
 
 export default class App extends Component {
   componentDidMount() {
-    shoftShadows({
+    softshadows({
       shadow_type: 'hard',
       padding: true
     })
   }
+
   render() {
     return (
       <div>
-        <img src="https://picsum.photos/id/171/300/300" title="" className="softshadow" />
-        <img src="https://picsum.photos/id/191/300/300" title="" className="softshadow" />
-        <img src="https://picsum.photos/id/193/300/300" title="" className="softshadow" />
+        <img src="https://picsum.photos/id/111/300/300" title="" className="softshadows" alt='img' />
+        <img src="https://picsum.photos/id/121/300/300" title="" className="softshadows" alt='img' />
+        <img src="https://picsum.photos/id/123/300/300" title="" className="softshadows" alt='img' />
       </div>
     )
   }
