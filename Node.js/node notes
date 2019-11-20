@@ -7,9 +7,14 @@ Cant use the DOM in browser from node.
 module.exports = Person; //module.exports is like export default
 const Person = require('./person') //this is importing the person.js file.
 
+Path Functions - https://www.w3schools.com/nodejs/ref_path.asp
+
+
+
 'Process' is like 'event' (onClick, onChange, onLoad etc)
 
 nodemon index.js - like starting a live server in terminal
+(sudo npm install -g nodemon)
 
 npm init - this generates the package.json file
 
