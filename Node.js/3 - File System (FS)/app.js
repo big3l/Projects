@@ -9,7 +9,7 @@ fs.readFile(fileExistPath, 'utf8', (err, data) => {
     // console.log(data)
     console.log('1st: the data has been read')
 })
-console.log('2nd: the order is syncronas, should follow file read function but its quicker so runs first')
+console.log('2nd: the order is Asynchronous, should follow file read function but its quicker so runs first')
 
 // fs.readFile(missingFilePath, 'utf8', (err, data) => {
 //     if (err) throw err;
