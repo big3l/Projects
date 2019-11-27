@@ -1,6 +1,20 @@
 const axios = require('axios');
-const fs = require('fs');
 
+let city = process.argv[2];
 
-let apiKey = 'http:api.openweathermap.org/data/2.5/forecast?id=524901&APPID=745aa89e7eae29812eed4c070bb4b3b9';
-console.log(apiKey)
+let apiKey = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=745aa89e7eae29812eed4c070bb4b3b9`;
+
+let fiveDay = `https://api.openweathermap.org/data/2.5/forecast?q=${city},us&appid=745aa89e7eae29812eed4c070bb4b3b9`;
+
+axios.get(apiKey).then(response => {
+    let conditions = response.data.weather[0].description;
+    let temp = (response.data.main.temp - 273).toFixed(2)
+    console.log(`It is now ${temp} °C in ${city} `)
+    console.log(`The current weather conditions are ${conditions} `)
+})
+
+axios.get(fiveDay).then(response => {
+    console.log(response.data);
+}).catch(error => {
+    console.log(error);
+});
