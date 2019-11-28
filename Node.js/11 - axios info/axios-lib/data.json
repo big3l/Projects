@@ -1,0 +1,234 @@
+{
+    "id": "happy",
+    "metadata": {
+        "operation": "retrieve",
+        "provider": "Oxford University Press",
+        "schema": "RetrieveEntry"
+    },
+    "results": [
+        {
+            "id": "happy",
+            "language": "en-gb",
+            "lexicalEntries": [
+                {
+                    "entries": [
+                        {
+                            "etymologies": [
+                                "Middle English (in the sense ‘lucky’): from the noun hap+ -y"
+                            ],
+                            "senses": [
+                                {
+                                    "definitions": [
+                                        "feeling or showing pleasure or contentment"
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "Melissa came in looking happy and excited"
+                                        },
+                                        {
+                                            "notes": [
+                                                {
+                                                    "text": "with clause",
+                                                    "type": "grammaticalNote"
+                                                }
+                                            ],
+                                            "text": "we're just happy that he's still alive"
+                                        },
+                                        {
+                                            "notes": [
+                                                {
+                                                    "text": "with infinitive",
+                                                    "type": "grammaticalNote"
+                                                }
+                                            ],
+                                            "text": "they are happy to see me doing well"
+                                        }
+                                    ],
+                                    "id": "m_en_gbus0450170.009",
+                                    "shortDefinitions": [
+                                        "feeling contentment"
+                                    ],
+                                    "subsenses": [
+                                        {
+                                            "constructions": [
+                                                {
+                                                    "text": "happy about"
+                                                }
+                                            ],
+                                            "definitions": [
+                                                "having a sense of trust and confidence in (a person, arrangement, or situation)"
+                                            ],
+                                            "examples": [
+                                                {
+                                                    "text": "he was not happy about the proposals"
+                                                }
+                                            ],
+                                            "id": "m_en_gbus0450170.013",
+                                            "notes": [
+                                                {
+                                                    "text": "\"happy about\"",
+                                                    "type": "wordFormNote"
+                                                }
+                                            ],
+                                            "shortDefinitions": [
+                                                "trusting and confident in"
+                                            ]
+                                        },
+                                        {
+                                            "constructions": [
+                                                {
+                                                    "text": "happy with"
+                                                }
+                                            ],
+                                            "definitions": [
+                                                "satisfied with the quality or standard of"
+                                            ],
+                                            "examples": [
+                                                {
+                                                    "text": "I'm happy with his performance"
+                                                }
+                                            ],
+                                            "id": "m_en_gbus0450170.014",
+                                            "notes": [
+                                                {
+                                                    "text": "\"happy with\"",
+                                                    "type": "wordFormNote"
+                                                }
+                                            ],
+                                            "shortDefinitions": [
+                                                "satisfied with quality of"
+                                            ]
+                                        },
+                                        {
+                                            "definitions": [
+                                                "willing to do something"
+                                            ],
+                                            "examples": [
+                                                {
+                                                    "text": "we will be happy to advise you"
+                                                }
+                                            ],
+                                            "id": "m_en_gbus0450170.015",
+                                            "notes": [
+                                                {
+                                                    "text": "with infinitive",
+                                                    "type": "grammaticalNote"
+                                                }
+                                            ],
+                                            "shortDefinitions": [
+                                                "willing to do"
+                                            ],
+                                            "thesaurusLinks": [
+                                                {
+                                                    "entry_id": "happy",
+                                                    "sense_id": "t_en_gb0006743.002"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "definitions": [
+                                                "used in greetings"
+                                            ],
+                                            "examples": [
+                                                {
+                                                    "text": "happy Christmas"
+                                                }
+                                            ],
+                                            "id": "m_en_gbus0450170.017",
+                                            "notes": [
+                                                {
+                                                    "text": "attributive",
+                                                    "type": "grammaticalNote"
+                                                }
+                                            ],
+                                            "shortDefinitions": [
+                                                "used in greetings"
+                                            ]
+                                        }
+                                    ],
+                                    "thesaurusLinks": [
+                                        {
+                                            "entry_id": "happy",
+                                            "sense_id": "t_en_gb0006743.001"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "definitions": [
+                                        "fortunate and convenient"
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "he had the happy knack of making people like him"
+                                        }
+                                    ],
+                                    "id": "m_en_gbus0450170.020",
+                                    "notes": [
+                                        {
+                                            "text": "attributive",
+                                            "type": "grammaticalNote"
+                                        }
+                                    ],
+                                    "shortDefinitions": [
+                                        "fortunate and convenient"
+                                    ],
+                                    "thesaurusLinks": [
+                                        {
+                                            "entry_id": "happy",
+                                            "sense_id": "t_en_gb0006743.003"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "definitions": [
+                                        "inclined to use a specified thing excessively or at random"
+                                    ],
+                                    "examples": [
+                                        {
+                                            "text": "they tended to be grenade-happy"
+                                        }
+                                    ],
+                                    "id": "m_en_gbus0450170.022",
+                                    "notes": [
+                                        {
+                                            "text": "in combination",
+                                            "type": "grammaticalNote"
+                                        }
+                                    ],
+                                    "registers": [
+                                        {
+                                            "id": "informal",
+                                            "text": "Informal"
+                                        }
+                                    ],
+                                    "shortDefinitions": [
+                                        "inclined to use"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en-gb",
+                    "lexicalCategory": {
+                        "id": "adjective",
+                        "text": "Adjective"
+                    },
+                    "pronunciations": [
+                        {
+                            "audioFile": "http://audio.oxforddictionaries.com/en/mp3/happy_gb_1.mp3",
+                            "dialects": [
+                                "British English"
+                            ],
+                            "phoneticNotation": "IPA",
+                            "phoneticSpelling": "ˈhapi"
+                        }
+                    ],
+                    "text": "happy"
+                }
+            ],
+            "type": "headword",
+            "word": "happy"
+        }
+    ],
+    "word": "happy"
+}
