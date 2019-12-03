@@ -1,0 +1,10 @@
+
+$ npx express-generator projectname
+$ npm install
+
+
+npx express-generator example --no-view --gi
+
+https://www.sitepoint.com/create-new-express-js-apps-with-express-generator/
+
+https://expressjs.com/en/starter/generator.html
