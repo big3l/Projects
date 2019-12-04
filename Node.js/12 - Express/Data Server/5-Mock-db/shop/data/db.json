@@ -1,0 +1,71 @@
+{
+  "records": [
+    {
+      "id": 0,
+      "title": "Samsung Galaxy S10+ Smartphone (16,35 cm/6,4 Zoll, 512 GB Speicherplatz, 12 MP Kamera)",
+      "price": 899.99,
+      "color": "Purple"
+    },
+    {
+      "id": 1,
+      "title": "Apple iPhone",
+      "price": 135,
+      "color": "green"
+    },
+    {
+      "id": 2,
+      "title": "Samsung Galaxy S10+ Smartphone ",
+      "price": "899",
+      "color": "Purple"
+    },
+    {
+      "id": 3,
+      "title": "Samsung Galaxy S10+ Smartphone ",
+      "price": "899",
+      "color": "Purple"
+    },
+    {
+      "id": 4,
+      "title": "Samsung Galaxy S10+ Smartphone ",
+      "price": "899",
+      "color": "Purple"
+    },
+    {
+      "id": 5,
+      "title": "Samsung Galaxy S10+ Smartphone ",
+      "price": "899",
+      "color": "Purple"
+    },
+    {
+      "id": 6,
+      "title": "Samsung Galaxy S10+ Smartphone ",
+      "price": "899",
+      "color": "Purple"
+    },
+    {
+      "id": 7,
+      "title": "Samsung Galaxy S10+ Smartphone ",
+      "price": "899",
+      "color": "Purple"
+    },
+    {
+      "id": 8,
+      "title": "Samsung Galaxy S10+ Smartphone ",
+      "price": "899",
+      "color": "Purple"
+    },
+    {
+      "id": 9,
+      "title": "Samsung Galaxy S10+ Smartphone ",
+      "price": "899",
+      "color": "Purple"
+    },
+    {
+      "id": 10,
+      "title": "Samsung Galaxy S10+ Smartphone ",
+      "price": "899",
+      "color": "Purple"
+    }
+  ],
+  "count": 11
+}
