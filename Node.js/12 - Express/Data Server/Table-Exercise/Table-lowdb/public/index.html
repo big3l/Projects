@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Table Exercise</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <h1>Table Exercise</h1>
+    <form action="/api/post" method="post">
+      ID number<input type="number" name="ID" placeholder="enter the ID" /><br />
+      Name <input type="text" name="name" placeholder="enter the name" /><br />
+      User Name: <input type="text" name="username" placeholder="enter the user name" /><br />
+      Email:<input type="email" name="email" placeholder="enter the email address" /><br />
+      Occupation: <input type="text" name="occupation" placeholder="enter the Occupation" /><br />
+      City: <input type="text" name="city" placeholder="enter the city" /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <br>
+    <table>
+      <thead id="thead">
+
+      </thead>
+      <tbody id="tbody">
+        
+      </tbody>
+    </table>
+
+    <br>
+    <form action="/api/delete" method="post">
+      Delete ID: <input type="text" name="id" placeholder="enter the ID number to delete"><br>
+      <input type="submit" value="Delete">
+    </form>
+
+    <script src="/javascripts/obtain.js"></script>
+    <script src="/javascripts/create.js"></script>
+
+  </body>
+
+</html>

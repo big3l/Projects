@@ -36,9 +36,11 @@ router.get("/", function(req, res, next) {
 router.get("/:id", (req, res) => {
   //filtering
   let item = data.filter(item => {
-    return item.id == req.params.id;
+    // return item.id == req.params.id;
+    if (item.id == req.params.id) {
+      return true;
+    }
   });
-
   res.status(200).send(item);
   res.end(item.id);
 });
@@ -75,28 +77,30 @@ router.post("/", (req, res) => {
     console.log(price);
     console.log(color);
 
+    // Dynamic id increments
+    let newid = data.__wrapped__.records.length;
+    console.log(newid);
+
+    let count = db.get("count");
+
     db.get("records")
       .push({
-        id: newid,
+        id: count,
         title: title,
         price: price,
         color: color
       })
       .write();
     res.status(200).send("database has been updated\n");
-  
-    // Dynamic id increments
-    let newid = data.__wrapped__.records.length;
-    console.log(newid);
 
     // Dynamic increment count
     db.update("count", n => n + 1).write();
-
   } else {
     res.status(404).send("This is a duplicate \n");
   }
 });
 
+// deleting an item.
 router.post("/delete", (req, res) => {
   let id = parseInt(req.body.id);
   console.log(id);
@@ -108,3 +112,6 @@ router.post("/delete", (req, res) => {
 });
 
 module.exports = router;
+
+
+// problem - when item is removed, counter is not adjusted.

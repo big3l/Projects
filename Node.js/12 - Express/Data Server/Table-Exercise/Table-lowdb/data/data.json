@@ -1,0 +1,20 @@
+{
+    "list": [
+        {
+            "ID": 0,
+            "name": "Leanne Graham",
+            "username": "Bret",
+            "email": "Sincere@april.biz",
+            "occupation": "Baker",
+            "city": "Gwenborough"
+        },
+        {   
+            "ID": 1,
+            "name": "Ervin Howell",
+            "username": "Antonette",
+            "email": "Shanna@melissa.tv",
+            "occupation": "Developer",
+            "city": "Wisokyburgh"
+        }
+    ]
+}

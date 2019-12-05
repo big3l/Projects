@@ -13,12 +13,6 @@
       "color": "green"
     },
     {
-      "id": 2,
-      "title": "Samsung Galaxy S10+ Smartphone ",
-      "price": "899",
-      "color": "Purple"
-    },
-    {
       "id": 3,
       "title": "Samsung Galaxy S10+ Smartphone ",
       "price": "899",
@@ -67,5 +61,5 @@
       "color": "Purple"
     }
   ],
-  "count": 11
+  "count": 12
 }
