@@ -1,0 +1,11 @@
+https://github.com/Mansour-Tumeh/FBW3-Lessons/tree/master/Data%20Server/6-Request%20Object
+
+
+
+https://node.hamburg-coders.pro/weather?filter=very-cold
+
+(req.protocol)     // "https"
+(req.hostname)     // "hamburg-coders.pro"
+(req.path)         // "/weather"
+(req.originalUrl)  // "/weather?filter=very-cold"
+(req.subomains)    // "['node']"
