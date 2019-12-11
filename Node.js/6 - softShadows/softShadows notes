@@ -1,0 +1,12 @@
+https://www.npmjs.com/package/softshadows
+
+npm adduser
+npm whoami
+git init
+git add .
+git commit -m 'first commit'
+git remote add origin git@github.com:big3l/softShadow.git
+git push -u origin master
+npm init
+(select a package name that isnt in use on the npm website)
+npm publish
