@@ -56,8 +56,8 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   const found = members.some(item => item.id == req.params.id);
   if (found) {
-    members.forEach((CheckUser, index) => {
-      if (CheckUser.id === parseInt(req.params.id)) {
+    members.forEach((newMember, index) => {
+      if (newMember.id === parseInt(req.params.id)) {
         members.splice(index, 1);
         res.status(200).json({ msg: "Member deleted", members });
       }
