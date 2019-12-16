@@ -1,0 +1,44 @@
+Install instrucstions
+https://vitux.com/how-to-install-xampp-on-your-ubuntu-18-04-lts-system/
+
+https://www.apachefriends.org/index.html - download
+
+$ cd Downloads
+$ chmod 755 xampp-linux-x64-7.3.12-0-installer.run
+$ sudo ./xampp-linux-x64-7.3.12-0-installer.run
+
+on XAMPP app, 
+Select Go To Application on Welcome tab
+select Manage Servers tab
+select MySQL Database
+start
+
+
+http://localhost/phpmyadmin/
+
+
+launch XAMPP through terminal
+$ sudo /opt/lampp/lampp start
+
+re-launch XAMPP if already started through terminal
+$ cd /opt/lampp
+$ sudo ./manager-linux-x64.run
+
+
+select a post : 
+SELECT * FROM `posts` WHERE id = 1
+
+insert a post :
+INSERT INTO `posts` (`id`, `title`, `body`) VALUES (NULL, 'title five', 'this is the body of title five');
+
+update a post :
+UPDATE `posts` SET `title` = 'updated post one', `body` = 'body updated post one' WHERE `posts`.`id` = 1; 
+
+delete a post :
+DELETE FROM `posts` WHERE id = 1
+
+
+
+installing packages in terminal with express
+npm init -y
+npm install --save express mysql
