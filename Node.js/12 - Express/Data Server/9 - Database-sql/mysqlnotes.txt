@@ -24,6 +24,10 @@ re-launch XAMPP if already started through terminal
 $ cd /opt/lampp
 $ sudo ./manager-linux-x64.run
 
+installing packages in terminal with express
+npm init -y
+npm install --save express mysql
+
 
 select a post : 
 SELECT * FROM `posts` WHERE id = 1
@@ -38,7 +42,32 @@ delete a post :
 DELETE FROM `posts` WHERE id = 1
 
 
+MySQL Workbench - another form of phpmyadmin server
+https://www.linode.com/docs/databases/mysql/install-and-configure-mysql-workbench-on-ubuntu/
 
-installing packages in terminal with express
-npm init -y
-npm install --save express mysql
+
+
+Commands for SQL in phpmyadmin or Workbench SQL :
+CREATE TABLE products (product_id int AUTO_INCREMENT, product_name VARCHAR(255), product_desc VARCHAR (255), PRIMARY KEY(product_id))
+SELECT * FROM products - to view whole list
+SELECT * from users, orders where users.id = orders.user_id - to view specific order
+
+adding data to the table :
+insert into products (product_id, product_name, product_desc, price) VALUES (NULL,'Apple AirPods 2 (2019) ', 'bluetooth_headphones, true wireless headphones', '189')
+
+Adding another column to the table
+ALTER TABLE products
+ADD price FLOAT(11)
+
+Updating a column in the table
+UPDATE products set price = 1046.5 WHERE product_id = 1
+UPDATE products set product_name = 'Nintendo Snatch' WHERE product_id = 2
+
+joining data from multiple lists :
+https://www.w3schools.com/nodejs/nodejs_mysql_join.asp
+select first_name, last_name, order_id, order_date, order_status from mysqlDB.users, mysqlDB.orders where users.id = orders.user_id and orders.order_status = 'COMPLETED'
+
+select first_name, last_name, product_name, product_desc, price, order_date, order_status from users, orders, products where orders.product_id = products.product_id and  orders.user_id = users.id
+
+selecting all the data from all the lists :
+select first_name, last_name, email, order_id, order_date, order_status, product_desc, product_name, product_name,price from users, orders, products

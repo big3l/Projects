@@ -13,14 +13,15 @@ app.get("/", (req, res) => {
 //connect to the database
 const db = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  database: "mysqlDB"
+  user: "adminDan",
+  password : "1234",
+  database: "DansDB"
 });
 db.connect(err => {
   if (err) {
     throw err;
   }
-  console.log("Mysql connected");
+  console.log("Mysql connected with adminDan");
 });
 
 // Create DB
@@ -99,11 +100,11 @@ app.get("/updatepost/:id", (req, res) => {
 });
 
 //delete post
-app.get("/deletepost/id:", (req, res) => {
+app.get("/deletepost/:id", (req, res) => {
   let sql = `delete from posts where id = ${req.params.id}`;
   db.query(sql, (err, result) => {
     if (err) throw err;
     console.log(result);
-    res.send("Post Deleted");
+    res.send("Post Deleted....");
   });
 });
