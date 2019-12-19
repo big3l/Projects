@@ -6,5 +6,5 @@ to run
 node create_db.js
 
 
-compass to view tables from mongodb
+Install MongoDB Compass app for viewing data
 https://www.mongodb.com/download-center/compass

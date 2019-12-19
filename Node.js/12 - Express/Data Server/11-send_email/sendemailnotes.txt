@@ -1,0 +1,16 @@
+The idea is to send an email from a website with the form contents entered by the user
+
+https://nodemailer.com/about/
+
+install the following packages : 
+$ npm i express body-parser express-handlebars nodemailer -D
+
+const nodemailer = require("nodemailer");
+
+Body-parser info : 
+https://github.com/expressjs/body-parser
+
+
+handlebars {{}} info
+https://www.npmjs.com/package/express-handlebars
+const exphbs = require("express-handlebars");

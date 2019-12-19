@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 const db = mysql.createConnection({
   host: "localhost",
   user: "adminDan",
-  password : "1234",
+  password: "1234",
   database: "DansDB"
 });
 db.connect(err => {
@@ -50,7 +50,7 @@ app.get("/addpost", (req, res) => {
   //  let post = { title: "the title one", body: "this is the body of post 1" };
   let sql =
     "insert into posts (id , title , body) VALUES (NULL,'title one ', 'body of title one')";
-  let query = db.query(sql, (err, result) => {
+  db.query(sql, (err, result) => {
     if (err) throw err;
     console.log(result);
     res.send("Post with id:1 added to posts Table...");
