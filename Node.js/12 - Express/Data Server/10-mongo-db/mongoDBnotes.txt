@@ -5,6 +5,67 @@ https://github.com/Mansour-Tumeh/FBW3-Lessons/tree/master/Data%20Server/11-mongo
 to run
 node create_db.js
 
-
 Install MongoDB Compass app for viewing data
 https://www.mongodb.com/download-center/compass
+
+
+MongoDB Terminal and Atlas commands
+
+to start mongo :
+$ sudo service mongod start
+$ mongo
+
+To view databases previously created 
+$ show dbs
+
+to select a db  
+$ use "db name"
+
+view folder (collections) inside db
+$ show collections
+
+customer is the collection name.
+to view list of the collection:
+$ db.customers.find()
+
+to create a new databases
+$ use "new db name"
+
+to insert item into database called articles with name and price as key and value
+$ db.articles.insertOne({name: "Apple iphone 8 64 gb", price: 400})
+
+to search for a specific item using name inside articles
+$ db.articles.find({name: "Apple iphone 8 64 gb"})
+
+to insert multiple items
+$ db.articles.insertMany([{name: "Dell laptop", price: 550}, {name: "Lenovo thinkpad", price: 675}, {name: "macbook air", price: 799}])
+
+find items less than or equal to 600
+$ db.articles.find({price: {$lte: 600}})
+
+find items less than 600
+$ db.articles.find({price: {$lt: 600}})
+
+find items greater than 600
+$ db.articles.find({price: {$gt: 600}})
+
+find items greater than or equal to 600
+$ db.articles.find({price: {$gte: 600}})
+
+to update an items price to 999
+$ db.articles.updateOne({name: "Apple iphone 8 64 gb"}, {$set: {price: 999}})
+
+to update many items with price greater than 699 with a new value of Pro
+$ db.articles.updateMany({price:{$gt:699}}, {$set: {"pro": true}})
+
+to delete many items
+$ db.articles.deleteMany({"name": true})
+
+to delete many items with price greater than 550 less than 700 ##not sure if this is correct??
+$ db.articles.deleteMany({price: {$gt:550}, price: {$lt:700}})
+
+to delete many items with price between 550 and 700 ##not sure if this is correct??
+$ db.articles.deleteMany({$and : [{price: {$gt:550}, price: {$lt:700}}]})
+
+to remove items between 600 and 800 ##not sure if this is correct??
+db.articles.remove({"price": {$gt:600}, price: {$lt:800}})
