@@ -1,15 +1,16 @@
 {
-  "name": "expressmongo",
+  "name": "mongo-example",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon app"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "^3.4.0"
-  }
+    "mongodb": "^3.4.1"
+  },
+  "description": ""
 }

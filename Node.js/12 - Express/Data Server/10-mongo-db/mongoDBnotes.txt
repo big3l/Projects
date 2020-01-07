@@ -24,6 +24,9 @@ $ use "db name"
 view folder (collections) inside db
 $ show collections
 
+to create a new collection called articles
+$ db.createCollection('items')
+
 customer is the collection name.
 to view list of the collection:
 $ db.customers.find()
