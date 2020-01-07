@@ -8,7 +8,7 @@ const exphbs = require("express-handlebars");
 app.get("/", (req, res) => {
   //   res.send("<h1> THIS IS THE CONTACT FORM PAGE </h1>");
   res.render("contact", { layout: false });
-});
+});    
 
 // static folder
 app.use("/public", express.static(path.join(__dirname, "public")));
