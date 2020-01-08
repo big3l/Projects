@@ -1,0 +1,16 @@
+https://github.com/Mansour-Tumeh/FBW3-Lessons/commit/da1200d66471596db3207aa88dccd28cd62d5f83
+
+
+ORM is for SQL, MySQL (relational database)
+ODM is for MongoDB
+
+My SQL format:
+var cat = {name: 'xyz',
+           age: 9}
+
+MongoDB format:
+{_id: cat
+    name: 'xyz',
+    age: 9}
+
+    
