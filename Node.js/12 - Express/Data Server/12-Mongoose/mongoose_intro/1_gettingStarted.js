@@ -8,6 +8,7 @@ let productSchema = new mongoose.Schema({
 });
 
 // create a class method for log messaging
+// NOTE: methods must be added to the schema before compiling it with mongoose.model()
 productSchema.methods.logMessage = function(){
     let message = `The product ${this.name} with price the ${this.price} has been saved`;
     console.log(message);    
