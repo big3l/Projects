@@ -21,10 +21,11 @@ const BootcampSchema = new mongoose.Schema({
   email: {
     type: String,
     unique: true,
-    required: [
-      "^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$.",
-      "Please add a valid email"
-    ]
+    required: true
+    // [
+    //   "^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$.",
+    //   "Please add a valid email"
+    // ]
   },
   address: {
     type: String,
