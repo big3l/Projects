@@ -16,7 +16,7 @@ const BootcampSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    match: ["//https?://(www.)?[-a-zA-Z]"]
+    //  match: ["//https?://(www.)?[-a-zA-Z]"]
   },
   email: {
     type: String,
