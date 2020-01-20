@@ -4,8 +4,13 @@ const passport = require("passport");
 const flash = require("connect-flash");
 const session = require("express-session");
 const ExpressValidator = require("express-validator");
-// const expressLayouts = require("ejs");
+const ejs = require("ejs");
 const colors = require("colors");
+const app = express();
+
+const expressLayouts = require ("express-ejs-layouts")
+app.use(expressLayouts);
+app.set('view engine', 'ejs');
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config/config.env" });
@@ -13,10 +18,6 @@ dotenv.config({ path: "./config/config.env" });
 const connectDB = require("./config/db");
 connectDB();
 
-const app = express();
-
-// EJS View Engine
-app.set("view engine", "ejs");
 
 // Body parser for Posting Data
 app.use(express.urlencoded({ extended: true }));
@@ -43,14 +44,12 @@ app.use((req,res,next)=> {
     next();
 });
 
-// Routes
-const index = require('./routes/index');
-const users = require('./routes/users')
-app.use('/', index);
-app.use('/users', users);
+// Routes 
+app.use('/' , require('./routes/index'));
+app.use('/users' ,require('./routes/users'));
 
 const PORT = process.env.PORT || 5005;
-const server = app.listen(PORT, console.log("Server started on port 5005"));
+const server = app.listen(PORT, console.log("Server started on port 5005".rainbow));
 console.log(
   `Server Started on Port ${PORT} in ${process.env.NODE_ENV} mode`.magenta
 );
