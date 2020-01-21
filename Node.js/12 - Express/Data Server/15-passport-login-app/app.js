@@ -7,10 +7,13 @@ const ExpressValidator = require("express-validator");
 const ejs = require("ejs");
 const colors = require("colors");
 const app = express();
+const strategy = require('./config/Logging_facebook');
 
 const expressLayouts = require("express-ejs-layouts");
 app.use(expressLayouts);
 app.set("view engine", "ejs");
+
+require('./config/passport')(passport)
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config/config.env" });
@@ -37,11 +40,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+passport.use(strategy);
+
 // Global variables
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_message = req.flash("error_msg");
-  // res.locals.error = req.flash("error");
+  res.locals.error = req.flash("error");
   next();
 });
 
