@@ -19,7 +19,7 @@ router.post(
         } else {
           return val;
         }
-      })
+      }),
   ],
   (req, res) => {
     var errors = validationResult(req).array();

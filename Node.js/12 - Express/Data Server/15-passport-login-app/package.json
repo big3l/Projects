@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app",
-    "live": "nodemon app"
+    "live": "nodemon app",
+    "watch": "DEBUG=record-shop:* nodemon --inspect ./bin/www"    
   },
   "keywords": [],
   "author": "",
