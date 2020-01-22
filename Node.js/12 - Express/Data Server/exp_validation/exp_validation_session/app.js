@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
 // User router
-const user = require("./views/partials/user.routes");
+const user = require("./user.routes");
 
 // Express settings
 const app = express();
