@@ -23,35 +23,13 @@ const verifyPasswordsMatch = (req, res, next) => {
   return check("password")
     .isLength({ min: 6 })
     .withMessage("password must be at least 6 charachters long")
-    .equals(password2)
-    // .withMessage("Passwords do not match");
+    .equals(password2);
+  // .withMessage("Passwords do not match");
 };
 
 router.post(
   "/register",
   [
-    // body("email").custom(value => {
-    //   return User.findOne({ email: value }).then(data => {
-    //     if (data) {
-    //       throw new Error("email address already exists");
-    //     } else {
-    //       return true;
-    //     }
-    //   });
-    // }),
-    // body("password").custom(value => {
-    //   return User.findOne({ password: value }).then(data => {
-    //     if (data) {
-    //       bcrypt.genSalt(10, (err, salt) => {
-    //         bcrypt.hash(User.password, salt, hash => {
-    //           // if (err) throw err;
-    //           User.password = hash;
-    //           console.log("the hashed password is : " + User.password);
-    //         });
-    //       });
-    //     }
-    //   });
-    // }),
     check("name")
       .trim()
       .not()
@@ -59,12 +37,13 @@ router.post(
       .withMessage("Name is empty"),
     check("email")
       .trim()
-      .normalizeEmail()
+      // .normalizeEmail()
       .isEmail()
       .withMessage("email is not valid"),
     check("password")
       .isLength({ min: 6 })
       .withMessage("Password is too short"),
+    // custom validation
     body("password").custom((value, { req }) => {
       if (value !== req.body.password2) {
         throw new Error("Passwords do not match!");
@@ -75,19 +54,34 @@ router.post(
   ],
   (req, res) => {
     const { name, email, password, password2 } = req.body;
-
     console.log(req.body);
     // if there are errors
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(422).json({ errors: errors.array() });
+    const check_errors = validationResult(req);
+    let errors = [];
+    if (!check_errors.isEmpty()) {
+      // return res.status(422).json({ errors: errors() });
+      console.log(check_errors.array());
+      // errors.push(check_errors.array());
+      check_errors.array().forEach((item) => {
+        errors.push(item);
+      });
+      console.log("errors :", errors);
+      if (errors.length > 0) {
+        res.render("register", {
+          errors,
+          name,
+          email,
+          password,
+          password2
+        });
+      }
     } else {
       // validation passed
       User.findOne({ email: email }).then(data => {
         if (data) {
           // we found the email in our database
-          error.push({ msg: "Email is already registered" });
-          res.render("register", { error, name, email, password, password2 });
+          errors.push({ msg: "Email is already registered" });
+          res.render("register", { errors, name, email, password, password2 });
         } else {
           const newUser = new User({ name, email, password });
           // Hash password

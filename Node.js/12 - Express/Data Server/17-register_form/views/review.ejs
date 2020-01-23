@@ -1,0 +1,80 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <i class="fas fa-beer"></i> Review Page
+      </h1>
+      <form action="/users/review" method="POST">
+        <div class="form-group">
+          <label for="brewery_name">Brewery Name</label>
+          <input
+            type="name"
+            id="brewery_name"
+            name="brewery_name"
+            class="form-control"
+            placeholder="Choose Brewery Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="beer_name">Beer Name</label>
+          <input
+            type="name"
+            id="beer_name"
+            name="beer_name"
+            class="form-control"
+            placeholder="Choose Beer Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="beer_style">Choose Beer Style to review</label>
+          <select
+            class="form-control"
+            id="sel1"
+            name="beer_style"
+            placeholder="Choose Beer Style"
+          >
+            <option>select from the menu:</option>
+            <option>IPA (various)</option>
+            <option>STOUT</option>
+            <option>PALE ALE</option>
+            <option>PILSNER</option>
+            <option>GOSE</option>
+            <option>SOUR</option>
+            <option>BELGIAN</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="venue">Venue</label>
+          <input
+            type="venue"
+            id="venue"
+            name="venue"
+            class="form-control"
+            placeholder="Were you at home, bar, brewery, club in a field?"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <Label for="rating">Add your rating here: </Label>
+        </div>
+        <div>
+          <span id="rateMe2" class="empty-stars"></span>
+        </div>
+        <div>
+          <label for="review_comment">Write your review here:</label>
+          <textarea
+            class="form-control"
+            rows="5"
+            id="review_comment"
+            placeholder="Add your tasting notes here...."
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Submit your Review!
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
