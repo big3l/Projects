@@ -1,0 +1,4 @@
+https://github.com/Mansour-Tumeh/FBW3-Lessons/tree/master/Data%20Server/19-Json-web-token
+https://jwt.io/
+https://www.base64decode.org/
+https://github.com/auth0/node-jsonwebtoken
