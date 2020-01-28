@@ -168,4 +168,16 @@ router.get(
   })
 );
 
+// Login with GitHub
+router.get("/auth/github", passport.authenticate("github",{scope:'email'}));
+
+router.get(
+  "/auth/github/callback",
+  passport.authenticate("github", { failureRedirect: "/users/login" }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect("/users/callback");
+  }
+);
+
 module.exports = router;

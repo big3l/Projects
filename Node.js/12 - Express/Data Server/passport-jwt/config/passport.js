@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const JWTStrategy = require("passport-jwt").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
+const GitHubStrategy = require("passport-github").Strategy;
 
 // Load User Model
 const User = require("../models/User");
@@ -90,6 +91,22 @@ module.exports = passport => {
           .catch(err => {
             done(err);
           });
+      }
+    )
+  );
+  passport.use(
+    new GitHubStrategy(
+      {
+        clientID: "9af009aeeff59908cf38",
+        clientSecret: "a777159f8a901a447c256877cd0daa2b5cbb97f2",
+        callbackURL: "http://localhost:5007/users/auth/github/callback",
+        profileFields:['email']
+      },
+      function(accessToken, refreshToken, profile, done) {
+        console.log(profile._json.email)
+        User.findOne({ email: profile._json.email }, function(err, user) {
+          return done(err, user);
+        });
       }
     )
   );
