@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
 const passport = require("passport");
+
 // Welcome page
 router.get("/", forwardAuthenticated, (req, res) => {
   res.render("welcome");
@@ -21,5 +22,7 @@ router.get(
     });
   }
 );
+
+ 
 
 module.exports = router;

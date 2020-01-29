@@ -24,7 +24,6 @@ module.exports = passport => {
           bcrypt.compare(password, userData.password, (err, isMatch) => {
             if (err) throw err;
             if (isMatch) {
-
               return done(null, userData);
             } else {
               return done(null, false, { message: "Password incorrect" });
@@ -69,8 +68,8 @@ module.exports = passport => {
     })
   );
   const optionsFacebook = {
-    clientID: "2588440934707785",
-    clientSecret: "ab80c3a547c407601ddd61a9a73c0ab1",
+    clientID: process.env.FB_ID,
+    clientSecret: process.env.FB_SECRET,
     callbackURL: "http://localhost:5007/users/auth/facebook/callback",
     profileFields: ["id", "displayName", "email"]
   };
@@ -98,8 +97,8 @@ module.exports = passport => {
   passport.use(
     new GitHubStrategy(
       {
-        clientID: "9af009aeeff59908cf38",
-        clientSecret: "a777159f8a901a447c256877cd0daa2b5cbb97f2",
+        clientID: process.env.GIT_ID,
+        clientSecret: process.env.GIT_SECRET,
         callbackURL: "http://localhost:5007/users/auth/github/callback",
         profileFields: ["email"]
       },

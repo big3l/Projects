@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const { body, check, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
-const mailer = require('../config/sendEmail');
+const mailer = require("../config/sendEmail");
 
 // User model
 const User = require("../models/User");
@@ -19,8 +19,7 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
-// Rigister Handle
-
+// Register Handle
 const verifyPasswordsMatch = (req, res, next) => {
   const { password2 } = req.body;
 
@@ -112,12 +111,12 @@ router.post(
               newUser
                 .save()
                 .then(user => {
-                  mailer(user.email); 
+                  mailer(user.email);
                   req.flash(
                     "success_msg",
                     "You are registered and you can login"
                   );
-                 
+
                   res.redirect("/users/login");
                 })
                 .catch(err => {
@@ -128,6 +127,22 @@ router.post(
         }
       });
     }
+  }
+);
+
+// profile
+router.get(
+  "/profile",
+  passport.authenticate("jwt", {
+    session: false,
+    failureRedirect: "/users/login",
+    failureFlash: true
+  }),
+  (req, res) => {
+    console.log(req.user);
+    res.render("profile", {
+      req: req
+    });
   }
 );
 
@@ -148,7 +163,6 @@ router.get("/callback", (req, res, next) => {
     .cookie("jwt", token, { httpOnly: true })
     .redirect("/dashboard");
 });
-
 
 // logout Handle
 
