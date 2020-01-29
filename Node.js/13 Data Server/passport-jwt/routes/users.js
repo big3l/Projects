@@ -5,7 +5,7 @@ const passport = require("passport");
 const { body, check, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const mailer = require("../config/sendEmail");
-
+const crypto = require("crypto");
 // User model
 const User = require("../models/User");
 
@@ -17,6 +17,61 @@ router.get("/login", (req, res) => {
 // Register Page
 router.get("/register", (req, res) => {
   res.render("register");
+});
+
+// Update Profile
+router.post(
+  "/profile",
+  passport.authenticate("jwt", {
+    session: false,
+    failureRedirect: "/users/login",
+    failureFlash: true
+  }),
+  (req, res) => {
+    console.log(req.user);
+    console.log(req.body);
+    const newData = {
+      id: req.body.id,
+      email: req.body.email,
+      password: req.body.password
+    };
+    User.findByIdAndUpdate(req.user._id, newData);
+    res.render("profile", {
+      user: req.user
+    });
+  }
+);
+
+// Forgot Password
+router.get("/forgotPassword", (req, res) => {
+  res.render("forgotPassword");
+});
+
+// Reset Password
+router.post("/forgotPassword", (req, res, next) => {
+  // 1- get the user from the DB using email
+  const email = req.body.email;
+  let errors = [];
+  User.findOne({ email: email }).then(data => {
+    if (data) {
+      console.log("Email found in out database");
+      const resetToken = crypto.randomBytes(32).toString("hex");
+      console.log(resetToken);
+      const passwordResetToken = crypto
+        .createHash("sha265")
+        .update(resetToken)
+        .digest("hex");
+        console.log(passwordResetToken)
+    } else {
+      errors.push({
+        msg: "Email is not registered"
+      });
+      res.render("forgotPassword", {
+        errors,
+        email
+      });
+    }
+  });
 });
 
 // Register Handle
@@ -56,7 +111,7 @@ router.post(
       return true;
     })
   ],
-  (req, res) => {
+  (req, res, next) => {
     const { name, email, password, password2 } = req.body;
 
     console.log(req.body);
@@ -141,9 +196,10 @@ router.get(
   (req, res) => {
     console.log(req.user);
     res.render("profile", {
-      req: req
+      user: req.user
     });
   }
+  // user.findOne()
 );
 
 // login Handle
@@ -165,7 +221,6 @@ router.get("/callback", (req, res, next) => {
 });
 
 // logout Handle
-
 router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success_msg", "You are logged out ");
