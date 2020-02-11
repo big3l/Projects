@@ -14,6 +14,7 @@ export default (state, action) => {
         ...state,
         contacts: [...state.contacts, action.payload]
       };
+  default: 
       default : return state;
   }
 };

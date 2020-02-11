@@ -1,7 +1,5 @@
 import React, { useState, useContext } from "react";
 import ContactContext from "../../context/contact/contactContext";
-const current = "ADD";
-const clearAll = "CLEAR";
 
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
@@ -13,21 +11,20 @@ const ContactForm = () => {
   });
   const { name, email, phone, type } = contact;
   const onChange = e => {
-    setContact({ ...contact, [e.target.name]: [e.target.value] });
+    setContact({ ...contact, [e.target.name]: e.target.value });
   };
   const onSubmit = e => {
-      e.preventDefault();
-      contactContext.addContact(contact);
-      setContact({
-        name: "",
-        email: "",
-        phone: "",
-        type: "personal"
-      })
-  }
+    e.preventDefault();
+    contactContext.addContact(contact);
+    setContact({
+      name: "",
+      email: "",
+      phone: "",
+      type: "personal"
+    });
+  };
   return (
-    <form onSubmit = {onSubmit}>
-
+    <form onSubmit={onSubmit}>
       <h2 className="text-dark">Add Contact</h2>
       <input
         type="text"
@@ -70,14 +67,12 @@ const ContactForm = () => {
       <div>
         <input
           type="submit"
-          value={current ? "Update Contact" : "Add Contact"}
+          value="Add Contact"
           className="btn btn-primary btn-block"
         />
       </div>
       <div>
-        <button className="btn btn-dark btn-block" onClick={clearAll}>
-          Clear Form
-        </button>
+        <button className="btn btn-dark btn-block">Clear Form</button>
       </div>
     </form>
   );
